@@ -1,0 +1,1 @@
+camera_follow_player();

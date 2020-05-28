@@ -1,0 +1,18 @@
+macOS icon ${options_dir}\mac\icons\icon512.png written out as 32-bit
+Windows NSIS Installer Script has been set to default due to changes in GameMaker Studio 2
+Converting GML script: ${project_dir}\scripts\animation_play\animation_play.gml
+Converted description /// @description animation_play(name,start_time)/// @param name
+/// @param start_time
+
+Converting GML script: ${project_dir}\scripts\animation_loop\animation_loop.gml
+Converted description /// @description animation_loop(loop_start,loop_end)/// @param loop_start
+/// @param loop_end
+
+Missing audiogroup for sound: 'snd_player_jump' - setting to default audio group
+Missing audiogroup for sound: 'snd_player_dash' - setting to default audio group
+Missing audiogroup for sound: 'snd_player_land' - setting to default audio group
+Missing audiogroup for sound: 'snd_player_wall_slide' - setting to default audio group
+Game speed set to 60
+Added compatibility script 'instance/instance_create.gml'
+Added compatibility script 'object/object_get_depth.gml'
+Added compatibility script '__global_object_depths.gml'

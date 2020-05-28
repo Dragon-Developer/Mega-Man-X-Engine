@@ -1,0 +1,18 @@
+{
+    "id": "38d6e40b-146d-48d3-9162-32d5d0b64cd9",
+    "modelName": "GMFolder",
+    "mvc": "1.1",
+    "name": "38d6e40b-146d-48d3-9162-32d5d0b64cd9",
+    "children": [
+        "7a633030-764d-4ca2-a6cb-f746b8cbe02e",
+        "338ffe79-5f5d-4170-bf67-d3e8da4b9807",
+        "bc54bc05-a02b-4071-9c0b-ef20b232ab32",
+        "69eead1a-d5eb-4cdc-bda3-b33126c41373",
+        "5a9f8eec-a1f6-4465-b0e9-edf7984b338c",
+        "4f963a59-d013-4f49-8a15-fbc8528ad48e"
+    ],
+    "filterType": "GMScript",
+    "folderName": "Step",
+    "isDefaultView": false,
+    "localisedFolderName": ""
+}
