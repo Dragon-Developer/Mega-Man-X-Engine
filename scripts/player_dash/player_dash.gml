@@ -5,6 +5,8 @@ if (!dash && dash_unlocked)
 {
     // Double Tap
     var _result = key_p_right - key_p_left;
+	var result = key_right - key_left;
+	
     var start_dash = false;
     
     if (_result != 0)
@@ -15,12 +17,12 @@ if (!dash && dash_unlocked)
             dash_tap = false;
             dash_tap_t = 0;
         }
-        else
-        {
-            dash_tap = true;
-            dash_tap_t = 0;
-            dash_tap_dir = _result;
-        }
+	}
+    if (_result != 0 && result != 0 && result != dash_tap_dir)
+    {
+        dash_tap = true;
+        dash_tap_t = 0;
+        dash_tap_dir = _result;
     }
     
     if (dash_tap)
@@ -71,6 +73,9 @@ if (dash)
         // Play Audio
         audio_play(dash_sound);
         
+		idle_enabled = false;
+		walk_enabled = false;
+		
         if (dash_air)
         {
             dash_air_count++;
@@ -81,7 +86,7 @@ if (dash)
             wall_jump_t = 0;
             dash_length = dash_air_length;
             wall_jump_reset_gravity = false;
-            vspeed = 0;
+            v_speed = 0;
         }
         else dash_length = dash_normal_length;
     }
@@ -92,7 +97,7 @@ if (dash)
         if (is_on_floor() || dash_air) animation_play("dash");
         
         // Gravity
-        if (dash_air) gravity = 0;
+        if (dash_air) grav = 0;
 		
     }
     // Dash Spark
@@ -105,7 +110,7 @@ if (dash)
     {
         if (!move_x(dash_speed * dash_dir) || (!is_on_floor() && !dash_air)) condition_to_end = true;
         
-        // Dash Dust
+		// Dash Dust
 		if (instance_exists(dash_dust) && dash_dust.script != noone)
 		{
 			script_execute(dash_dust.script);	
@@ -135,14 +140,14 @@ if (dash)
         
         if ((key_p_jump && is_on_floor()) || !is_on_floor())
         {
-            walk_speed = dash_speed;
-            
+			walk_speed = dash_speed;
             if (is_on_floor())
             {
                 dash = false;
                 dash_t = -1;
                 dash_end = false;
                 dash_end_t = 0;
+				idle_enabled = true;
                 fall_enabled = true;
                 dash_air_count = 1;
             }
@@ -154,7 +159,7 @@ if (dash)
         if (!key_p_jump && is_on_floor(3))
         {
             walk_speed = walk_speed_default;
-            vspeed = 0;
+            v_speed = 0;
             move_down();
             player_counters_reset();
         }
@@ -167,8 +172,10 @@ if (dash)
 if (dash_end)
 {
     var t = dash_end_t;
+	
+	if (is_on_floor()) walk_speed = walk_speed_default;    
     
-    if (t <= 6 && (is_on_floor(3) || dash_air)) animation_play("dash_end");
+	if (t <= 6 && (is_on_floor(3) || dash_air)) animation_play("dash_end");
     
     if (t >= 7 || (key_left ^^ key_right) || key_p_dash)
     {   
@@ -179,10 +186,14 @@ if (dash_end)
         dash_tapped = false;
         dash_tap = false;
         
-        if (dash_air && !jump && !is_on_floor(3)) animation_play("fall", 10);
-        
+        if (dash_air && !jump && !is_on_floor(3))
+		{
+			animation_play("fall", 10);
+			fall = true;
+		}
         dash_air = false;
-        fall_enabled = true;
+        idle_enabled = true;
+		fall_enabled = true;
     }
     
     if (key_p_dash)

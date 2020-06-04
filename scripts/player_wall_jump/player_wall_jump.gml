@@ -8,13 +8,13 @@ if (key_p_jump)
     
     if (!is_on_floor())
     {
-        if (place_meeting(x + 9, y, obj_block_parent))
+        if (place_meeting(x + 9, y, obj_square_parent))
         {
             condition = true;   
             dir_new = 1;
         }
         
-        if (place_meeting(x - 9, y, obj_block_parent))
+        if (place_meeting(x - 9, y, obj_square_parent))
         {
             condition = true;
             dir_new = -1;
@@ -38,8 +38,8 @@ if (key_p_jump)
         dash_t = 0;
         dash_end = false;
         dash_end_t = 0;
-        vspeed = 0;
-        gravity = 0;
+        v_speed = 0;
+        grav = 0;
     }
 }
 
@@ -65,8 +65,8 @@ if (wall_jump)
 	
     if (t <= 5)
     {
-        gravity = 0;
-        vspeed = 0;
+        grav = 0;
+        v_speed = 0;
         if (key_dash && dash_unlocked)
         {
             if (walk_speed != dash_speed) dash_air_count++;
@@ -76,19 +76,19 @@ if (wall_jump)
     
     if (t == 6)
     {
-        gravity = gravity_default;
-        vspeed = -wall_jump_strength;
+        grav = gravity_default;
+        v_speed = -wall_jump_strength;
     }
     
     if (wall_jump_reset_gravity)
     {
-        gravity = 0;
-        vspeed = 0;
+        grav = 0;
+        v_speed = 0;
     }
     
     if (t >= 5 && t <= 11)
     {
-        if (!is_on_ceil(3))
+        if (!wall_jump_reset_gravity)
         {
             move_x(-wall_jump_dir * walk_speed);
         }
@@ -109,6 +109,7 @@ if (wall_jump)
         jump = true;
         animation_play("jump", 10);
         walk_enabled = true;
+		idle_enabled = true;
         wall_slide_enabled = true;
         fall_enabled = true;
         wall_jump_reset_gravity = false;

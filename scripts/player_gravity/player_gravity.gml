@@ -1,8 +1,8 @@
 if (is_on_floor())
 {
-    gravity = 0;
+    grav = 0;
 }
 else
 {
-    gravity = gravity_default;
+    grav = gravity_default;
 }

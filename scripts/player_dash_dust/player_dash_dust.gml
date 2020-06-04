@@ -1,4 +1,5 @@
 var t = dash_t;
+
 if (dash_dust.min_limit <= t && t <= dash_dust.max_limit && !dash_air)
 {
     if (dash_dust.timer >= dash_dust.timer_limit) dash_dust.timer = 0;

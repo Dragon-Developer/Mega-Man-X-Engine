@@ -2,7 +2,7 @@
 var _hspeed = argument[0];
 var result = false;
 // If the path is clear
-if (place_free(x + _hspeed, y))
+if (is_place_free(x + _hspeed, y))
 {
     var _down = false;
     // If the object is going down the ramp
@@ -14,7 +14,7 @@ if (place_free(x + _hspeed, y))
     x += _hspeed;
     result = true;
     // Prevent this object from bouncing on the slope
-    if (_down && !place_free(x, y + 8))
+    if (_down && !is_place_free(x, y + 8))
     {
         move_down();
     }
@@ -22,7 +22,7 @@ if (place_free(x + _hspeed, y))
 else
 {
     // If there is a slope on the way
-    if (place_meeting(x + _hspeed, y, obj_slope_parent) && place_free(x, y - 8))
+    if (place_meeting(x + _hspeed, y, obj_slope_parent) && is_place_free(x, y - 8))
     {
         y -= 8;
         x += _hspeed;
@@ -32,15 +32,7 @@ else
     else
     {
         var _x = x;
-        
-        if (argument[0] > 0)
-        {
-            move_contact_solid(0, ceil(argument[0]));
-        }
-        else
-        {
-            move_contact_solid(180, ceil(-argument[0]));
-        }
+		move_contact_block(argument[0], 0);
         result = (x != _x);
     }
 }

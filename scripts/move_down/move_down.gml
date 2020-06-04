@@ -1,7 +1,7 @@
-var _dist = -1;
+var _dist = 10;
 
 y = floor(y);
 
 if (argument_count) _dist = argument[0];
 
-move_contact_solid(270, _dist);
+move_contact_block(0, _dist);

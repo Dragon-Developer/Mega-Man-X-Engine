@@ -4,12 +4,25 @@ char_name = "x";
 // Sprites
 pl_sprite[P_FULL] = 0;
 
-// Camera
-instance_create_depth(x, y, 0, obj_camera);
-
 // Layers
 layer_up = layer_create(layer_get_depth(layer) - 1);
 layer_down = layer_create(layer_get_depth(layer) + 1);
+
+// Camera
+cam = instance_create_layer(x, y, layer_up, obj_camera);
+
+// Ready
+instance_create_layer(cam.mid_x, cam.mid_y, layer_up, obj_player_ready);
+
+// Start
+start = false; // Starting Teleport
+start_t = 0; // Timer
+start2 = false; // Starting in the Ground
+start2_t = 0; // Timer
+start_sound = snd_player_start;
+x_start = x;
+y_start = y;
+locked = true;
 
 // Keys
 scr_keys_start();
@@ -21,6 +34,7 @@ my_health = max_health;
 // Direction (1 = right, -1 = left)
 dir = 1;
 image_xscale = 1;
+
 // Animation
 animation_init();
 animation_script = scr_x_animation; // Script
@@ -28,6 +42,10 @@ animations_init();
 player_animations();
 animation_play("idle");
 image_speed = 0;
+
+// Idle
+idle = true;
+idle_enabled = true; // Can the idle animation be played?
 
 // Walk
 walk = false; // Is the player walking?
@@ -92,7 +110,7 @@ land_enabled = true; // Can the land animation be played?
 
 // Gravity
 gravity_default = 0.25;
-gravity = gravity_default;
+scr_physics_init(gravity_default);
 
 // Wall Slide
 wall_slide = false; // Is the player sliding on the wall?

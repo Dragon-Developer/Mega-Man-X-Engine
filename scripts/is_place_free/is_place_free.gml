@@ -1,0 +1,1 @@
+return !place_meeting(argument[0], argument[1], obj_block_parent);

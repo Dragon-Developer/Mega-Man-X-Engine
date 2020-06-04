@@ -1,3 +1,19 @@
+animation_add("tp|start",
+[
+	0, 0
+], 0);
+
+animation_add("start", 
+[
+	0, 1,
+	2, 2,
+	3, 3,
+	4, 4,
+	5, 5,
+	6, 6,
+	8, 6
+]);
+
 animation_add("idle", 
 [
 	0, 0,
