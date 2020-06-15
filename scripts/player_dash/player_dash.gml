@@ -1,7 +1,7 @@
 if (!dash_enabled) exit;
 
 // Starting Dash
-if (!dash && dash_unlocked)
+if (dash_unlocked)
 {
     // Double Tap
     var _result = key_p_right - key_p_left;
@@ -48,14 +48,17 @@ if (!dash && dash_unlocked)
         {
             if ((is_on_floor() && !jump) || (dash_air_unlocked && dash_air_count < dash_air_limit))
             {
-                dash = true;
-                dash_t = 0;
-                dash_dir = new_dash_dir;
-                dir = dash_dir;
-                image_xscale = dir;
-                dash_tap_dir = 0;
-                dash_tapped = start_dash;
-                dash_air = !is_on_floor();
+				if (!dash_end || (dash_end && result != 0))
+				{
+	                dash = true;
+	                dash_t = 0;
+	                dash_dir = new_dash_dir;
+	                dir = dash_dir;
+	                image_xscale = dir;
+	                dash_tap_dir = 0;
+	                dash_tapped = start_dash;
+	                dash_air = !is_on_floor();
+				}
             }
         }
         start_dash = false;
@@ -177,7 +180,7 @@ if (dash_end)
     
 	if (t <= 6 && (is_on_floor(3) || dash_air)) animation_play("dash_end");
     
-    if (t >= 7 || (key_left ^^ key_right) || key_p_dash)
+    if (t >= 7 || (key_left ^^ key_right) || key_p_dash || (key_p_jump && is_on_floor()))
     {   
         dash = false;
         dash_t = 0;
@@ -195,16 +198,6 @@ if (dash_end)
         idle_enabled = true;
 		fall_enabled = true;
     }
-    
-    if (key_p_dash)
-    {
-        if (is_on_floor() || dash_air_count < dash_air_limit)
-        {
-            dash = true;
-            dash_tap_dir = dir;
-            dash_air = !is_on_floor();
-            fall_enabled = false;
-        }
-    }
+	
     dash_end_t++;
 }

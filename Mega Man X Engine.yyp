@@ -543,6 +543,14 @@
             }
         },
         {
+            "Key": "4370fa43-68c2-42a0-93d7-03ecb50e2f85",
+            "Value": {
+                "id": "56b635c9-8c1b-415a-86d7-1970507154a5",
+                "resourcePath": "sprites\\spr_x_dash_fire\\spr_x_dash_fire.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "473ba40a-d018-48d0-b8b2-f7be28e4c781",
             "Value": {
                 "id": "39893e82-49cb-4eaa-b8fb-027c27234e17",
@@ -1287,6 +1295,14 @@
             }
         },
         {
+            "Key": "c2e8abd2-4828-43aa-a5b3-2fe2ae060682",
+            "Value": {
+                "id": "6ed6185a-0fb8-4a5c-bfa4-da72ef5b75b1",
+                "resourcePath": "views\\c2e8abd2-4828-43aa-a5b3-2fe2ae060682.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "c33accfa-c8fa-45e6-8887-18c107359450",
             "Value": {
                 "id": "722881cd-5ebc-419b-949c-be143d426fe4",
@@ -1668,6 +1684,14 @@
                 "id": "e369ea49-3a96-40d8-bf45-cd924f204b0c",
                 "resourcePath": "sprites\\spr_x_jump_x2_legs\\spr_x_jump_x2_legs.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "ffc8eae3-1872-451d-93cf-19920764d894",
+            "Value": {
+                "id": "b558f2dc-de73-4abe-9ce7-5cc0e43a8510",
+                "resourcePath": "objects\\obj_player_x_dash_fire\\obj_player_x_dash_fire.yy",
+                "resourceType": "GMObject"
             }
         },
         {

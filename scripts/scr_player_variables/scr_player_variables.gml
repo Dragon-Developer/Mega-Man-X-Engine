@@ -85,7 +85,7 @@ dash_dust.max_limit = 22; // Stop creating dust in that frame
 // Dash - Air Dash
 dash_air = false; // Is the player using Air Dash?
 dash_air_length = 18; // Dash Air Length
-dash_air_unlocked = true; // Set to true when an armor unlocks this feature
+dash_air_unlocked = false; // Set to true when an armor unlocks this feature
 dash_air_limit = 1; // How many air dashes can the player do?
 dash_air_count = 0; // How many dashes did the player use?
 

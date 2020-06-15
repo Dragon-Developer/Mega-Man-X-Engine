@@ -5,7 +5,7 @@ var result = key_right - key_left;
 if (!is_on_floor())
 {
     // If the player is falling close to the wall
-    if (!can_move_x(result) && v_speed > 0)
+    if (!can_move_x(result) && v_speed >= 0)
     {
         wall_slide = true;
         wall_slide_dir = result;
@@ -28,8 +28,8 @@ if (wall_slide)
         animation_play("wall_slide");
         fall_enabled = false;
         v_speed = 0;
+		audio_play(wall_slide_sound);
     }
-    if (t == 4) audio_play(wall_slide_sound);
     
     if (t == 5) dir = -wall_slide_dir;
     
