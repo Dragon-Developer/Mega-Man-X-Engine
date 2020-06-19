@@ -89,6 +89,14 @@ dash_air_unlocked = false; // Set to true when an armor unlocks this feature
 dash_air_limit = 1; // How many air dashes can the player do?
 dash_air_count = 0; // How many dashes did the player use?
 
+// Dash Up
+dash_up = false; // Is the player using Up Air Dash?
+dash_up_length = 32; // Dash Air Length
+dash_up_unlocked = false; // Set to true when an armor unlocks this feature
+
+// Dash Up - Effects
+dash_up_spark = player_effect_new(obj_player_dash_spark_up, 2, 24, layer_up);
+
 // Dash - End
 dash_end = false; // Is the dash at the end?
 dash_end_t = 0; // Timer

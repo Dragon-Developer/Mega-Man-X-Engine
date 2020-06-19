@@ -52,7 +52,6 @@ if (wall_slide)
         idle_enabled = true;
 		dash_enabled = true;
 		
-		
         if (!is_on_floor(2)) v_speed = 0;
     }
     wall_slide_t++;

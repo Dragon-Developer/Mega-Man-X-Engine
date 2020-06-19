@@ -4,6 +4,9 @@ key_left = false;
 key_p_right = false;
 key_right = false;
 
+key_p_up = false;
+key_up = false;
+
 key_p_jump = false;
 key_jump = false;
 

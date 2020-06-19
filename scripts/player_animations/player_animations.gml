@@ -90,3 +90,20 @@ animation_add("wall_jump|wall",
 	0, 3,
 	3, 4
 ], 3);
+
+animation_add("dash_up",
+[
+	0, 0,
+	2, 1,
+	5, 2,
+	8, 3,
+	16, 4,
+	18, 5,
+	20, 6
+], 20);
+
+animation_add("dash_up_end|dash_up",
+[
+	0, 5,
+	2, 4
+], 2);

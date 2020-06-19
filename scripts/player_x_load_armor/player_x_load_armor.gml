@@ -7,6 +7,6 @@ if (armor[P_LEG] == "x2")
 	
 	// Air Dash
 	dash_air_unlocked = true;
-	dash_air_limit = 1;
+	dash_up_unlocked = true;
 }
 

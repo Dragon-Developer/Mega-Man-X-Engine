@@ -1,3 +1,6 @@
+var _x = x;
+var _y = y;
+
 var _hsp = ceil(argument[0]);
 var _vsp = ceil(argument[1]);
 
@@ -19,3 +22,5 @@ while(_hsp != 0 || _vsp != 0)
 		_hsp = 0;
 	}
 }
+
+return (x != _x || y != _y);

@@ -6,7 +6,6 @@ if (dash_unlocked)
     // Double Tap
     var _result = key_p_right - key_p_left;
 	var result = key_right - key_left;
-	
     var start_dash = false;
     
     if (_result != 0)
@@ -44,29 +43,40 @@ if (dash_unlocked)
         
         if (result != 0) new_dash_dir = result;
         
-        if (can_move_x(dash_speed * new_dash_dir))
-        {
-            if ((is_on_floor() && !jump) || (dash_air_unlocked && dash_air_count < dash_air_limit))
-            {
-				if (!dash_end || (dash_end && result != 0))
-				{
-	                dash = true;
-	                dash_t = 0;
-	                dash_dir = new_dash_dir;
-	                dir = dash_dir;
-	                image_xscale = dir;
-	                dash_tap_dir = 0;
-	                dash_tapped = start_dash;
-	                dash_air = !is_on_floor();
-				}
-            }
-        }
+		if ((!dash_up_unlocked || !key_up || start_dash || is_on_floor()) &&
+		(can_move_x(dash_speed * new_dash_dir)) &&
+		((is_on_floor() && !jump) || (dash_air_unlocked && dash_air_count < dash_air_limit)) &&
+		(!dash_end || (dash_end && (result != 0 || dash_up))))
+		{
+			dash = true;
+			dash_t = 0;
+			dash_dir = new_dash_dir;
+			dir = dash_dir;
+			image_xscale = dir;
+			dash_tap_dir = 0;
+			dash_tapped = start_dash;
+			dash_air = !is_on_floor();
+			dash_up = false;
+			dash_end = false;
+		}
+		else if ((dash_up_unlocked && key_up && !wall_slide) &&
+		(!is_on_ceil() && !is_on_floor() && (dash_air_count < dash_air_limit)) &&
+		(!dash_end || (dash_end && !dash_up)))
+		{
+			dash = true;
+			dash_t = 0;
+			dash_dir = dir;
+			image_xscale = dir;
+			dash_air = true;
+			dash_up = true;
+			dash_end = false;
+		}
         start_dash = false;
     }
 }
 
-// Dash
-if (dash)
+// Dash (Horizontal)
+if (dash && !dash_up)
 {
     var t = dash_t;
     var condition_to_end = (t == dash_length + 1 || (key_p_jump && is_on_floor()));
@@ -171,6 +181,76 @@ if (dash)
     dash_t++;
 }
 
+// Dash (Vertical)
+if (dash && dash_up)
+{
+	var t = dash_t;
+    var condition_to_end = (t == dash_length + 1 || (key_p_jump && is_on_floor()) || !key_dash);
+	
+	if (t == 0)
+	{
+		dash_length = dash_up_length;
+        dash_air_count++;
+        jump = false;
+        fall_enabled = false;
+		walk_enabled = false;
+        jump_enabled = true;
+        wall_jump = false;
+        wall_jump_t = 0;
+        wall_jump_reset_gravity = false;
+		wall_slide_enabled = false;
+		wall_slide = false;
+        v_speed = 0;
+	}
+	
+	if (t == 16)
+	{
+		dash_spark_inst = player_effect_create(dash_up_spark);
+	}
+	
+	if (t >= 0 && t <= dash_length)
+	{
+		animation_play("dash_up");
+		grav = 0;
+		v_speed = 0;
+	}
+	
+	if (array_contains([1, 3, 7, 9, 11, 13, 15, 16], t))
+	{
+		condition_to_end |= !move_contact_block(0, -1);
+	}
+	
+	if (t == 19)
+	{
+		audio_play(dash_sound);	
+	}
+	
+	if (t >= 19 && t <= 20)
+	{
+		condition_to_end |= !move_contact_block(0, -2);
+	}
+	
+	if (t >= 21 && t <= dash_length)
+	{
+		condition_to_end |= !move_contact_block(0, -5);
+	}
+	
+	if (condition_to_end)
+	{
+		dash_end = true;
+		walk_enabled = true;
+		wall_jump_enabled = true;
+        wall_slide_enabled = true;
+		
+		dash_t = dash_length + 2;
+		
+		if (t >= 21) walk_speed = dash_speed;
+		player_effect_destroy(dash_spark_inst);
+	}
+	
+	dash_t++;
+}
+
 // Dash End
 if (dash_end)
 {
@@ -178,8 +258,15 @@ if (dash_end)
 	
 	if (is_on_floor()) walk_speed = walk_speed_default;    
     
-	if (t <= 6 && (is_on_floor(3) || dash_air)) animation_play("dash_end");
-    
+	if (!dash_up)
+	{
+		if (t <= 6 && (is_on_floor(3) || dash_air)) animation_play("dash_end");
+	}
+	else
+	{
+		animation_play("dash_up_end")
+	}
+	
     if (t >= 7 || (key_left ^^ key_right) || key_p_dash || (key_p_jump && is_on_floor()))
     {   
         dash = false;
@@ -188,6 +275,7 @@ if (dash_end)
         dash_end_t = -1;
         dash_tapped = false;
         dash_tap = false;
+		dash_up = false;
         
         if (dash_air && !jump && !is_on_floor(3))
 		{
@@ -197,6 +285,8 @@ if (dash_end)
         dash_air = false;
         idle_enabled = true;
 		fall_enabled = true;
+		walk_enabled = true;
+
     }
 	
     dash_end_t++;
