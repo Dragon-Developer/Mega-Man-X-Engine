@@ -215,6 +215,14 @@
             }
         },
         {
+            "Key": "17b80667-be8d-4b17-a0d8-95aef7487c81",
+            "Value": {
+                "id": "e8dd7ffd-64c1-42fa-8369-307c1e84ce31",
+                "resourcePath": "sprites\\spr_x_dolor_x2_legs\\spr_x_dolor_x2_legs.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "17f511cc-8bf7-49ab-a59f-6bb17cd17d82",
             "Value": {
                 "id": "30bb2297-7976-4345-83ab-92b4169e007a",
@@ -279,6 +287,14 @@
             }
         },
         {
+            "Key": "1d19102a-5655-44a1-a195-c1fb14e4ab34",
+            "Value": {
+                "id": "d1856c0e-87d7-4a37-87d1-70fcc9eafd08",
+                "resourcePath": "scripts\\player_dolor\\player_dolor.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1e82adaa-9394-47c3-ab1b-629bc305873d",
             "Value": {
                 "id": "7a4ecf17-b95d-40c1-acf5-cbefad949575",
@@ -291,6 +307,14 @@
             "Value": {
                 "id": "f49590e1-612a-4287-b192-93aac981c9f1",
                 "resourcePath": "views\\1ec9e8bb-0661-4958-8800-970e46ec04ee.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "1eea3666-1fc0-43ab-9f90-d3d6b9a66421",
+            "Value": {
+                "id": "63993cd2-a48c-4c71-aa4f-954063b8b90a",
+                "resourcePath": "views\\1eea3666-1fc0-43ab-9f90-d3d6b9a66421.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -308,6 +332,14 @@
                 "id": "068d8444-aeb5-4936-b8ce-2f502dcd70fa",
                 "resourcePath": "views\\224e0085-4448-49e3-8b5a-b7ba13979f39.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "23528910-9730-4e1c-894e-a16ed4dae077",
+            "Value": {
+                "id": "569ad269-7c06-4583-85c8-03175239b580",
+                "resourcePath": "sprites\\spr_x_dolor2_x2_legs\\spr_x_dolor2_x2_legs.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -487,6 +519,14 @@
             }
         },
         {
+            "Key": "388eb8a5-c576-40b6-8def-602ba3049c93",
+            "Value": {
+                "id": "f176973b-c55f-42eb-8c1a-50b739235363",
+                "resourcePath": "sprites\\spr_x_dolor\\spr_x_dolor.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "38d6e40b-146d-48d3-9162-32d5d0b64cd9",
             "Value": {
                 "id": "5c88f30c-3465-4782-ae78-607e8e0f9e57",
@@ -639,6 +679,14 @@
             }
         },
         {
+            "Key": "5099b709-18fc-4a79-a42a-3295d13ee6c0",
+            "Value": {
+                "id": "2ec9d403-fbad-4f3c-964d-93dc871ad961",
+                "resourcePath": "sprites\\spr_x_dolor2_x2_arms\\spr_x_dolor2_x2_arms.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5501641a-0aa0-4a99-9dd9-2ca287e22eab",
             "Value": {
                 "id": "d2db0100-98f9-42e7-b413-0fa31b07ec7e",
@@ -703,6 +751,22 @@
             }
         },
         {
+            "Key": "5d14fd43-2bbb-4336-8988-b5c6bed5e3e1",
+            "Value": {
+                "id": "251a397d-f748-4901-bb4b-a92e04ec76e6",
+                "resourcePath": "sprites\\spr_x_dolor_x2_arms\\spr_x_dolor_x2_arms.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "5dca7c07-24ad-48b1-9e28-98582f2c4d43",
+            "Value": {
+                "id": "331d93a9-777c-47a0-8c54-60268fb55e1b",
+                "resourcePath": "sounds\\snd_dolor\\snd_dolor.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "5e8b1f95-2866-47b0-b960-08d2bd27bd5b",
             "Value": {
                 "id": "9dc575b8-7992-476e-957d-99980f706f00",
@@ -740,6 +804,14 @@
                 "id": "6ca762cd-6958-447f-912a-cf1abaaba7e1",
                 "resourcePath": "sounds\\snd_player_jump\\snd_player_jump.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "65346e03-43f9-4cb8-a457-3c6d3ad6e106",
+            "Value": {
+                "id": "d49e1197-2402-4b7f-93f6-44aad83cdba6",
+                "resourcePath": "scripts\\player_immunity\\player_immunity.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -876,6 +948,14 @@
                 "id": "c6c25dc5-4729-42b7-abbe-7e1f12e49fac",
                 "resourcePath": "views\\79263a31-c6bb-4334-bbf8-386cddad067b.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "7940ae81-9da9-47d2-bad5-dfedf9f1700a",
+            "Value": {
+                "id": "f89d6b5c-a478-4251-a1b0-9188215bcde5",
+                "resourcePath": "sprites\\spr_x_dolor2\\spr_x_dolor2.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1087,6 +1167,14 @@
             }
         },
         {
+            "Key": "96b3ee4f-7860-46da-825f-230e231ce2bf",
+            "Value": {
+                "id": "2282334c-45bb-4264-821f-b10948953076",
+                "resourcePath": "sprites\\spr_x_dolor2_x2_helm\\spr_x_dolor2_x2_helm.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "9a146f64-548f-4fc6-b09a-3f87099002f5",
             "Value": {
                 "id": "a20baacf-b329-427c-a9d7-26a08dddb0b1",
@@ -1295,6 +1383,14 @@
             }
         },
         {
+            "Key": "b8123bd5-f735-43bf-ad0c-eafd7c58673d",
+            "Value": {
+                "id": "d22f16b4-a99e-47a6-a9a1-ea32da21ba58",
+                "resourcePath": "views\\b8123bd5-f735-43bf-ad0c-eafd7c58673d.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "bb1f79b8-ab63-4071-b73f-8719cca62b9e",
             "Value": {
                 "id": "9a42f67c-b6fe-49c9-a7b9-47b454559ae4",
@@ -1404,6 +1500,14 @@
                 "id": "b806783a-8f4f-4bd0-887a-438540697908",
                 "resourcePath": "views\\c60695fa-5001-4863-8d75-84e43de4843a.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "c680425b-448d-4d0b-8fdb-adeb8a6e51eb",
+            "Value": {
+                "id": "440f578b-4288-47df-b594-e86c4641ce41",
+                "resourcePath": "scripts\\player_dolor_reset\\player_dolor_reset.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1543,6 +1647,14 @@
             }
         },
         {
+            "Key": "d6380855-0762-4529-956e-c3c2ed34fdf7",
+            "Value": {
+                "id": "9722edee-1ffa-4378-ab21-a561f1998d3d",
+                "resourcePath": "sprites\\spr_x_dolor_x2_helm\\spr_x_dolor_x2_helm.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "d7191b34-aee0-48d8-a868-24e217e51829",
             "Value": {
                 "id": "0928906b-f1f8-493c-aca3-602cd87b9abb",
@@ -1596,6 +1708,14 @@
                 "id": "cc74eeb2-f9a3-4d2b-9a52-6bc0395a1a90",
                 "resourcePath": "scripts\\player_load_sprites\\player_load_sprites.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "e32b996c-358c-4512-aaed-8acec127f9bc",
+            "Value": {
+                "id": "21ea93e9-6440-483f-985d-c582a4e74731",
+                "resourcePath": "sprites\\spr_x_dolor2_x2_body\\spr_x_dolor2_x2_body.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1790,6 +1910,9 @@
         "c20acdc3-3a43-4247-b2a8-5c6c50af73f1",
         "69f486c9-6f75-4a3e-9481-71044d74858b",
         "d940819e-ef7b-4b17-a452-8555598fa4d4",
+        "1d19102a-5655-44a1-a195-c1fb14e4ab34",
+        "c680425b-448d-4d0b-8fdb-adeb8a6e51eb",
+        "65346e03-43f9-4cb8-a457-3c6d3ad6e106",
         "9078c9ad-6bd5-47cb-8e12-e2261bf8cf9d",
         "c3bbca60-3790-4053-af69-b9e963ae6658",
         "2d0ba937-4f77-4dea-a444-15015e3dac0c",

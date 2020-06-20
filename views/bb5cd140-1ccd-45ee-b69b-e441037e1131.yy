@@ -10,7 +10,9 @@
         "275c0832-4502-4cad-af55-1b5a07dd898b",
         "a81dd306-afa8-4e5d-9ff6-f7ba16dc1e33",
         "3165fbec-70a2-4409-b97a-469a182834c2",
-        "5ef1dff2-7946-46ab-bcf7-9a7b85edcc16"
+        "5ef1dff2-7946-46ab-bcf7-9a7b85edcc16",
+        "17b80667-be8d-4b17-a0d8-95aef7487c81",
+        "23528910-9730-4e1c-894e-a16ed4dae077"
     ],
     "filterType": "GMSprite",
     "folderName": "Legs",

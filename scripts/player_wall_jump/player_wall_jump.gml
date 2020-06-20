@@ -85,22 +85,26 @@ if (wall_jump)
         grav = 0;
         v_speed = 0;
     }
-    
+    var condition_to_end = false;
+	
     if (t >= 5 && t <= 11)
     {
         if (!wall_jump_reset_gravity)
         {
-            move_x(-wall_jump_dir * walk_speed);
+			if (!is_on_ceil())
+			{
+				move_x(-wall_jump_dir * walk_speed);
+			}
+			else
+			{
+				v_speed = 0;
+				condition_to_end = true;
+			}
         }
     }
-    
-    var condition_to_end = false;
-    result = key_right - key_left;
-    
-    if (wall_jump_reset_gravity && (result == -wall_jump_dir))
-    {
-        condition_to_end = true;
-    }
+    var result = key_right - key_left;
+
+    condition_to_end |= (wall_jump_reset_gravity && result == -wall_jump_dir);
     
     if (t == 12 || condition_to_end)
     {

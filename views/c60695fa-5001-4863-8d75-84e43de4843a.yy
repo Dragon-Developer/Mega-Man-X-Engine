@@ -10,7 +10,9 @@
         "7d00ec85-1c40-4b58-a43f-6624c5a1aa89",
         "9f9d0ea6-b002-412d-a2dd-1ddfb78f87b1",
         "1a3e4a71-22a1-4e12-b63c-535269b23175",
-        "1939a83c-52ab-4036-8071-e21653df8c29"
+        "1939a83c-52ab-4036-8071-e21653df8c29",
+        "5d14fd43-2bbb-4336-8988-b5c6bed5e3e1",
+        "5099b709-18fc-4a79-a42a-3295d13ee6c0"
     ],
     "filterType": "GMSprite",
     "folderName": "Arms",

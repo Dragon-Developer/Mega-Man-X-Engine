@@ -5,6 +5,8 @@ player_start();
 if (locked) exit;
 
 player_gravity();
+player_dolor();
+player_immunity();
 player_fall();
 player_walk();
 player_dash();
