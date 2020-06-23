@@ -1,8 +1,8 @@
 {
-    "id": "5dca7c07-24ad-48b1-9e28-98582f2c4d43",
+    "id": "61a65fd1-f0e8-41dd-896d-d4dda8f6bbc2",
     "modelName": "GMSound",
     "mvc": "1.0",
-    "name": "snd_dolor",
+    "name": "snd_player_hover",
     "audioGroupGuid": "7b2c4976-1e09-44e5-8256-c527145e03bb",
     "bitDepth": 1,
     "bitRate": 128,

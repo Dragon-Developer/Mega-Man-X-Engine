@@ -38,6 +38,7 @@ if (key_p_jump)
         dash_t = 0;
         dash_end = false;
         dash_end_t = 0;
+		hover_enabled = false;
         v_speed = 0;
         grav = 0;
     }
@@ -117,6 +118,7 @@ if (wall_jump)
         wall_slide_enabled = true;
         fall_enabled = true;
         wall_jump_reset_gravity = false;
+		hover_enabled = true;
     }
     
     wall_jump_t++;

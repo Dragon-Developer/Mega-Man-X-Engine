@@ -7,7 +7,7 @@ if (immunity)
 		blink = true;
 	}
 	
-	if (t >= immunity_limit)
+	if (t >= immunity_length)
 	{
 		immunity = false;
 		immunity_t = 0;

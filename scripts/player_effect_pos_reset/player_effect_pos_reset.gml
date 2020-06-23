@@ -1,6 +1,6 @@
 var _x = 0, _y = 0;
 
-if (argument[0] == noone) exit;
+if (argument[0] == noone || !instance_exists(argument[0])) exit;
 
 _x = argument[0].xoffset;
 _y = argument[0].yoffset;

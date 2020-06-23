@@ -142,17 +142,27 @@ wall_jump_reset_gravity = false; // Set to true when the player is on the ceilin
 // Wall Jump - Effect
 wall_jump_spark = player_effect_new(obj_player_wall_jump_spark, 16, 20, layer_up);
 
+// Hover
+hover = false;
+hover_t = 0;
+hover_length = 120;
+hover_dir = 1;
+hover_enabled = true;
+hover_unlocked = false;
+hover_mode = 0;
+hover_sound = snd_player_hover;
+
 // Dolor
 dolor = false; // Is the player getting dolor?
 dolor_t = 0; // Timer
 dolor_jump = true; // Will the player jump when getting dolor?
 dolor_damage = 1; // Damage that will be done to the player
-dolor_sound = snd_dolor; // Sound
+dolor_sound = snd_player_dolor; // Sound
 
 // Immunity
 immunity = false;
 immunity_t = 0;
-immunity_limit = 60;
+immunity_length = 60;
 immunity_type = immunity_types.dolor;
 
 enum immunity_types
