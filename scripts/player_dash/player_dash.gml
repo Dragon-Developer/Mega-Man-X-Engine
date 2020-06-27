@@ -46,7 +46,9 @@ if (dash_unlocked)
 		if ((!dash_up_unlocked || !key_up || start_dash || is_on_floor()) &&
 		(can_move_x(dash_speed * new_dash_dir)) &&
 		((is_on_floor() && !jump) || (dash_air_unlocked && dash_air_count < dash_air_limit)) &&
-		(!dash_end || (dash_end && (result != 0 || dash_up))))
+		(!dash_end || (dash_end && (result != 0 || dash_up))) &&
+		(!dash_tapped || (dash_tapped && result != dash_dir && key_p_dash)) &&
+		(!start_dash || (start_dash && (new_dash_dir != dash_dir || !dash))))
 		{
 			dash = true;
 			dash_t = 0;
@@ -79,7 +81,7 @@ if (dash_unlocked)
 if (dash && !dash_up)
 {
     var t = dash_t;
-    var condition_to_end = (t == dash_length + 1 || (key_p_jump && is_on_floor()));
+    var condition = (t == dash_length + 1 || (key_p_jump && is_on_floor()));
     
     if (t == 0)
     {
@@ -121,7 +123,7 @@ if (dash && !dash_up)
     // Dash Movement
     if (t >= 1 && t <= dash_length)
     {
-        if (!move_x(dash_speed * dash_dir) || (!is_on_floor() && !dash_air)) condition_to_end = true;
+        if (!move_x(dash_speed * dash_dir) || (!is_on_floor() && !dash_air)) condition = true;
         
 		// Dash Dust
 		if (instance_exists(dash_dust) && dash_dust.script != noone)
@@ -136,13 +138,13 @@ if (dash && !dash_up)
     
     if (!dash_tapped)
     {
-        if (!key_dash) condition_to_end = true;
+        condition |= !key_dash;
     }
-    else if (result != dash_dir) condition_to_end = true;
+    else condition |= (result != dash_dir);
     
-    if (result != 0 && result != dash_dir) condition_to_end = true;
+    condition |= (result != 0 && result != dash_dir);
     
-    if (condition_to_end && t <= dash_length + 2)
+    if (condition && t <= dash_length + 2)
     {
         dash_end = true;
         dash_t = dash_length + 3;

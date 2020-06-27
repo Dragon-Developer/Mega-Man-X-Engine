@@ -143,14 +143,15 @@ wall_jump_reset_gravity = false; // Set to true when the player is on the ceilin
 wall_jump_spark = player_effect_new(obj_player_wall_jump_spark, 16, 20, layer_up);
 
 // Hover
-hover = false;
-hover_t = 0;
-hover_length = 120;
-hover_dir = 1;
-hover_enabled = true;
-hover_unlocked = false;
-hover_mode = 0;
-hover_sound = snd_player_hover;
+hover = false; // Is the player using hover?
+hover_t = 0; // Timer
+hover_length = 120; // Duration
+hover_dir = 1; // Direction
+hover_enabled = true; // Can the player use hover?
+hover_unlocked = false; // Set to true when an armor unlocks this feature
+hover_mode = 0; // Mode 0 = Stop animation when falling, Mode 1 = Keep animation when falling
+hover_sound = snd_player_hover; // Sound
+hover_speed = 2; // Speed
 
 // Dolor
 dolor = false; // Is the player getting dolor?
@@ -176,7 +177,11 @@ blink_t = 0;
 blink_speed = 1;
 
 // Shoot
-shoot = false;
+shoot = false; // Is the player shooting
+shoot_t = 0; // Timer
+
+// Weapon
+weapon = ""; // ...
 
 // Armor
 armor[P_OG] = "";

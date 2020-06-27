@@ -19,6 +19,7 @@ if (move != 0 && walk_enabled)
 				walk = true;
 				idle = false;
 				animation_play("walk");
+				walk_speed = walk_speed_default;
 			}
 			else
 			{

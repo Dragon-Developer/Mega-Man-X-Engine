@@ -4,9 +4,18 @@
     "mvc": "1.0",
     "name": "obj_slope_left_1",
     "eventList": [
-        
+        {
+            "id": "0d5fec9a-ec94-435b-b82d-004abdf27c7a",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "d06655dd-e124-4937-9c52-4df7d3f18c9a"
+        }
     ],
-    "maskSpriteId": "cbb5099e-13ab-4f2f-b04d-faa7b8c1e642",
+    "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
     "parentObjectId": "87221d86-cbe5-4f7d-8a36-22041a7c0610",
     "persistent": false,
@@ -26,6 +35,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "294243e9-1df4-4a89-b569-38f9c3cc35a6",
-    "visible": true
+    "spriteId": "4bec59ff-19ac-4152-a246-b7a6e1987096",
+    "visible": false
 }

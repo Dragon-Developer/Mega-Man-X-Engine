@@ -9,7 +9,7 @@ var sign_vsp = sign(_vsp);
 
 while(_hsp != 0 || _vsp != 0)
 {
-	if (is_place_free(x + sign_hsp, y + sign_vsp))
+	if (!place_meeting(x + sign_hsp, y + sign_vsp, obj_block_parent))
 	{
 		x += sign_hsp;
 		y += sign_vsp;

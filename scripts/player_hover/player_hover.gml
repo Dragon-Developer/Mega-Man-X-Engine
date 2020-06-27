@@ -25,7 +25,7 @@ if (hover)
 	{
 		grav = 0;
 		v_speed = 0;
-		walk_speed = walk_speed_default;
+		walk_speed = hover_speed;
 	}
 	
 	var result = key_right - key_left;
@@ -51,6 +51,8 @@ if (hover)
 		dash_enabled = true;
 		wall_jump_enabled = true;
 		wall_slide_enabled = true;
+	
+		walk_speed = walk_speed_default;
 		
 		audio_stop_sound(hover_sound);
 		

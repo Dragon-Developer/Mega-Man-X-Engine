@@ -47,6 +47,14 @@
             }
         },
         {
+            "Key": "01bb5e2d-5342-4074-82b3-21d916e0e484",
+            "Value": {
+                "id": "2f2c5315-6fe9-4816-bd8f-8a1b68df0268",
+                "resourcePath": "views\\01bb5e2d-5342-4074-82b3-21d916e0e484.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "01e9ea6f-7a39-44d6-a768-686bc38ad986",
             "Value": {
                 "id": "7b850c14-efe8-4fb4-88c0-18bca1cd4b6a",
@@ -511,6 +519,14 @@
             }
         },
         {
+            "Key": "356cae26-fe40-4e42-9b4b-6cd55cb0d02a",
+            "Value": {
+                "id": "b4516a4c-c4ff-47ba-a0db-1119ca19662b",
+                "resourcePath": "scripts\\is_on_slope\\is_on_slope.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "357f0fc0-c9f9-432c-85ab-69762db2551b",
             "Value": {
                 "id": "a4f6e206-0078-4221-b8e4-cc1f5f62e690",
@@ -679,11 +695,27 @@
             }
         },
         {
+            "Key": "49b80356-2ad5-4c59-88e3-b367d326771e",
+            "Value": {
+                "id": "f59cf829-26f0-4d7f-a114-581717fec5f8",
+                "resourcePath": "tilesets\\ts_chill_penguin\\ts_chill_penguin.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
             "Key": "4b8aa410-063c-4be7-94d4-aff9b32eb329",
             "Value": {
                 "id": "08fccd5a-886a-4c3e-9aec-b2066c8f3572",
                 "resourcePath": "scripts\\macros\\macros.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "4bec59ff-19ac-4152-a246-b7a6e1987096",
+            "Value": {
+                "id": "d11e56fb-a444-4a95-a367-e80e52fda196",
+                "resourcePath": "sprites\\spr_slope_left1\\spr_slope_left1.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -748,6 +780,14 @@
                 "id": "a116567b-72d4-4ef5-9d43-cc616b18751e",
                 "resourcePath": "views\\5985c938-d74b-46e9-a759-dd9d839ed355.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "5a74a754-e557-43e1-a885-a85f9bd82db7",
+            "Value": {
+                "id": "b6d18299-250b-4e72-9405-5c66ea9adf9a",
+                "resourcePath": "sprites\\spr_slope_right1\\spr_slope_right1.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1519,6 +1559,14 @@
             }
         },
         {
+            "Key": "be577893-77dc-4543-b6c4-c7cf295fa8c9",
+            "Value": {
+                "id": "f2d07639-2a80-482f-ae7e-88b303409cde",
+                "resourcePath": "sprites\\spr_tiles_chill_penguin\\spr_tiles_chill_penguin.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "be9ecffb-04a4-4d0c-80fe-88fa87edcb14",
             "Value": {
                 "id": "a39e3bb8-8023-4082-84ce-995970d6050a",
@@ -2082,6 +2130,7 @@
         "96b127db-8f0d-43fe-964f-d126b6211001",
         "1095a552-fbd8-4b2c-a0b0-09c3cee8b01b",
         "cdbcb2bc-b040-48d4-ac6d-4c4fad1abb42",
+        "356cae26-fe40-4e42-9b4b-6cd55cb0d02a",
         "b2b9bcb3-f0e2-4b5a-8d0d-5dd44e5c8583",
         "a08187b9-989d-4f8b-871d-c914f460e976",
         "762f4d60-ee40-4ed6-ade9-c91f4eddcc42",
