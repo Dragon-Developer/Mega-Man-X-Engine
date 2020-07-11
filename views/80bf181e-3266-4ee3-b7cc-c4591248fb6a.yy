@@ -7,7 +7,7 @@
         "d940819e-ef7b-4b17-a452-8555598fa4d4"
     ],
     "filterType": "GMScript",
-    "folderName": "Start",
+    "folderName": "Intro",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

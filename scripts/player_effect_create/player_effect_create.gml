@@ -9,6 +9,8 @@ inst.owner = self;
 inst.xoffset = effect.x;
 inst.yoffset = effect.y;
 
+ds_list_add(effects_list, inst);
+
 with(inst)
 {
     event_perform(ev_step, ev_step_normal);

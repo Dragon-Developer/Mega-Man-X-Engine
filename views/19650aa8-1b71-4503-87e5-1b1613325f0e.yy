@@ -7,7 +7,7 @@
         "5501641a-0aa0-4a99-9dd9-2ca287e22eab"
     ],
     "filterType": "GMScript",
-    "folderName": "Animation Handler",
+    "folderName": "Animation Controller",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

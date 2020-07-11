@@ -25,6 +25,10 @@ if (key_p_jump)
     {
         dir = dir_new;
         image_xscale = dir;
+		while (!is_place_free(x, y))
+		{
+			x -= dir;
+		}
         wall_jump = true;
         wall_jump_t = 0;
         wall_jump_dir = dir;
@@ -54,14 +58,15 @@ if (wall_jump)
     
     if (t == 0)
     {
-        animation_play("wall_jump", 0);
         walk_speed = walk_speed_default;
         player_counters_reset();
         audio_play(jump_sound);
         
         if (is_on_ceil(wall_jump_strength)) wall_jump_reset_gravity = true;
     }
-    
+	
+    animation_play("wall_jump", t);
+	
     if (t == 1) player_effect_create(wall_jump_spark);
 	
     if (t <= 5)
@@ -113,6 +118,7 @@ if (wall_jump)
         wall_jump_t = -1;
         jump = true;
         animation_play("jump", 10);
+		jump_t = 11;
         walk_enabled = true;
 		idle_enabled = true;
         wall_slide_enabled = true;

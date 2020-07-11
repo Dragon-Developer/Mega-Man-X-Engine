@@ -1,0 +1,1 @@
+return animation == argument[0] && !animation_end;

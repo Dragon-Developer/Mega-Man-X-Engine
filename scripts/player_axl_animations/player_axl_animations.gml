@@ -1,4 +1,4 @@
-animation_add("start", 
+animation_add("intro", 
 [
 	0, 1,
 	3, 2,
@@ -15,11 +15,16 @@ animation_add("start",
 	36, 13,
 	39, 14,
 	42, 15,
-	45, 16,
-	48, 17,
-	51, 18,
-	54, 19,
-	58, 19
+	44, 15
+]);
+
+animation_add("intro_end|intro",
+[
+	0, 16,
+	10, 17,
+	13, 18,
+	16, 19,
+	20, 19
 ]);
 
 animation_add("fall|jump",

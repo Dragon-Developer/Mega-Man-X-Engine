@@ -1,0 +1,1 @@
+special_input_list = ds_list_create();

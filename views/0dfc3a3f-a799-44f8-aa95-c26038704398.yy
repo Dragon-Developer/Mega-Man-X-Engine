@@ -8,7 +8,8 @@
         "e74059ee-9a06-4cc6-ae23-c64eb34c2be7",
         "4e2b5b63-20a2-449c-8b82-2faed1ce4d41",
         "c60695fa-5001-4863-8d75-84e43de4843a",
-        "c2e8abd2-4828-43aa-a5b3-2fe2ae060682"
+        "c2e8abd2-4828-43aa-a5b3-2fe2ae060682",
+        "fd929cdb-925e-4b64-abbc-3816ef9fb852"
     ],
     "filterType": "GMSprite",
     "folderName": "X2",

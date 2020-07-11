@@ -2,6 +2,14 @@
 /// @param name
 /// @param start_time
 var flag = false;
+
+if (argument[0] == "")
+{
+	animation_end = true;
+	animation = "";
+	exit;
+}
+
 if (animation != argument[0])
 {
 	animation = argument[0];
@@ -12,11 +20,13 @@ if (animation != argument[0])
     animation_loop = animations_loop[? animation];
 	animation_i = 0;
 	animation_frame_index_start = -1;
+	animation_end = false;
 	flag = true;
 }
 if (argument_count > 1)
 {
 	animation_t = argument[1];
+	animation_end = false;
 	flag = true;
 }
 if (flag && array_length_1d(animation_loop))

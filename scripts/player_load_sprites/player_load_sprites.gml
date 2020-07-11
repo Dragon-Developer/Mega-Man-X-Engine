@@ -15,6 +15,7 @@ for (var k = ds_map_find_first(sprite_str); !is_undefined(k); k = ds_map_find_ne
 for (var k = ds_map_find_first(sprite_str); !is_undefined(k); k = ds_map_find_next(sprite_str, k))
 {
 	sprite_str[? k] = "spr_" + char_name + "_" + sprite_str[? k]; // spr_player_action
+	sprite_shoot_str[? k] = "spr_" + char_name + "_" + sprite_shoot_str[? k]; // spr_player_action_shoot
 	// If this armor can only be used when full
 	if (armor[P_FULL] != "")
 	{
@@ -33,9 +34,9 @@ for (var i = 0; i <= P_FULL; i++)
 }
 
 parts_name[P_OG] = "";
-parts_name[P_LEG] = "legs";
+parts_name[P_LEGS] = "legs";
 parts_name[P_BODY] = "body";
-parts_name[P_ARM] = "arms";
+parts_name[P_ARMS] = "arms";
 parts_name[P_HELM] = "helm";
 
 for (var l = 0; l < 2; l++)
@@ -79,11 +80,53 @@ for (var l = 0; l < 2; l++)
 				if (sprite_to_add != -1)
 				{
 					map[? k] = sprite_to_add;
-					show_debug_message("Added sprite " + sprite_to_add_name);
+					log("Added sprite " + sprite_to_add_name);
 				}
-				else if (sprite_to_add_name != "" && armor[j] != "")
+				else if (sprite_to_add_name != "" && (armor[j] != "" || j == 0))
 				{
-					show_debug_message("Couldn't find sprite " + sprite_to_add_name);
+					if (l == 1) // shoot
+					{
+						var map2 = my_sprites[| j];
+						map[? k] = map2[? k];
+					}
+					
+					if (map[? k] == noone)
+					{
+						log("Couldn't find sprite " + sprite_to_add_name);
+					}
+				}
+			}
+		}
+		// This sprite doesn't exists but maybe it's only for a full armor
+		// Example: There is no spr_x_shoryuken, but there is spr_x_shoryuken_x2
+		else
+		{
+			var check_armor = armor[P_LEGS];
+			if (check_armor != "" && armor_is_full(check_armor))
+			{
+				var sprite_armor_name = _sprite_name + "_" + check_armor; // spr_x_shoryuken_x2
+				var sprite_to_add = asset_get_index(sprite_armor_name);
+				
+				var map = (sprite_map == sprite_str) ? my_sprites[| 0] : my_sprites_shoot[| 0];
+				map[? k] = noone;
+				
+				if (sprite_to_add != -1)
+				{
+					map[? k] = sprite_to_add;
+					log("Added sprite " + sprite_armor_name);
+				}
+				else if (sprite_armor_name != "")
+				{
+					if (l == 1) // shoot
+					{
+						var map2 = my_sprites[| 0];
+						map[? k] = map2[? k];
+					}
+					
+					if (map[? k] == noone)
+					{
+						log("Couldn't find sprite " + sprite_armor_name);
+					}
 				}
 			}
 		}

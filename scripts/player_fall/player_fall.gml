@@ -1,11 +1,16 @@
 // Colliding with the ground
 if (is_on_floor(v_speed) && v_speed >= 0)
 {
+	while (!is_place_free(x, y))
+	{
+		x -= dir;
+	}
     if (v_speed > 0 && land_enabled)
     {
 		if (animation != "land")
 		{
 			animation_play("land");
+			audio_stop(land_sound);
 			audio_play(land_sound);
 		}
 	}

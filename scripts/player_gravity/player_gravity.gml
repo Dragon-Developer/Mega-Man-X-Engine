@@ -1,4 +1,5 @@
-if (is_on_floor())
+iof = is_on_floor();
+if (iof)
 {
     grav = 0;
 }

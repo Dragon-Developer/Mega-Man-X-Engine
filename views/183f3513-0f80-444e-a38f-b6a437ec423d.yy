@@ -9,7 +9,10 @@
         "9a146f64-548f-4fc6-b09a-3f87099002f5",
         "3e85f09b-222d-4035-8dab-32c45f841bad",
         "c86fd8df-9bdd-4d1e-8a6d-16c5bce8dbee",
-        "03edc793-c3b4-48d3-90aa-d8976049827b"
+        "03edc793-c3b4-48d3-90aa-d8976049827b",
+        "7937a7c4-21bf-48e4-be40-cec93c9ddd49",
+        "725a2bb2-42ee-487d-9592-b97fedb3fb8f",
+        "716b0550-c5b3-4f0b-b3ba-67e48728c007"
     ],
     "filterType": "GMScript",
     "folderName": "Animation Controller",

@@ -10,7 +10,7 @@ if (dolor)
 		my_health -= dolor_damage;
 		if (wall_slide) dir = wall_slide_dir;
 		player_dolor_reset(false);
-		animation_play("dolor");
+		animation_play(dolor_animation);
 		audio_play(dolor_sound);
 		v_speed = 0;
 		grav = 0;
@@ -32,7 +32,7 @@ if (dolor)
 		move_x(-dir);
 	}
 	
-
+	// Animation End
 	if (animation == "")
 	{
 		dolor = false;

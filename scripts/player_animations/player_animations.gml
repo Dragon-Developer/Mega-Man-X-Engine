@@ -1,9 +1,9 @@
-animation_add("tp|start",
+animation_add("tp|intro",
 [
 	0, 0
 ], 0);
 
-animation_add("start", 
+animation_add("intro", 
 [
 	0, 1,
 	2, 2,
@@ -12,6 +12,29 @@ animation_add("start",
 	5, 5,
 	6, 6,
 	8, 6
+]);
+
+animation_add("intro2",
+[
+    0, 1,
+    4, 2,
+    8, 3,
+    12, 4,
+    16, 5,
+    20, 6,
+    24, 7,
+    28, 8,
+    32, 9,
+	36, 10,
+	40, 11,
+	47, 11
+]);
+
+animation_add("intro2_end",
+[
+	0, 0,
+	4, 1,
+	29, 1
 ]);
 
 animation_add("idle", 
@@ -124,3 +147,93 @@ animation_add("dolor",
 	30, 0,
 	32, 0
 ]);
+
+animation_add("dolor2",
+[
+	0, 0,
+	3, 1,
+	5, 1,
+	7, 2,
+	9, 1,
+	11, 2,
+	13, 1,
+	15, 2,
+	17, 1,
+	21, 2,
+	22, 1,
+	30, 0,
+	32, 0
+]);
+
+animation_add("crouch",
+[
+	0, 0,
+	2, 1
+], 2);
+
+animation_add("crouch_end|crouch",
+[
+	0, 0,
+	1, 0
+]);
+
+animation_add("shoot",
+[
+	0, 0,
+	4, 1
+], 4);
+
+animation_add("db_buster_1|db_buster",
+[
+	0, 0,
+	1, 1,
+	6, 2,
+	8, 3
+], 8);
+
+animation_add("db_buster_2|db_buster",
+[
+	0, 4,
+	1, 5,
+	3, 6,
+	8, 7,
+	10, 8
+], 10);
+
+animation_add("db_buster_1_air|db_buster_air",
+[
+	0, 0,
+	1, 1,
+	6, 2,
+	8, 3
+], 8);
+
+animation_add("db_buster_2_air|db_buster_air",
+[
+	0, 4,
+	1, 4,
+	3, 5,
+	8, 6,
+	10, 7
+], 10);
+
+animation_add("saber",
+[
+	0, 0,
+	2, 1,
+	5, 2,
+	6, 3,
+	7, 4,
+	9, 5,
+	11, 6,
+	13, 7,
+	15, 8,
+	17, 9,
+	21, 10,
+	37, 9,
+	40, 2,
+	43, 1,
+	51, 0
+]);
+
+animation_add("saber_air", animations_frames[? "saber"]);

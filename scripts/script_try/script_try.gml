@@ -1,0 +1,1 @@
+if (script_exists(argument[0])) script_execute(argument[0]);

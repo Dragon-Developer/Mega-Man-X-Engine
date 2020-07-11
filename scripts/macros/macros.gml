@@ -1,6 +1,21 @@
 #macro P_OG 0
 #macro P_HELM 1
-#macro P_ARM 2
-#macro P_LEG 3
+#macro P_ARMS 2
+#macro P_LEGS 3
 #macro P_BODY 4
 #macro P_FULL 5
+
+#macro LEGS armor[P_LEGS]
+#macro ARMS armor[P_ARMS]
+#macro BODY armor[P_BODY]
+#macro HELM armor[P_HELM]
+#macro SHOOT_1 1
+#macro SHOOT_2 2
+#macro DOWN_LEFT 10
+#macro DOWN 12
+#macro DOWN_RIGHT 13
+#macro LEFT 14
+#macro RIGHT 16
+#macro UP_LEFT 17
+#macro UP 18
+#macro UP_RIGHT 19

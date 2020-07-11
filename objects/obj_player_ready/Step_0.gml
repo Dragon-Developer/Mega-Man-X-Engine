@@ -15,7 +15,7 @@ if (t == 83)
 {
 	if (instance_exists(obj_player_parent))
 	{
-		obj_player_parent.start = true;	
+		obj_player_parent.intro = true;	
 	}
 	instance_destroy();
 	exit;

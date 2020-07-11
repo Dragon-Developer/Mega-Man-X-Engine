@@ -1,4 +1,5 @@
 animation = ""; // Current Animation
+animation_end = false;
 animation_frames = [];
 animation_sprite_name = "";
 animation_loop = [];

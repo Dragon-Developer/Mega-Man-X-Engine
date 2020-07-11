@@ -2,12 +2,13 @@ if (!wall_slide_enabled) exit;
 // Starting Wall Slide
 var result = key_right - key_left;
 
-if (!is_on_floor())
+if (!wall_slide && !is_on_floor())
 {
     // If the player is falling close to the wall
     if (!can_move_x(result) && v_speed >= 0)
     {
         wall_slide = true;
+		wall_slide_t = 0;
         wall_slide_dir = result;
         walk_ignore_dir = true;
         walk_ignore_move = true;
@@ -21,20 +22,22 @@ if (wall_slide)
     var t = wall_slide_t;
     grav = 0;
     walk_speed = walk_speed_default;
+	//jump_animation_enabled = false;
+	jump = false;
+	fall_enabled = false;
     player_counters_reset();
     
     if (t == 0)
     {
-        animation_play("wall_slide");
-        fall_enabled = false;
         v_speed = 0;
 		audio_play(wall_slide_sound);
     }
-    
-    if (t == 5) dir = -wall_slide_dir;
-    
+    animation_play("wall_slide", t);
+
     if (t >= 5)
 	{
+		dir = -wall_slide_dir;
+		
 		if (instance_exists(wall_slide_dust) && wall_slide_dust.script != noone)
 		{
 			script_execute(wall_slide_dust.script);
@@ -51,6 +54,8 @@ if (wall_slide)
         walk_ignore_move = false;
         idle_enabled = true;
 		dash_enabled = true;
+		
+		dir = wall_slide_dir;
 		
         if (!is_on_floor(2)) v_speed = 0;
     }

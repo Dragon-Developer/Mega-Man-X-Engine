@@ -31,8 +31,3 @@ if (move != 0 && walk_enabled)
         }
     }
 }
-
-if (idle && idle_enabled && is_on_floor() && animation != "land")
-{
-	animation_play("idle");	
-}

@@ -7,7 +7,7 @@
         "dd98d9f5-044b-4b1b-85bf-364d4f429876"
     ],
     "filterType": "GMObject",
-    "folderName": "Axl",
+    "folderName": "Test",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

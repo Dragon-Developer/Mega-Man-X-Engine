@@ -1,3 +1,3 @@
 player_step();
-script_execute(animation_script);
-scr_physics_update();
+script_execute(animation_controller);
+scr_physics_update(false);

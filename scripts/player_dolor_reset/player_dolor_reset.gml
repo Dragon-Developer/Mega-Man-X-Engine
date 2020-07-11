@@ -30,6 +30,7 @@ dash_end_t = 0;
 // Jump
 jump = false;
 jump_enabled = val;
+jump_animation_enabled = val;
 
 // Fall
 fall = false;
@@ -47,3 +48,17 @@ wall_slide_enabled = val;
 wall_jump = false;
 wall_jump_t = 0;
 wall_jump_enabled = val;
+
+// Shoot
+shoot = false;
+shoot_t = 0;
+shoot_enabled = val;
+shoot_animation = "";
+shoot_limit = 15;
+shoot_next_animation = "";
+shoot_at_time = 0;
+shoot_projectile = noone;
+shoot_next_wait = false;
+shoot_wait = false;
+shoot_cancel_on_wall = false;
+shoot_type = shoot_types.normal;

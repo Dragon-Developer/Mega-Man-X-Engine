@@ -28,11 +28,12 @@ for (var i = animation_frame_index; i < array_length_1d(animation_frames); i += 
 	{
 		if (animation_t > animation_frames[i])
 		{
-			animation = "";
+			//animation = "";
 			animation_t = -1;
 			animation_frame_index = 0;
 			animation_frame_index_start = -1;
 			animation_frame_index_end = -1;
+			animation_end = true;
 			break;
 		}
 	}
