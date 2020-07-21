@@ -4,15 +4,13 @@ event_inherited();
 armor_script = player_x_armor;
 variables_script = player_x_variables;
 
+// Palette
+palette_init(plt_x);
+
 // Armor
-LEGS = "x2";
-HELM = "x2";
-BODY = "x2";
-ARMS = "x2";
+FULL = "ult";
 
 // Load Armor Properties
 player_load_armor();
 // Get Weapon Offsets
 player_x_weapon_offsets();
-// Palette
-palette_init(plt_x);

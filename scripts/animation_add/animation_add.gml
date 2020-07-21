@@ -16,7 +16,7 @@ if (ds_list_size(str_list) == 2)
 
 ds_list_destroy(str_list);
 
-animations_frames[? _name] = argument[1];
+animations_frames[? _name] = (argument_count > 1) ? argument[1] : [];
 animations_loop[? _name] = [];
 animations_sprite_name[? _name] = _sprite_name;
 

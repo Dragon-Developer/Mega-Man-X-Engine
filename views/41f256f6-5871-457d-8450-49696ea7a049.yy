@@ -4,9 +4,9 @@
     "mvc": "1.1",
     "name": "41f256f6-5871-457d-8450-49696ea7a049",
     "children": [
-        "c8c7788f-7436-4760-bc24-c72429ce559f",
-        "aaf89dfb-aa36-4b92-8b3f-f557dd1894b8",
-        "7ea6e698-f363-47e7-9613-c4987f882811"
+        "b434e79b-a251-48da-a44a-828cbe1428dd",
+        "7c8c2028-1761-458f-b588-62aad1a246a9",
+        "314a03f6-13df-490e-a608-182293e41b57"
     ],
     "filterType": "GMScript",
     "folderName": "Special Weapons",

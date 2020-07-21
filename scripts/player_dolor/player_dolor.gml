@@ -33,7 +33,7 @@ if (dolor)
 	}
 	
 	// Animation End
-	if (animation == "")
+	if (animation_end)
 	{
 		dolor = false;
 		dolor_t = -1;

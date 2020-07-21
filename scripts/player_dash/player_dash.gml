@@ -80,181 +80,179 @@ if (dash_unlocked)
 }
 
 // Dash (Horizontal)
-if (dash && !dash_up)
+if (dash)
 {
-    var t = dash_t++;
-    var condition = (t == dash_length + 1 || (key_p_jump && is_on_floor()));
+	var t = dash_t++;
+	
+	if (!dash_up)
+	{
+	    var condition = (t == dash_length + 1 || (key_p_jump && is_on_floor()));
     
-    if (t == 0)
-    {
-        // Play Audio
-        audio_play(dash_sound);
+	    if (t == 0)
+	    {
+	        // Play Audio
+	        audio_play(dash_sound);
         
-		idle_enabled = false;
-		walk_enabled = false;
+			idle_enabled = false;
+			walk_enabled = false;
 		
-        if (dash_air)
-        {
-            dash_air_count++;
-            jump = false;
-            fall_enabled = false;
-            jump_enabled = true;
-            wall_jump = false;
-            wall_jump_t = 0;
-            dash_length = dash_air_length;
-            wall_jump_reset_gravity = false;
-            v_speed = 0;
-        }
-        else dash_length = dash_normal_length;
-    }
+	        if (dash_air)
+	        {
+	            dash_air_count++;
+	            jump = false;
+	            fall_enabled = false;
+	            jump_enabled = true;
+	            wall_jump = false;
+	            wall_jump_t = 0;
+	            dash_length = dash_air_length;
+	            wall_jump_reset_gravity = false;
+	            v_speed = 0;
+	        }
+	        else dash_length = dash_normal_length;
+	    }
     
-    if (t >= 0 && t <= dash_length)
-    {
-        // Animation
-        if (iof || dash_air) animation_play("dash");
+	    if (t >= 0 && t <= dash_length)
+	    {
+	        // Animation
+	        if (iof || dash_air) animation_play("dash");
         
-        // Gravity
-        if (dash_air) grav = 0;
+	        // Gravity
+	        if (dash_air) grav = 0;
 		
-    }
-    // Dash Spark
-    if (t == 1)
-    {
-        dash_spark_inst = player_effect_create(dash_spark);
-    }
-    // Dash Movement
-    if (t >= 1 && t <= dash_length)
-    {
-        if (!move_x(dash_speed * dash_dir) || (!is_on_floor() && !dash_air)) condition = true;
+	    }
+	    // Dash Spark
+	    if (t == 1)
+	    {
+	        dash_spark_inst = player_effect_create(dash_spark);
+	    }
+	    // Dash Movement
+	    if (t >= 1 && t <= dash_length)
+	    {
+	        if (!move_x(dash_speed * dash_dir) || (!is_on_floor() && !dash_air)) condition = true;
         
-		// Dash Dust
-		if (instance_exists(dash_dust) && dash_dust.script != noone)
+			// Dash Dust
+			if (instance_exists(dash_dust) && dash_dust.script != noone)
+			{
+				script_execute(dash_dust.script);	
+			}
+	    }
+	    // Dash Spark - Reset Relative Position
+	    if (t == 1 || t == 2) player_effect_pos_reset(dash_spark_inst);
+    
+	    var result = key_right - key_left;
+    
+	    if (!dash_tapped)
+	    {
+	        condition |= !key_dash;
+	    }
+	    else condition |= (result != dash_dir);
+    
+	    condition |= (result != 0 && result != dash_dir);
+    
+	    if (condition && t <= dash_length + 2)
+	    {
+	        dash_end = true;
+	        dash_t = dash_length + 3;
+	        dash_spark_inst = player_effect_destroy(dash_spark_inst);
+	        walk_enabled = true;
+	        wall_jump_enabled = true;
+	        wall_slide_enabled = true;
+		
+	        if ((key_p_jump && is_on_floor()) || !is_on_floor())
+	        {
+				walk_speed = dash_speed;
+			
+	            if (is_on_floor())
+	            {
+	                dash = false;
+	                dash_t = 0;
+	                dash_end = false;
+	                dash_end_t = 0;
+					idle_enabled = true;
+	                fall_enabled = true;
+	            }
+			
+				dash_air_count++;
+	            dash_tapped = false;
+	            dash_tap = false;
+	        }
+        
+	        if (!key_p_jump && is_on_floor(3))
+	        {
+	            walk_speed = walk_speed_default;
+	            v_speed = 0;
+	            move_down();
+	            player_counters_reset();
+	        }
+        
+	    }
+	}
+	else
+	{
+		var condition_to_end = (t == dash_length + 1 || (key_p_jump && is_on_floor()) || !key_dash);
+	
+		if (t == 0)
 		{
-			script_execute(dash_dust.script);	
+			dash_length = dash_up_length;
+		    dash_air_count++;
+		    jump = false;
+		    fall_enabled = false;
+			walk_enabled = false;
+		    jump_enabled = true;
+		    wall_jump = false;
+		    wall_jump_t = 0;
+		    wall_jump_reset_gravity = false;
+			wall_slide_enabled = false;
+			wall_slide = false;
+		    v_speed = 0;
 		}
-    }
-    // Dash Spark - Reset Relative Position
-    if (t == 1 || t == 2) player_effect_pos_reset(dash_spark_inst);
-    
-    var result = key_right - key_left;
-    
-    if (!dash_tapped)
-    {
-        condition |= !key_dash;
-    }
-    else condition |= (result != dash_dir);
-    
-    condition |= (result != 0 && result != dash_dir);
-    
-    if (condition && t <= dash_length + 2)
-    {
-        dash_end = true;
-        dash_t = dash_length + 3;
-        dash_spark_inst = player_effect_destroy(dash_spark_inst);
-        walk_enabled = true;
-        wall_jump_enabled = true;
-        wall_slide_enabled = true;
+	
+		if (t == 16)
+		{
+			dash_spark_inst = player_effect_create(dash_up_spark);
+		}
+	
+		if (t >= 0 && t <= dash_length)
+		{
+			animation_play("dash_up");
+			grav = 0;
+			v_speed = 0;
+		}
+	
+		if (array_contains([1, 3, 7, 9, 11, 13, 15, 16], t))
+		{
+			condition_to_end |= !move_contact_block(0, -1);
+		}
+	
+		if (t == 19)
+		{
+			audio_play(dash_sound);	
+		}
+	
+		if (t >= 19 && t <= 20)
+		{
+			condition_to_end |= !move_contact_block(0, -2);
+		}
+	
+		if (t >= 21 && t <= dash_length)
+		{
+			condition_to_end |= !move_contact_block(0, -5);
+		}
+	
+		if (condition_to_end)
+		{
+			dash_end = true;
+			walk_enabled = true;
+			wall_jump_enabled = true;
+		    wall_slide_enabled = true;
 		
-        if ((key_p_jump && is_on_floor()) || !is_on_floor())
-        {
+			dash_t = dash_length + 2;
+		
 			walk_speed = dash_speed;
-			
-            if (is_on_floor())
-            {
-                dash = false;
-                dash_t = 0;
-                dash_end = false;
-                dash_end_t = 0;
-				idle_enabled = true;
-                fall_enabled = true;
-            }
-			
-			dash_air_count++;
-            dash_tapped = false;
-            dash_tap = false;
-        }
-        
-        if (!key_p_jump && is_on_floor(3))
-        {
-            walk_speed = walk_speed_default;
-            v_speed = 0;
-            move_down();
-            player_counters_reset();
-        }
-        
-    }
+			player_effect_destroy(dash_spark_inst);
+		}
+	}
 }
-
-// Dash (Vertical)
-if (dash && dash_up)
-{
-	var t = dash_t;
-    var condition_to_end = (t == dash_length + 1 || (key_p_jump && is_on_floor()) || !key_dash);
-	
-	if (t == 0)
-	{
-		dash_length = dash_up_length;
-        dash_air_count++;
-        jump = false;
-        fall_enabled = false;
-		walk_enabled = false;
-        jump_enabled = true;
-        wall_jump = false;
-        wall_jump_t = 0;
-        wall_jump_reset_gravity = false;
-		wall_slide_enabled = false;
-		wall_slide = false;
-        v_speed = 0;
-	}
-	
-	if (t == 16)
-	{
-		dash_spark_inst = player_effect_create(dash_up_spark);
-	}
-	
-	if (t >= 0 && t <= dash_length)
-	{
-		animation_play("dash_up");
-		grav = 0;
-		v_speed = 0;
-	}
-	
-	if (array_contains([1, 3, 7, 9, 11, 13, 15, 16], t))
-	{
-		condition_to_end |= !move_contact_block(0, -1);
-	}
-	
-	if (t == 19)
-	{
-		audio_play(dash_sound);	
-	}
-	
-	if (t >= 19 && t <= 20)
-	{
-		condition_to_end |= !move_contact_block(0, -2);
-	}
-	
-	if (t >= 21 && t <= dash_length)
-	{
-		condition_to_end |= !move_contact_block(0, -5);
-	}
-	
-	if (condition_to_end)
-	{
-		dash_end = true;
-		walk_enabled = true;
-		wall_jump_enabled = true;
-        wall_slide_enabled = true;
-		
-		dash_t = dash_length + 2;
-		
-		walk_speed = dash_speed;
-		player_effect_destroy(dash_spark_inst);
-	}
-	
-	dash_t++;
-}
-
 // Dash End
 if (dash_end)
 {

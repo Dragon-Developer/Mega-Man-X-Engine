@@ -1,9 +1,7 @@
 owner = noone;
 dir = 1;
 
-animation = 0;
-animation_t = 0; // Timer
-animation_i = 0; // Image Index
+animation_init();
 
 timer = 0;
 

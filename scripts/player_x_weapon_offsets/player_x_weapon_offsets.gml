@@ -60,3 +60,9 @@ player_weapon_offset("db_buster_air", 4, 24, -7);
 player_weapon_offset("db_buster_air", 5, 24, -7);
 player_weapon_offset("db_buster_air", 6, 24, -7);
 player_weapon_offset("db_buster_air", 7, 24, -7);
+
+player_weapon_offset("hover", 0, 13, -6);
+player_weapon_offset("hover", 1, 17, -6);
+player_weapon_offset("hover", 2, 19, -5);
+player_weapon_offset("hover", 3, 23, -3);
+player_weapon_offset("hover", 4, 25, -2);

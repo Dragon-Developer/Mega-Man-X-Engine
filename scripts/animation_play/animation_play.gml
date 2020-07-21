@@ -27,6 +27,7 @@ if (argument_count > 1)
 {
 	animation_t = argument[1];
 	animation_end = false;
+	//if (argument[1] > animation_frames[array_length_1d(animation_frames) - 2]) animation_end = true;
 	flag = true;
 }
 if (flag && array_length_1d(animation_loop))

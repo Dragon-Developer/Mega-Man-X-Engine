@@ -6,3 +6,5 @@ global.key_down = vk_down;
 global.key_jump = ord("V");
 global.key_dash = ord("D");
 global.key_shoot = ord("X");
+global.key_shoot2 = ord("C");
+global.key_special = ord("Z");

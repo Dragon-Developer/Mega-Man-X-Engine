@@ -1,10 +1,7 @@
 // Colliding with the ground
 if (is_on_floor(v_speed) && v_speed >= 0)
 {
-	while (!is_place_free(x, y))
-	{
-		x -= dir;
-	}
+	player_fix_x_axis();
     if (v_speed > 0 && land_enabled)
     {
 		if (animation != "land")
@@ -12,6 +9,7 @@ if (is_on_floor(v_speed) && v_speed >= 0)
 			animation_play("land");
 			audio_stop(land_sound);
 			audio_play(land_sound);
+			land = true;
 		}
 	}
     grav = 0;
@@ -45,4 +43,9 @@ if (!jump && !is_on_floor(3) && fall_enabled)
 {   
 	fall = true;
     animation_play("fall");
+}
+// Land
+if (!land_enabled || animation_on_end("land") || !is_on_floor())
+{
+	land = false;	
 }

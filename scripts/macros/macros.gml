@@ -9,6 +9,7 @@
 #macro ARMS armor[P_ARMS]
 #macro BODY armor[P_BODY]
 #macro HELM armor[P_HELM]
+#macro FULL armor[P_FULL]
 #macro SHOOT_1 1
 #macro SHOOT_2 2
 #macro DOWN_LEFT 10

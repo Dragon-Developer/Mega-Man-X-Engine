@@ -24,6 +24,20 @@ if (keyboard_check_pressed(vk_end))
 	change_armor = true;
 }
 
+if (keyboard_check_pressed(ord("K")))
+{
+	FULL = (FULL != "ult") ? "ult" : "";
+	LEGS = "";
+	BODY = "";
+	ARMS = "";
+	HELM = "";
+	change_armor = true;
+}
+else if (change_armor)
+{
+	FULL = "";	
+}
+
 if (change_armor)
 {
 	// Load Armor Properties

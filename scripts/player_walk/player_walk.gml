@@ -6,11 +6,11 @@ if (move != 0 && walk_enabled)
 {
     if (!walk_ignore_dir) dir = move;
     
-    image_xscale = move;
+    image_xscale = dir;
     
     if (!walk_ignore_move)
     {
-        var result = move_x(dir * walk_speed);
+        var result = move_x(move * walk_speed);
 		
         if (is_on_floor())
         {
@@ -20,6 +20,7 @@ if (move != 0 && walk_enabled)
 				idle = false;
 				animation_play("walk");
 				walk_speed = walk_speed_default;
+				player_counters_reset();
 			}
 			else
 			{

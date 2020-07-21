@@ -10,19 +10,22 @@ if (!wall_slide && !is_on_floor())
         wall_slide = true;
 		wall_slide_t = 0;
         wall_slide_dir = result;
+		player_fix_x_axis(result);
+		
+		walk_enabled = false;
         walk_ignore_dir = true;
         walk_ignore_move = true;
 		idle_enabled = false;
         dash_enabled = false;
+		hover = false;
     }
 }
 // Wall Slide
 if (wall_slide)
 {
-    var t = wall_slide_t;
+    var t = wall_slide_t++;
     grav = 0;
     walk_speed = walk_speed_default;
-	//jump_animation_enabled = false;
 	jump = false;
 	fall_enabled = false;
     player_counters_reset();
@@ -48,16 +51,17 @@ if (wall_slide)
     if (is_on_floor(2) || result != wall_slide_dir || can_move_x(wall_slide_dir))
     {
         wall_slide = false;
-        wall_slide_t = -1;
+        wall_slide_t = 0;
         fall_enabled = true;
         walk_ignore_dir = false;
         walk_ignore_move = false;
         idle_enabled = true;
 		dash_enabled = true;
+		walk_enabled = true;
 		
-		dir = wall_slide_dir;
+		dir = -wall_slide_dir;
+		image_xscale = dir;
 		
         if (!is_on_floor(2)) v_speed = 0;
     }
-    wall_slide_t++;
 }

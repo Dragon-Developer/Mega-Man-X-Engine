@@ -18,3 +18,9 @@ key_dash = false;
 
 key_p_shoot = false;
 key_shoot = false;
+
+key_p_shoot2 = false;
+key_shoot2 = false;
+
+key_p_special = false;
+key_special = false;

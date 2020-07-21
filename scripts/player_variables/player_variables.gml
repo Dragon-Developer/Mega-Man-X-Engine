@@ -21,6 +21,9 @@ idle_enabled = true; // Can the idle animation be played?
 crouch = false;
 crouch_enabled = true;
 crouch_unlocked = true;
+crouch_t = 0;
+crouch_end = false;
+crouch_end_t = 0;
 
 // Walk
 walk = false; // Is the player walking?
@@ -91,6 +94,7 @@ fall_enabled = true; // Can the fall animation be played?
 vspeed_max = 5.75; // Maximum Vertical Speed
 
 // Land
+land = false;
 land_sound = snd_player_land; // Sound
 land_enabled = true; // Can the land animation be played?
 
@@ -124,10 +128,28 @@ wall_jump_spark = player_effect_new(obj_player_wall_jump_spark, 16, 20, layer_up
 hover = false; // Is the player using hover?
 hover_t = 0; // Timer
 hover_length = 120; // Duration
-hover_dir = 1; // Direction
+//hover_dir = 1; // Direction
 hover_enabled = true; // Can the player use hover?
 hover_unlocked = false; // Set to true when an armor unlocks this feature
-hover_mode = 0; // Mode 0 = Stop animation when falling, Mode 1 = Keep animation when falling
+hover_toggle_mode = true;
+hover_mode = hover_modes.cancel_when_falling; // Mode
+hover_effect = noone;
+hover_effect_t = 0;
+hover_effect_i = 0;
+hover_effect_limit = 2;
+hover_effect_speed = 0.2;
+hover_vertical = false;
+hover_vertical_t = 0;
+hover_vertical_dir = -1;
+hover_vertical_limit = 6;
+hover_vertical_speed = 0.4;
+
+enum hover_modes
+{
+	cancel_when_falling, keep_when_falling
+}
+
+hover_keep_dir = false; 
 hover_sound = snd_player_hover; // Sound
 hover_speed = 2; // Speed
 
@@ -155,95 +177,6 @@ blink = false;
 blink_t = 0;
 blink_speed = 1;
 
-// Shoot
-shoot = false; // Is the player shooting
-shoot_t = 0; // Timer
-shoot_animation = ""; // Animation
-shoot_limit = 15; // Timer Limit
-shoot_enabled = true; // Is shot enabled?
-shoot_unlocked = true; // Does this player shoot?
-shoot_next_animation = ""; // Next Animation
-shoot_at_time = 8; // Shoot at frame ?
-shoot_projectile = noone; // Object
-shoot_next_wait = false; // Must the player wait the next animation to end to shoot again?
-shoot_wait = false; // Must the player wait the current animation to end to shoot again?
-shoot_cancel_on_wall = false; // Cancel animation if the player wall jump/slide?
-shoot_type = shoot_types.normal; // Type
-
-enum shoot_types
-{
-	normal, special, special_floor_and_air	
-}
-
-// Shot
-shot_id = 0;
-shots_count = 0;
-shots_limit = 3;
-
-// Charge
-charge = false; // Is the player charging a shot?
-charge_t = 0; // Timer
-charge_i = 0; // Image Index of Charge Sprite
-charge_level = -1; // Current Charge Level
-charge_level_max = 2; // Max Charge Level
-charge_limits = [0, 4, 63, 123, 183]; // Time for each level
-charge_sprite = noone; // Current Charge Sprite
-charge_sprites = // All Charge Sprites
-[
-	noone,
-	spr_player_charge_1,
-	spr_player_charge_2,
-	spr_player_charge_3,
-	spr_player_charge_saber
-];
-charge_palettes = [0, 1, 1, 2, 3]; // All Charge Palettes
-charge_palette = 0; // Current Charge Palette
-charge_blink = false; // Is the Charge Blinking (Swapping Palette every few frames)
-charge_blink_t = 0; // Timer
-charge_sound = snd_player_charge; // Charge Sound
-charge_enabled = true; // Is the Charge enabled?
-
 // Special Input
 special_input_init();
-
-// Shoryuken
-shoryuken = false;
-shoryuken_enabled = true;
-shoryuken_unlocked = false;
-shoryuken_t = 0;
-shoryuken_effect = player_effect_new(obj_player_shoryuken_effect, 5, 0, layer_down);
-shoryuken_jump_strength = 8;
-shoryuken_limit = 41;
-shoryuken_hspeed = 6.5;
-shoryuken_input = special_input_new([RIGHT, DOWN, DOWN_RIGHT, SHOOT_1],
-									[LEFT, DOWN, DOWN_LEFT, SHOOT_1]);
-shoryuken_sound = snd_player_x_shoryuken;
-
-// Hadouken
-hadouken = false;
-hadouken_enabled = true;
-hadouken_unlocked = false;
-hadouken_t = 0;
-hadouken_input = special_input_new([DOWN, DOWN_RIGHT, RIGHT, SHOOT_1],
-									[DOWN, DOWN_LEFT, LEFT, SHOOT_1]);
-hadouken_limit = 42;
-hadouken_sound = snd_player_x_hadouken;
-
-// Weapon
-enum weapon_styles
-{
-	snes, psx
-}
-
-//weapon_style = weapon_styles.snes;
-
-enum weapons
-{
-	x_buster,
-	z_saber,
-	a_pistol
-}
-
-weapon[0] = weapons.x_buster; // Primary weapon
-weapon[1] = noone; // Secondary weapon (Disabled in Snes Style)
-weapons_script[weapons.x_buster] = player_x_buster_x2;
+player_special_weapons_variables();

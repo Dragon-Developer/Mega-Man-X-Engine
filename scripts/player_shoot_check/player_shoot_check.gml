@@ -20,15 +20,25 @@ if (!charge_enabled)
 {
 	charge = false;
 	charge_t = 0;
+	audio_stop_sound(charge_sound);
 	
 }
 if (dash_up || dolor || !shoot_enabled || shoot_wait) condition = false;
 
 var change_state = -1, change_state_type = shoot_types.normal;;
 
+var key_p = key_p_shoot;
+var key_h = key_shoot;
+
+if (key_shoot2 && weapon[1] != noone)
+{
+	key_p = key_p_shoot2;
+	key_h = key_shoot2;
+	current_weapon = weapon[1];
+}
 if (current_weapon != noone && condition)
 {
-	if (key_p_shoot || (!key_shoot && charge))
+	if (key_p || (!key_h && charge))
 	{	
 		
 		charge = false;
@@ -52,7 +62,7 @@ if (current_weapon != noone && condition)
 
 if (!shoot)
 {
-	if (key_shoot && !charge && charge_level <= 0)
+	if (key_h && !charge && charge_level <= 0)
 	{
 		charge = true;
 		charge_t = 0;
@@ -161,6 +171,18 @@ if (change_state > -1)
 			{
 				animation = "";
 				animation_play(shoot_animation + "_air", shoot_t - 1);
+			}
+		break;
+		case shoot_types.super_shot:
+			if (!idle || dash || !is_on_floor())
+			{
+				shoot_animation = "";
+				shoot_limit = 16;	
+			}
+			if (change_state && crouch && shoot_animation != "")
+			{
+				animation = "";
+				animation_play(shoot_animation + "_c", shoot_t - 1);
 			}
 		break;
 	}

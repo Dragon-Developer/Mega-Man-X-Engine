@@ -4,4 +4,5 @@ switch(argument[0])
 {
 	case player_hadouken: hadouken_unlocked = true; break;
 	case player_shoryuken: shoryuken_unlocked = true; break;
+	case player_nova_strike: nova_strike_unlocked = true; break;
 }
