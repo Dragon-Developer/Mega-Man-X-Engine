@@ -35,8 +35,13 @@ if (wall_slide)
         v_speed = 0;
 		audio_play(wall_slide_sound);
     }
-    animation_play("wall_slide", t);
-
+	
+	if (wall_slide_animation_enabled)
+	{
+		animation = "";
+		animation_play("wall_slide", t);
+	}
+	
     if (t >= 5)
 	{
 		dir = -wall_slide_dir;

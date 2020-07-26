@@ -7,7 +7,7 @@
         "2b093d04-6254-4ba3-b622-8acc1dd22deb"
     ],
     "filterType": "GMSprite",
-    "folderName": "Test",
+    "folderName": "Axl",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

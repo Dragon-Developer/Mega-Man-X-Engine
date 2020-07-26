@@ -92,9 +92,6 @@ if (dash)
 	    {
 	        // Play Audio
 	        audio_play(dash_sound);
-        
-			idle_enabled = false;
-			walk_enabled = false;
 		
 	        if (dash_air)
 	        {
@@ -118,6 +115,10 @@ if (dash)
         
 	        // Gravity
 	        if (dash_air) grav = 0;
+			
+			idle_enabled = false;
+			walk_enabled = false;
+			fall_enabled = false;
 		
 	    }
 	    // Dash Spark

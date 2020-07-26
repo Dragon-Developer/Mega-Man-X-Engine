@@ -21,6 +21,13 @@ if (animation != argument[0])
 	animation_i = 0;
 	animation_frame_index_start = -1;
 	animation_end = false;
+	var _length = array_length_1d(animation_frames);
+	
+	if (_length > 0)
+	{
+		animation_length = animation_frames[_length - 2];
+	}
+	if (animation_t > animation_length) animation_end = true;
 	flag = true;
 }
 if (argument_count > 1)

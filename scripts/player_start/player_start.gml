@@ -41,6 +41,10 @@ my_health = max_health;
 dir = 1;
 image_xscale = 1;
 
+// Gravity
+gravity_default = 0.25;
+scr_physics_init(gravity_default);
+
 // Weapon
 weapon_offset = ds_map_create(); // Weapon (X, Y) Offset
 
@@ -126,4 +130,5 @@ weapon[0] = weapons.x_buster; // Primary weapon
 weapon[1] = noone; // Secondary weapon (Disabled in Snes Style)
 weapons_script[weapons.x_buster] = player_x_buster_x2;
 
+player_saber_init();
 player_variables();

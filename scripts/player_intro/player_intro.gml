@@ -40,7 +40,7 @@ if (intro2)
 		animation_play(intro_animation);
 	}
 	
-	if (animation_on_end(intro_animation))
+	if (animation == intro_animation && animation_on_end(intro_animation))
 	{
 		animation_play(intro_end_animation);
 		

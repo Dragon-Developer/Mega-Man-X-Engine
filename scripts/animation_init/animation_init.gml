@@ -9,5 +9,6 @@ animation_previous = "";
 animation_frame_index = 0;
 animation_frame_index_start = -1;
 animation_frame_index_end = -1;
+animation_length = 0;
 
 image_speed = 0;

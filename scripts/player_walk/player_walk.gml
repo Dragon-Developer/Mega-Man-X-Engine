@@ -26,6 +26,7 @@ if (move != 0 && walk_enabled)
 			{
 				idle = true;
 			}
+			while (!is_place_free(x, y)) y -= 1;
 			move_down();
             // For some reason, this fixed the bug on slopes
             if (v_speed > 0 && v_speed <= gravity_default) v_speed = 0;

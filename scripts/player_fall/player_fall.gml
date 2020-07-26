@@ -39,10 +39,24 @@ else
     if (v_speed >= vspeed_max) v_speed = vspeed_max;
 }
 // Fall Animation
+if (!fall)
+{
+	fall_t = 0;
+}
+
 if (!jump && !is_on_floor(3) && fall_enabled)
 {   
 	fall = true;
-    animation_play("fall");
+}
+else
+{
+	fall = false;	
+}
+
+if (fall)
+{
+	var t = fall_t++;
+	if (t < 4 || animation != "fall") animation_play("fall", t);
 }
 // Land
 if (!land_enabled || animation_on_end("land") || !is_on_floor())

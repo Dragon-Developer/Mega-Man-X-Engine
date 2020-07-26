@@ -22,8 +22,6 @@ crouch = false;
 crouch_enabled = true;
 crouch_unlocked = true;
 crouch_t = 0;
-crouch_end = false;
-crouch_end_t = 0;
 
 // Walk
 walk = false; // Is the player walking?
@@ -88,8 +86,12 @@ jump_sound = snd_player_jump; // Jump Sound
 jump_t = 0 // Timer
 jump_animation_enabled = true; // Is the jump animation enabled?
 
+// Double Jump
+double_jump_unlocked = false;
+
 // Fall
 fall = false; // Is the player falling?
+fall_t = 0; // Timer
 fall_enabled = true; // Can the fall animation be played?
 vspeed_max = 5.75; // Maximum Vertical Speed
 
@@ -98,17 +100,13 @@ land = false;
 land_sound = snd_player_land; // Sound
 land_enabled = true; // Can the land animation be played?
 
-// Gravity
-gravity_default = 0.25;
-scr_physics_init(gravity_default);
-
 // Wall Slide
 wall_slide = false; // Is the player sliding on the wall?
 wall_slide_t = 0; // Timer
 wall_slide_dir = 1; // Direction
 wall_slide_enabled = true; // Can the player slide on the wall?
 wall_slide_sound = snd_player_wall_slide; // Wall Slide Sound
-
+wall_slide_animation_enabled = true; // Is the animation enabled?
 // Wall Slide - Effects
 /// Dust
 wall_slide_dust = player_effect_new(obj_player_wall_slide_dust, -16, 16, layer_up, 4, player_wall_slide_dust);
@@ -120,6 +118,7 @@ wall_jump_dir = 1; // Direction
 wall_jump_strength = 5; // Initial Vertical Speed
 wall_jump_enabled = true; // Can the player jump on the wall?
 wall_jump_reset_gravity = false; // Set to true when the player is on the ceiling to ignore gravity
+wall_jump_animation_enabled = true; // Is the animation enabled?
 
 // Wall Jump - Effect
 wall_jump_spark = player_effect_new(obj_player_wall_jump_spark, 16, 20, layer_up);

@@ -8,7 +8,7 @@
         "14f8f093-b4f2-4088-96af-a7261d14d894"
     ],
     "filterType": "GMScript",
-    "folderName": "Test",
+    "folderName": "Axl",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

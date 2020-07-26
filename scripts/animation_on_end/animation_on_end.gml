@@ -1,1 +1,1 @@
-return animation_end && animation == argument[0];
+return (animation_end && animation == argument[0]) || animation_t > animation_length;
