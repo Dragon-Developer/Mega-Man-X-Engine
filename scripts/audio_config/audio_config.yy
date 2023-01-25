@@ -1,8 +1,12 @@
 {
-    "id": "98e544e7-fe23-43f9-b634-024b049b1f0e",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "audio_config",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Audio",
+    "path": "folders/Scripts/Utils/Audio.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "audio_config",
+  "tags": [],
+  "resourceType": "GMScript",
 }

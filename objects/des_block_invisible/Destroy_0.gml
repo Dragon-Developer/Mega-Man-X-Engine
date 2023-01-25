@@ -1,0 +1,2 @@
+event_inherited();
+instance_create_on_self(explosion_set_box)

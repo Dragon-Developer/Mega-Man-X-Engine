@@ -1,8 +1,12 @@
 {
-    "id": "822e1ceb-9233-4bef-8397-9e163c67959c",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_physics_update",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Physics",
+    "path": "folders/Scripts/Utils/Physics.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scr_physics_update",
+  "tags": [],
+  "resourceType": "GMScript",
 }

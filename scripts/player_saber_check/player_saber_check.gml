@@ -1,62 +1,65 @@
-if (!saber_unlocked) exit;
+function player_saber_check() {
+	if (!saber_unlocked || !saber_enabled || state == states.dolor || state == states.death
+		|| using_special_weapon || !instance_exists(saber)) exit;
 
-// Activate Method
-if (saber_atk == noone)
-{
-	saber_script = noone;
-	
-	if (key_p_shoot)
-	{
-		// Normal
-		if (!jump && is_on_floor() && v_speed == 0)
-		{
-			saber_atk = saber_atks.atk1;
-		}
-		else if (!is_on_floor())
-		{
-			// Wall Slide
-			if (wall_slide)
-			{
-				saber_atk = saber_atks.wall;
+	player_saber_key_check();
+
+	// Activate Method
+	var changed_atk = false;
+	if (saber_atk == noone) {
+		saber.shot_level = 0;
+		if (saber_key_p) {
+			changed_atk = true;
+			// Normal
+			if (is_on_floor()) {
+				player_saber_select(saber_atks.atk1);
+			} else {
+				// Wall Slide
+				if (state == states.wall_slide && substates[0] == 1) {
+					player_saber_select(saber_atks.wall);
+				}
+				// Jump
+				else {
+					player_saber_select(saber_atks.jump);
+					if (key_up)
+						player_saber_select(saber_atks.spinning_jump);
+				}
 			}
-			// Jump
-			else
-			{
-				saber_atk = saber_atks.jump;
+		}
+	}
+	if (saber_atk < saber_atks.normal_length) {
+		if (saber_key2_p) {
+			changed_atk = true;
+			// Normal
+			if ((is_on_floor() || dash_air_count < dash_air_limit) && can_move_x(dir))
+				player_saber_select(saber_atks.raikousen);
+			if (is_on_floor()) {
+				if (state == states.dash)
+					player_saber_select(saber_atks.dash);
+				if (key_up)
+					player_saber_select(saber_atks.up);
+			} else {
+				if (key_down)
+					player_saber_select(saber_atks.down);
 			}
 		}
-		
-		if (saber_atk != noone)
-		{
-			saber_script = saber_scripts[saber_atk];
+	}
+	if (changed_atk) {
+		if (saber_atk != noone) {
 			saber_atk_animation = saber_atk_animations[saber_atk];
 			saber_atk_sound = saber_atk_sounds[saber_atk];
 			saber_atk_next = false;
+			saber_state = saber_states[saber_atk];
+			ceil_reset_vspeed = true;
+			//saber.melee_activated = false;
+			//saber.destroy = true;
+			state_set(saber_state, 0, [0, 0, 0, 0, 0]);
 		}
 	}
-}
-
-script_try(saber_script);
-
-if (saber_end != noone)
-{
-	if (animation != saber_end_animation || animation_end)
-	{
-		idle_enabled = true;
-		jump_enabled = true;
-		jump_animation_enabled = true;
-		wall_jump_animation_enabled = true;
-		wall_slide_animation_enabled = true;
-		fall_enabled = true;
-		land_enabled = true;
-		dash_enabled = true;
-		walk_enabled = true;
-		walk_ignore_dir = false;
-		walk_ignore_move = false;
-		wall_slide_enabled = true;
-		wall_jump_enabled = true;
-		saber_end = noone;
-		
-		player_idle();
+	if (saber_atk != noone) {
+		saber.boss_damage = saber_skill_boss_damage[saber_atk_skill[saber_atk]];
+		saber.shot_level = saber_atk;
 	}
+
+
 }

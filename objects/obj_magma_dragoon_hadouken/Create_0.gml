@@ -1,0 +1,12 @@
+event_inherited();
+hp = 1;
+damage_set(2, 4, 6);
+damageable = false;
+blocking = false;
+shot_type = 0;
+persist = true;
+phy_type = phy_types.NEW;
+through_walls = true;
+grav = 0;
+animation_add("S", keyframes_generate(image_number, 1/2));
+animation_play("S");

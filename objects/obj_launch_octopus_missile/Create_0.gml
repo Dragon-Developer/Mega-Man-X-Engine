@@ -1,0 +1,11 @@
+event_inherited();
+hp = 1;
+damage_set(2, 4, 6);
+abs_hspeed = 4;
+damageable = true;
+hp = array_get([1, 2, 2], global.difficulty);
+shot_type = 0;
+phy_type = phy_types.NEW;
+through_walls = true;
+grav = 0;
+gravity_default = 0;

@@ -1,8 +1,12 @@
 {
-    "id": "cdbcb2bc-b040-48d4-ac6d-4c4fad1abb42",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "move_contact_block",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Physics",
+    "path": "folders/Scripts/Player/Base/Physics.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "move_contact_block",
+  "tags": [],
+  "resourceType": "GMScript",
 }

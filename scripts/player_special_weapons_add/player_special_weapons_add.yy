@@ -1,8 +1,12 @@
 {
-    "id": "c8c7788f-7436-4760-bc24-c72429ce559f",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "player_special_weapons_add",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Add",
+    "path": "folders/Scripts/Player/Base/Special Weapons/Add.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "player_special_weapons_add",
+  "tags": [],
+  "resourceType": "GMScript",
 }

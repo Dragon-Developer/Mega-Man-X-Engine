@@ -1,8 +1,12 @@
 {
-    "id": "74f812a6-4f5d-45f8-80c7-679075b37033",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "player_weapon_set",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Functions",
+    "path": "folders/Scripts/Player/Base/Weapons/Functions.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "player_weapon_set",
+  "tags": [],
+  "resourceType": "GMScript",
 }

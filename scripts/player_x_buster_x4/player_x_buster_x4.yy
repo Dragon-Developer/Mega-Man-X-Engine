@@ -1,8 +1,12 @@
 {
-    "id": "70d0016a-1658-4903-bab1-480e764e16f0",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "player_x_buster_x4",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "X4",
+    "path": "folders/Scripts/Player/Characters/X/Weapons/Shots/X4.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "player_x_buster_x4",
+  "tags": [],
+  "resourceType": "GMScript",
 }

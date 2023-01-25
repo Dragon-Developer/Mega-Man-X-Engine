@@ -1,0 +1,15 @@
+event_inherited();
+persist = true;
+hp = 1;
+damage_set(2, 4, 6);
+damageable = false;
+blocking = false;
+shot_type = 0;
+phy_type = phy_types.NEW;
+through_walls = true;
+grav = 0;
+v_speed = array_get([5, 5.5, 6], global.difficulty);
+h_speed = array_get([-3.25, -3.75, -4], global.difficulty);
+abs_hspeed = 5;
+animation_add("S", keyframes_generate(image_number, 1/2));
+animation_play("S");

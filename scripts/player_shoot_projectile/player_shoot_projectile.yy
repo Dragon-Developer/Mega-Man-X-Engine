@@ -1,8 +1,12 @@
 {
-    "id": "0ba30788-8dc8-4374-8bd8-99a54dcae193",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "player_shoot_projectile",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Shoot",
+    "path": "folders/Scripts/Player/Base/Weapons/Shoot.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "player_shoot_projectile",
+  "tags": [],
+  "resourceType": "GMScript",
 }

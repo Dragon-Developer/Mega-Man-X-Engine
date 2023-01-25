@@ -1,0 +1,1 @@
+projectile_collision_init();

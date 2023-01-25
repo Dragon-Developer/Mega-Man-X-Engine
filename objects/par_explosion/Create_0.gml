@@ -1,0 +1,1 @@
+surface_draw_init();

@@ -1,0 +1,13 @@
+event_inherited();
+persist = true;
+hp = 1;
+damage_set(3, 4, 6);
+damageable = false;
+blocking = false;
+shot_type = 0;
+phy_type = phy_types.NEW;
+through_walls = true;
+grav = 0;
+base_y = y;
+image_yscale = 30;
+image_index_update = false;

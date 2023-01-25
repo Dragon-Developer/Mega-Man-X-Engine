@@ -1,0 +1,1 @@
+global.items_count--;

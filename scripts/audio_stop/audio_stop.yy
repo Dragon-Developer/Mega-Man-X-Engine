@@ -1,8 +1,12 @@
 {
-    "id": "47ec13f3-bc68-4388-bf35-791a1703f057",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "audio_stop",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Audio",
+    "path": "folders/Scripts/Utils/Audio.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "audio_stop",
+  "tags": [],
+  "resourceType": "GMScript",
 }

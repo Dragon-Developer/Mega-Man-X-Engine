@@ -1,8 +1,12 @@
 {
-    "id": "f9100009-00c7-4971-a065-76805df8aca7",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "player_zero_animations",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Animations",
+    "path": "folders/Scripts/Player/Characters/Zero/Animations.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "player_zero_animations",
+  "tags": [],
+  "resourceType": "GMScript",
 }

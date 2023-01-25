@@ -1,10 +1,20 @@
-// Offset uniform
-plt_index = 0;
+// Needs refactoring and put all palette functions in one script called Palette
+function palette_init() {
+	// Offset uniform
+	plt_index = 0;
+	plt_index_default = 0;
+	plt_source_index = 0;
 
-v_offset = shader_get_uniform(shdr_palette_swap, "Offset");
+	plt_width = 32;
+	plt_texture = noone;
 
-//plt_width = sprite_get_width(argument[0]);
-plt_width = 32;
-// Sampler and texture variables
-plt_swap_sampler = shader_get_sampler_index(shdr_palette_swap, "Palette");
-plt_texture = sprite_get_texture(argument[0], 0);
+	if (!global.support_shaders) exit;
+
+	v_offset = shader_get_uniform(shdr_palette_swap, "Offset");
+	v_source_offset = shader_get_uniform(shdr_palette_swap, "OffsetSource");
+
+	// Sampler and texture variables
+	plt_swap_sampler = shader_get_sampler_index(shdr_palette_swap, "Palette");
+
+
+}

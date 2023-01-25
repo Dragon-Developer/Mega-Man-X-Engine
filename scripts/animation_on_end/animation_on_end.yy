@@ -1,8 +1,12 @@
 {
-    "id": "725a2bb2-42ee-487d-9592-b97fedb3fb8f",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "animation_on_end",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Animation",
+    "path": "folders/Scripts/Object/Animation.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "animation_on_end",
+  "tags": [],
+  "resourceType": "GMScript",
 }

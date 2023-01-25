@@ -10,11 +10,13 @@ uniform sampler2D Palette;
 
 //  Color Offset Index
 uniform float Offset;
+//  Source
+uniform float OffsetSource;
 
 void main() {
     vec4 NewColor;
     vec4 ref = texture2D(gm_BaseTexture, v_vTexcoord);
-    float Width = 32.0;
+    const float Width = 32.0;
     bool Found = false;
     if (Offset == 0.0){
         gl_FragColor = ref;
@@ -31,7 +33,7 @@ void main() {
         if (Found){
             break;
         }
-        vec2 uv_coord = vec2((n / Width), 0.0);
+        vec2 uv_coord = vec2((n / 32.0), (OffsetSource));
         vec4 ver = texture2D(Palette, uv_coord);
         if (ref == ver){
             vec2 uv_coord2 = vec2((n / Width), Offset);

@@ -1,6 +1,5 @@
 event_inherited();
 
-animation_init();
 animation_frames = [
 	0, 0,
     5, 1,

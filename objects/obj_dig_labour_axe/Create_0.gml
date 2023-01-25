@@ -1,0 +1,10 @@
+event_inherited();
+collide_damage = 2;
+through_walls = true;
+grav = 0.25;
+is_projectile = true;
+owner = -1;
+phy_type = phy_types.NEW;
+animation_add("L", keyframes_generate(image_number, 1/3));
+animation_add_loop("L");
+animation_play("L");

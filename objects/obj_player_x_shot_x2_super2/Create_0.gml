@@ -1,11 +1,19 @@
 event_inherited();
-
+atk = 4;
+shot_level = 2;
+boss_damage[? noone] = 1;
+hit_if_shot_level_is_equal = true;
+animation_add("D",[0 , 0]);
+animation_add("B",[0 , 0]);
+animation_play("D");
 owner = noone;
-trail_pos = [[x, y], [x, y], [x, y], [x, y]];
-
+trail_init(4);
 index = 0;
-
+shot_rotate = true;
 depths = [-1, 1];
+
+// These values were obtained through screenshots at each frame because
+// I was not able to obtain a simple function that generated this type of movement
 offsets[0] = [-4, 9];
 offsets[1] = [0, 8];
 offsets[2] = [2, 10];
@@ -32,3 +40,5 @@ offsets[21] = [13, -9];
 offsets[22] = [11, -8];
 offsets[23] = [9, -10];
 offsets[24] = [7, -5];
+
+physics_auto = false;

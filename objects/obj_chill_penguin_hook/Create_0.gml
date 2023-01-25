@@ -1,0 +1,15 @@
+event_inherited();
+hp = 1;
+grav = 0;
+persist = true;
+collide_damage = 0;
+shot_type = 0;
+phy_type = phy_types.NEW;
+through_walls = false;
+animation_add("N", [0, 0], 0);
+animation_add("S", keyframes_generate(image_number, 1), image_number - 1);
+animation_add("D", keyframes_generate(image_number, 1, true), image_number - 1);
+animation_play("N");
+owner = noone;
+started = false;
+depth -= 1;

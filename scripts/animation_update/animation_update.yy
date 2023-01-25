@@ -1,8 +1,12 @@
 {
-    "id": "c86fd8df-9bdd-4d1e-8a6d-16c5bce8dbee",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "animation_update",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Animation",
+    "path": "folders/Scripts/Object/Animation.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "animation_update",
+  "tags": [],
+  "resourceType": "GMScript",
 }

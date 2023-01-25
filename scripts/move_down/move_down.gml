@@ -1,7 +1,11 @@
-var _dist = 10;
+function move_down() {
+	var _dist = 10;
 
-y = floor(y);
+	y = floor(y);
 
-if (argument_count) _dist = argument[0];
+	if (argument_count) _dist = argument[0];
 
-move_contact_block(0, _dist);
+	move_contact_block(0, _dist);
+
+
+}

@@ -1,0 +1,10 @@
+death0.ogg
+death1.ogg
+death2.ogg
+dolor0.ogg
+dolor1.ogg
+jump0.ogg
+jump1.ogg
+saber1_normal.ogg
+saber2_normal.ogg
+saber3_normal.ogg

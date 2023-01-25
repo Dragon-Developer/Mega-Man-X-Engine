@@ -1,0 +1,1 @@
+enemy_behavior_normal();

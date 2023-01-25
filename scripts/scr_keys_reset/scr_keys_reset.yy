@@ -1,8 +1,12 @@
 {
-    "id": "b2b9bcb3-f0e2-4b5a-8d0d-5dd44e5c8583",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_keys_reset",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Key Event",
+    "path": "folders/Scripts/Player/Base/Key Event.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scr_keys_reset",
+  "tags": [],
+  "resourceType": "GMScript",
 }

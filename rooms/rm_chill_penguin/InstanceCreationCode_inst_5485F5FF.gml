@@ -1,0 +1,1 @@
+sprite_index = spr_light_chill_penguin;

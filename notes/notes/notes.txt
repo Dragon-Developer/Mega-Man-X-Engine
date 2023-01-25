@@ -1,0 +1,10 @@
+Where to add an armor?
+Add armor sprites (spr_player_action_armor)
+Go to script Player/Global/player_global_armor_settings
+
+Where to set armor skills?
+Go to script Player/Characters/[char]/player_[char]_armor
+
+Where to add new weapons?
+Go to script Player/Weapons/player_weapon_settings
+Add weapon script Player/Characters/[char]/Weapons/player_[char]_[weapon]

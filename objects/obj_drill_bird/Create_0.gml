@@ -1,0 +1,13 @@
+event_inherited();
+hp = 3;
+persist = 1;
+collide_damage = 2;
+grav = 0;
+face_x = false;
+length = 40;
+position = 1;
+speed_rate = 0.15;
+dir = -1;
+animation_add("M", keyframes_generate(4, 1/2));
+animation_add_loop("M");
+animation_add("T", [0, 4], 0);

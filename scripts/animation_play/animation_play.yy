@@ -1,8 +1,12 @@
 {
-    "id": "bb1f79b8-ab63-4071-b73f-8719cca62b9e",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "animation_play",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Animation",
+    "path": "folders/Scripts/Object/Animation.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "animation_play",
+  "tags": [],
+  "resourceType": "GMScript",
 }

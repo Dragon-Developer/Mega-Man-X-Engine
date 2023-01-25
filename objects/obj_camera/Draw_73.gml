@@ -1,1 +1,0 @@
-player_draw_healthbar(_target);

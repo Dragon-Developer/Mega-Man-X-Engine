@@ -1,0 +1,9 @@
+image_speed = 0;
+image_alpha = 0.5;
+image_index = 1;
+var inst = instance_create_layer(x, y, layer, obj_dark_area);
+inst.image_xscale = image_xscale;
+inst.image_yscale = image_yscale;
+inst.image_alpha = 0.75;
+inst.color = #2c58a8;
+inst.ignore_light = true;

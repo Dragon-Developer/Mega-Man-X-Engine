@@ -1,8 +1,12 @@
 {
-    "id": "98b733b1-7225-4996-8763-6449d515de14",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "player_weapon_offset",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Functions",
+    "path": "folders/Scripts/Player/Base/Weapons/Functions.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "player_weapon_offset",
+  "tags": [],
+  "resourceType": "GMScript",
 }

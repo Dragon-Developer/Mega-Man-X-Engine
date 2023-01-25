@@ -1,0 +1,5 @@
+death.ogg
+dolor0.ogg
+dolor1.ogg
+jump0.ogg
+jump1.ogg

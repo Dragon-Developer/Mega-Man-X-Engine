@@ -1,0 +1,2 @@
+PAUSE;
+event_inherited();

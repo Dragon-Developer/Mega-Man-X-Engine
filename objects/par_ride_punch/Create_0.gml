@@ -1,0 +1,13 @@
+event_inherited();
+lv = 4;
+atk = 1.5;
+boss_damage[? noone] = 2;
+anti_destroy = true;
+anti_destroy_limit = 0;
+animation_frames = [5, 0];
+animation_end_destroy = true;
+hit_sound = snd_ride_armor_hit;
+hit_only_once = true;
+hit_sound_on_destroy = true;
+abs_hspeed = 0;
+visible = false;

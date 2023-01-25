@@ -1,0 +1,12 @@
+event_inherited();
+hp = 1;
+collide_damage = 2;
+phy_type = phy_types.NEW;
+v_speed = 4;
+abs_hspeed = 4;
+grav = 0;
+through_walls = false;
+face_x = false;
+animation_add("L", keyframes_generate(image_number, 1/2));
+animation_add_loop("L");
+animation_play("L");

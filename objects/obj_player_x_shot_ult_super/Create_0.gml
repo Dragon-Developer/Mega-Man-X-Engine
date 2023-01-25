@@ -1,10 +1,17 @@
 event_inherited();
+lv = 4;
+atk = 4;
+shot_level = 1;
+boss_damage[? noone] = 2;
+anti_destroy = true;
+destroy_reset_speed = false;
+anti_destroy_limit = 10;
 
-audio_play(snd_player_x_shot_ult);
+sound = snd_player_x_shot_ult;
 
 animations_init();
 
-animation_add("init",
+animation_add("S",
 [
 	0, 0,
 	2, 1,
@@ -12,7 +19,7 @@ animation_add("init",
 	6, 3,
 ]);
 
-animation_add("loop",
+animation_add("L",
 [
 	0, 4,
 	3, 5,
@@ -21,5 +28,8 @@ animation_add("loop",
 	11, 7
 ], 0, 11);
 
+plasma_balls_count = 0;
+plasma_balls_limit = 3;
 abs_hspeed = 0;
 execute_step_in_first_frame = true;
+collision_script = player_x_plasma_ball_collision;

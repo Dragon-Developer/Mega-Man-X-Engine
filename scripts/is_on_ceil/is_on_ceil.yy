@@ -1,8 +1,12 @@
 {
-    "id": "1ab1d9ad-773a-4263-8006-daeea86ec8c7",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "is_on_ceil",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Physics",
+    "path": "folders/Scripts/Player/Base/Physics.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "is_on_ceil",
+  "tags": [],
+  "resourceType": "GMScript",
 }

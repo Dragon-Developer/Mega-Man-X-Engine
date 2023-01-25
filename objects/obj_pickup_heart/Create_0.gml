@@ -1,0 +1,11 @@
+event_inherited();
+animation_add("L", keyframes_generate(image_number, 1 / 11));
+animation_add_loop("L");
+animation_play("L");
+amount = 2;
+pickup_type = pickup_types.heart;
+wait_limit = 80;
+min_limit = 4;
+heart_id = -1;
+bar_light = true;
+sound = snd_item_heart;

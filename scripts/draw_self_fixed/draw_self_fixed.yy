@@ -1,8 +1,12 @@
 {
-    "id": "12785871-e3fd-4ac6-a278-fc8683caad7f",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "draw_self_fixed",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Draw",
+    "path": "folders/Scripts/Utils/Draw.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "draw_self_fixed",
+  "tags": [],
+  "resourceType": "GMScript",
 }

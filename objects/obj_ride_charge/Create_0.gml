@@ -1,0 +1,13 @@
+event_inherited();
+lv = 4;
+atk = 1;
+boss_damage[? noone] = 1;
+anti_destroy = true;
+anti_destroy_limit = 0;
+animation_end_destroy = false;
+hit_sound = snd_ride_armor_x2_hit;
+hit_cancel_sound = true;
+hit_only_once = false;
+hit_sound_on_destroy = true;
+//audio_play(snd_player_x_shot_ult);
+abs_hspeed = 0;

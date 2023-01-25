@@ -1,0 +1,15 @@
+event_inherited();
+animation_add("S", keyframes_generate(3, 1 / 2));
+animation_add_loop("S");
+animation_play("S");
+timer = 0;
+timer_limit = array_get([120, 150, 150], global.difficulty);
+player_speed = array_get([1.5, 2, 2.5], global.difficulty);
+owner = noone;
+local_game_speed_init();
+vx = 0;
+vy = 0;
+vh = 0;
+vw = 0;
+lift_speed = 1.5;
+player_stuck = false;

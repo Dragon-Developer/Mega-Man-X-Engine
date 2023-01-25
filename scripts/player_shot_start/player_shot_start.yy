@@ -1,8 +1,12 @@
 {
-    "id": "7c2523cc-010c-4fb6-9c87-86a5fd1c49ee",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "player_shot_start",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Shots",
+    "path": "folders/Scripts/Player/Base/Shots.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "player_shot_start",
+  "tags": [],
+  "resourceType": "GMScript",
 }

@@ -1,8 +1,12 @@
 {
-    "id": "0af1b744-7758-4d54-8515-069a24a0ae21",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "player_x_variables",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Variables",
+    "path": "folders/Scripts/Player/Characters/X/Variables.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "player_x_variables",
+  "tags": [],
+  "resourceType": "GMScript",
 }
