@@ -268,3 +268,4 @@ function player_trail_set(interval, amount) {
 	trail_sprites_enabled = false;
 	trail_sprites_remove = false;
 }
+

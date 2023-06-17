@@ -25,6 +25,8 @@ function global_values() {
 	global.paused						    = false;
 	global.pause_type					    = pause_types.none;
 	global.is_using_door					= 0;
+	global.bgm_volume			        	= 0;
+	global.sfx_volume			        	= 0;
 	global.center_screen = true;
 	global.player_lives = 2;
 	global.items_count = 0;
@@ -33,6 +35,8 @@ function global_values() {
 	global.unlocked_points = 0;
 	global.golden_armor_enabled = false;
 	global.tile_shader_multiplier = 1;
+	global.anyone_can_get_armors = 1;
+	
 	enum diff_modes {
 		easy,
 		normal,

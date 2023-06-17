@@ -14,3 +14,5 @@ FULL = "white";
 
 // Load Armor Properties
 player_load_armor();
+
+is_axl = 1;

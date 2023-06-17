@@ -4,6 +4,7 @@ function player_states() {
 		none,
 		ready,
 		intro,
+		capsule,
 		outro,
 		idle,
 		crouch,
@@ -73,6 +74,7 @@ function player_states() {
 	state_array[states.none]         = noone;
 	state_array[states.ready]        = player_state_ready;
 	state_array[states.intro]        = player_state_intro;
+	state_array[states.capsule]      = player_state_armor_change;
 	state_array[states.outro]		 = player_state_outro;
 	state_array[states.idle]         = player_state_idle;
 	state_array[states.crouch]       = player_state_crouch;
@@ -88,6 +90,7 @@ function player_states() {
 	state_array[states.complete]	 = player_state_complete;
 	state_array[states.grabbed]	     = player_state_grabbed;
 	state_array[states.ride]	     = player_state_ride;
+	
 
 	// Special State Scripts
 	state_array[states.hover]        = player_state_hover;

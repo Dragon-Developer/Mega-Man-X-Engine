@@ -7,5 +7,11 @@ if (!global.paused) {
 	scr_physics_update(false);
 }
 
+if(armor_check)
+{
+ player_check_armor();
+ armor_check = 0;
+}
+
 G.player_x = x;
 G.player_y = y;

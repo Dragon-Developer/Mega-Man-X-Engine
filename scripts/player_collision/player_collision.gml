@@ -1,4 +1,5 @@
 function player_collision() {
+	
 	if (state == states.intro || state == states.outro) exit;
 	// Colliding with the ground
 	if (is_on_floor(v_speed) && v_speed >= 0) || (is_on_floor() && state == states.jump && state_timer > 1 && v_speed == 0)

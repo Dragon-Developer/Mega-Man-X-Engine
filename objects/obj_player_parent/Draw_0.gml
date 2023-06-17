@@ -1,4 +1,7 @@
+if (live_call()) return live_result;
+
 if (ignore_draw) exit;
+
 player_draw_event();
 var _x = x, _y = y;
 if (state == states.ride) {

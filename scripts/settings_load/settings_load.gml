@@ -10,6 +10,8 @@ function settings_load() {
 	global.settings[1] = ini_read_real("SETTINGS", "Input", input_types.keyboard);
 
 	G.voice_language = ini_read_string("AUDIO", "Voice Language", "SNES");
+	ini_read_real("AUDIO", "Sound Volume", global.sfx_volume);
+	ini_read_real("AUDIO", "Music Volume", global.bgm_volume);
 	for (var i = 0; i < array_length(global.key_config); i++)
 	{
 		global.key_config[i] = ini_read_real("KEYS", global.key_text[i], global.key_config_default[i]);

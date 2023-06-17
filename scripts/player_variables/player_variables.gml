@@ -347,3 +347,4 @@ function player_immunity_variables() {
 	blink_speed = 1;
 	
 }
+

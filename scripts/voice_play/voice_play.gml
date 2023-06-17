@@ -28,7 +28,8 @@ function voice_play() {
 			sound_index = list[| floor(global.voice_rcount) mod length];
 		}
 		if (sound_index != noone)
-			audio_play_sound(sound_index, 0, 0);	
+			audio_play_sound(sound_index, 0, 0);
+			audio_sound_gain(sound_index, global.sfx_volume, 0);
 	}
 
 

@@ -43,7 +43,7 @@ function ride_init() {
 	dolor_damage = 1;
 	dolor_effect_inst = noone;
 	dolor_effect = player_effect_new(obj_ride_x1_damage, 0, 0, layer_up);
-	hp = 32;
+	hp = 32;//32
 	damage_reduction = 0;
 	light = 0;
 	player_immunity_variables();
@@ -90,6 +90,7 @@ function ride_step() {
 	ride_check_punch();
 	ride_check_charge();
 	ride_collision();
+	ride_check_dead();
 	scr_physics_update(false);
 	ride_check_dolor();
 	player_immunity();
@@ -418,5 +419,55 @@ function ride_check_dolor() {
 				}
 			}
 		}
+	}
+}
+/// @function		ride_check_dead()
+/// @description	death effect for the Ride Armor/Chaser
+function ride_check_dead() {
+if (hp <= 0){dead=1}
+if (dead){deathtimer --;}
+if (deathtimer != deathtimer_max)
+   {
+	explosion_timer ++ 
+	
+	if (explosion_timer == 6)
+	{
+	instance_create_depth(random_range(x-30,x+30),random_range(y-40,y+20),depth-1,explode_FX2)
+	audio_play(choose(exploding,exploding2));
+	explosion_timer = 0;
+	}
+   }
+if (deathtimer == 1){ride_eject()}
+if (deathtimer == 0){instance_create_depth(x,y,depth-1,explosion_set_box);instance_create_depth(x,y,depth-1,explode_FX3);audio_play(exploding5);instance_destroy();}
+}
+/// @function		ride_eject()
+/// @description	Be forcefully ejected from the Ride Armor/Chaser
+function ride_eject() {
+	if (state != RIDE_ARMOR_STATE.ACTIVATED) {
+		state_set(RIDE_ARMOR_STATE.DEACTIVATING, 0, [is_on_floor()]);
+		with (char_instance) {
+			state_set(states.jump);	
+			ride_inst = noone;
+			mask_index = default_mask;
+			v_speed -= 12;
+			walk_speed = other.walk_speed;
+			depth += 4;
+			dir = other.dir;
+			xscale = dir;
+		}
+		char_instance = noone;
+		h_speed = 0;
+		walk_speed = walk_speed_default;
+		punch_animation = "";
+		scr_keys_reset();
+		if (substates[0]) {
+			animation_play("deactivating");	
+		}
+		punch = false;
+		punch_animation = "";
+		charge = false;
+		charge_t = 0;
+		audio_stop(snd_ride_armor_charge);
+		depth += 5;
 	}
 }

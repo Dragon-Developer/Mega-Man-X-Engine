@@ -38,5 +38,5 @@ function music_play(music_name = "") {
 	}
 	// Play Music
 	global.music_playing_index = audio_play_sound(snd, 0, _loop);
-	audio_sound_gain(global.music_playing_index, 1, 0);
+	audio_sound_gain(global.music_playing_index, global.bgm_volume, 0);
 }

@@ -87,6 +87,11 @@ function ride_armor_init() {
 	charged_punch_object = obj_ride_charged_punch;
 	dash_charged_punch_object = obj_ride_dash_charged_punch;
 	state_set(RIDE_ARMOR_STATE.DISABLED);
+	// Death
+	deathtimer_max = 250;
+    deathtimer = deathtimer_max;
+    explosion_timer = 0;
+    dead = 0;
 }
 /// @function		ride_armor_after_step
 /// @description	Run this after the state step script

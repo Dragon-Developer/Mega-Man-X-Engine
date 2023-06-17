@@ -12,7 +12,8 @@ enum menu_states {
 	boss_intro,
 	audio_settings,
 	voice_language,
-	weapon_get
+	weapon_get,
+	volume
 }
 
 enum background_select { intro, middle, ending }
@@ -46,6 +47,7 @@ titles[menu_states.key_config]      = _("KEY CONFIG");
 titles[menu_states.audio_settings]  = _("AUDIO SETTINGS");
 titles[menu_states.voice_language]  = _("VOICE LANGUAGE");
 titles[menu_states.weapon_get]		= "";
+titles[menu_states.volume]		    = _("VOLUME CONTROL");
 
 // Pages
 // Needs a lot of refactoring:
@@ -152,12 +154,20 @@ stage_select_positions = [
 #endregion
 #region Audio Settings
 page_items[menu_states.audio_settings] = [
-	[_("VOICE LANGUAGE"), [64, 64, 144, 20]],
-	[_("BACK"),   [64, 88, 144, 20]]
+	[_("VOICE LANGUAGE"),  [64, 64, 144, 20]],
+	[_("VOLUME SETTINGS"), [64, 88, 144, 20]],
+	[_("BACK"),            [64, 112, 144, 20]]
 ];
 #endregion
 #region Voice Language
 page_items[menu_states.voice_language] = [];
+#endregion
+#region Volume Settings
+page_items[menu_states.volume] = [
+	[_("SFX VOLUME"),      [64, 64, 144, 20]],
+	[_("BGM VOLUME"),      [64, 88, 144, 20]],
+	[_("BACK"),            [64, 112, 144, 20]]
+];
 #endregion
 
 #region Weapon Get

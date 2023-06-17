@@ -12,3 +12,5 @@ palette_texture_set(plt_zero);
 FULL = "black";
 // Load Armor Properties
 player_load_armor();
+
+is_zero = 1;

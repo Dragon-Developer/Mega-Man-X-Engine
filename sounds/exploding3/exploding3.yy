@@ -12,7 +12,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "exploding3",
-  "duration": 0.0,
+  "duration": 1.732063,
   "parent": {
     "name": "SFX",
     "path": "folders/Sounds/SFX.yy",

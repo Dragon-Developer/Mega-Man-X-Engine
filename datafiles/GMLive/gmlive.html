@@ -1,0 +1,1242 @@
+<html lang="en"><head>
+<meta charset="UTF-8">
+<title>GMLive.gml cheat sheet</title>
+<meta name="viewport" content="width=device-width" />
+<meta name="livenode" content="#doc" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_us" />
+<meta property="og:site_name" content="YellowAfterlife" />
+<meta property="og:title" content="GMLive.gml cheat sheet" />
+<script type="text/javascript">
+if (document.location.host == "yal.cc" && location.protocol == "http:") {
+	document.location.protocol = "https:";
+}
+</script>
+<style type="text/css">body, #doc tt, #doc code {
+	font: 15px 'Open Sans', sans-serif;
+	line-height: 1.35;
+}
+body {
+	margin: 0;
+}
+.main {
+	width: 100%;
+	min-height: 100%;
+	min-height: 100vh;
+	background-color: #f5f7f9;
+}
+.page {
+	max-width: 656px;
+	background: #ffffff;
+	margin: 0 auto;
+	padding: 8px;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+	min-height: 100%;
+	min-height: 100vh;
+	box-sizing: border-box;
+}
+.page > p:first-child {
+	margin-top: 0;
+}
+#doc, #doc ul, #doc ol {
+	padding-left: 0;
+	margin: 0;
+}
+#doc article > ul, #doc article > ol {
+	padding-left: 20px;
+}
+#doc article ul li {
+	list-style: disc;
+	list-style-image: url('data:image/svg+xml;base256,<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="20px" height="1em" viewBox="0 0 20px 1em"><circle cx="17px" cy="0.675em" r="2px"/></svg>'); 
+}
+
+#doc header {
+	margin: 0;
+	font-weight: 700;
+	font-size: 100%;
+	color: #458;
+	border-left: 2px solid #f3f3f3;/* #f9f9f9*/
+	padding-left: 4px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	cursor: pointer;
+}
+#doc header a {
+	outline: none;
+	text-decoration: none;
+	color: #458;
+}
+#doc header::before {
+	display: inline-block;
+	content: "+";
+	font: 12px monospace;
+	border: 1px solid #458;
+	line-height: 11px;
+	height: 11px;
+	width: 11px;
+	text-align: center;
+	border-radius: 50%;
+	margin-right: 4px;
+	vertical-align: middle;
+	position: relative;
+	top: -1px;
+}
+#doc section.open > header::before {
+	content: "-";
+}
+#doc section.empty > header::before {
+	content: " "; /*"·"*/
+}
+#doc header:hover {
+	border-left-color: #f3f3f3;
+	background: #f3f3f3;
+}
+#doc header .ret-arrow {
+	font-weight: normal;
+	margin: 0 0.1em;
+}
+
+#doc a.broken {
+	color: red;
+}
+#doc p, .intro p {
+	margin: 0;
+}
+#doc p + p, .intro p + p, #doc p.pad, .display-controls {
+	margin-top: 0.5em;
+}
+#doc img {
+	max-width: 100%;
+}
+#doc h3 {
+	margin: 0.25em 0;
+	font-size: 125%;
+	font-weight: normal;
+	border-bottom: 1px solid #ccc;
+}
+
+#doc article, #doc ul {
+	padding-left: 20px;
+	border-left: 2px solid #f3f3f3;
+}
+#doc article {
+	padding-top: 0.25em;
+	padding-bottom: 0.5em;
+}
+#doc tt {
+	font-weight: bold;
+}
+#doc code {
+	display: inline-block;
+	background: #FFFBE4;
+	font-family: Consolas, Ubuntu Mono, Dejavu Sans Mono, Lucida Console, monospace;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 16px;
+	padding: 0 2px;
+	border: 1px solid #E6E0C4;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	max-width: 100%;
+	word-break: break-word;
+}
+
+#doc table {
+	border-spacing: 0;
+	color: currentColor;
+}
+#doc table, #doc table td, #doc table th {
+	border: 1px solid #f3f3f3;
+}
+#doc table td, #doc table th {
+	padding: 0.1em 0.5em;
+}
+#doc pre {
+	font-family: Consolas, Dejavu Sans Mono, Segoe UI Mono, Ubuntu Mono, Lucida Console, monospace;
+	font-size: 9pt;
+	line-height: 1.25;
+	background: white;
+	padding: 4px 2px 4px 10px;
+	margin: 0;
+	-moz-tab-size: 4;
+	tab-size: 4;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+#doc pre a {
+	text-decoration: none;
+}
+#doc pre a.uf {
+	background-color: #f7f0ff;
+}
+#doc pre a.kw {
+	background-color: #f0f7ff;
+}
+#doc pre a.sf, #doc pre a.sv {
+	background-color: #fff3f0;
+}
+#doc pre a:hover {
+	text-decoration: underline;
+}
+#doc abbr[title] {
+	text-decoration: underline;
+	-webkit-text-decoration-color: #bbb;
+	text-decoration-color: #bbb;
+	-webkit-text-decoration-style: double;
+	text-decoration-style: double;
+}
+#doc hr {
+	margin: 0.5em 0;
+	margin-right: 1em;
+	border: 0;
+	border-top: 2px dashed #f3f3f3;
+}
+#doc section + hr {
+	margin: 0;
+	height: 1em;
+	border: 1px solid #f3f3f3;
+	border-width: 1px 0 1px 0;
+}
+#doc section {
+	border-top: 1px solid #f3f3f3;
+	margin-top: 0.3em;
+}
+#doc section:first-child {
+	margin-top: 0em;
+}
+#doc section:last-child {
+	border-bottom: 1px solid #f3f3f3;
+}
+#doc section + section, #doc hr + section {
+	border-top: 0;
+	margin-top: 0;
+}
+#doc section + p {
+	border-top: 1px solid #f3f3f3;
+	padding-top: 0.3em;
+}
+/* delay display until load */
+#doc[ready] section:not(.open) > article {
+	display: none;
+}</style>
+<style type="text/css" id="lang_gml">/* GameMakerLanguage */
+pre.gmlmd .md { color: #7A81A9 } /* #define */
+pre.gmlmd .kw { color: #008; font-weight: bold } /* keyword */
+pre.gmlmd .co { color: #080 } /* comment */
+pre.gmlmd .nu { color: #00f } /* number */
+pre.gmlmd .nx { color: #00f } /* hex */
+pre.gmlmd .st { color: #00f } /* string */
+pre.gmlmd .ts { color: #00f } /* template string */
+pre.gmlmd .op { color: #000 } /* operator */
+pre.gmlmd .cb { color: #008; font-weight: bold } /* curly brace */
+pre.gmlmd .sv { color: #800 } /* std func */
+pre.gmlmd .sf { color: #800 } /* std var */
+pre.gmlmd .ri { color: #0078aa } /* assets */
+pre.gmlmd .uf { color: #808 } /* user func */
+pre.gmlmd .uv { color: #000 } /* user var */
+pre.gmlmd .lv { color: #648 } /* local var */
+pre.gmlmd .fd { color: #804 } /* field */
+
+#night:checked + .main pre.gmlmd .op { color: #CCCCCC }
+#night:checked + .main pre.gmlmd .co { color: #5B995B }
+#night:checked + .main pre.gmlmd .kw { color: #FFB871 }
+#night:checked + .main pre.gmlmd .md { color: #FFB871 }
+#night:checked + .main pre.gmlmd .cb { color: #FFB871 }
+#night:checked + .main pre.gmlmd .sf { color: #FFB871 }
+#night:checked + .main pre.gmlmd .uf { color: #FFB871 }
+#night:checked + .main pre.gmlmd .nu { color: #FF8080 }
+#night:checked + .main pre.gmlmd .st { color: #FCF320 }
+#night:checked + .main pre.gmlmd .ts { color: #FF8080 }
+#night:checked + .main pre.gmlmd .sv { color: #FF8080 }
+#night:checked + .main pre.gmlmd .gv { color: #FF80FF }
+#night:checked + .main pre.gmlmd .ri { color: #FF8080 }
+#night:checked + .main pre.gmlmd .lv { color: #FFF899 }
+#night:checked + .main pre.gmlmd .uv { color: #B2B1FF }
+#night:checked + .main pre.gmlmd .fd { color: #B2B1FF }
+
+#night:checked + .main pre.gmlmd a.uf,
+#night:checked + .main pre.gmlmd a.kw,
+#night:checked + .main pre.gmlmd a.sf {
+	background-color: #431;
+}
+#night:checked + .main pre.gmlmd a.sv {
+	background-color: #422;
+}</style>
+<style type="text/css" id="night_css">#night { display: none }
+#night:checked + .main {
+	background-color: #424242;
+}
+#night:checked + .main .page {
+	background-color: #1c1c1c;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	color: white;
+}
+#night:checked + .main a,
+#night:checked + .main a:visited,
+#night:checked + .main #doc header,
+#night:checked + .main label[for="night"] {
+	color: #9DEC76;
+}
+#night:checked + .main #doc header:before,
+#night:checked + .main #doc h3 {
+	border-color: #9DEC76
+}
+#night:checked + .main #doc header,
+#night:checked + .main #doc header:hover,
+#night:checked + .main #doc article,
+#night:checked + .main #doc section,
+#night:checked + .main #doc section + p,
+#night:checked + .main #doc hr,
+#night:checked + .main #doc ul,
+#night:checked + .main #doc table,
+#night:checked + .main #doc table td,
+#night:checked + .main #doc table th
+{
+	border-color: rgba(205,225,255,0.1);
+}
+#night:checked + .main #doc header:hover,
+#night:checked + .main #doc .asset:hover {
+	background: rgba(205,225,255,0.1);
+}
+#night:checked + .main article ul li {
+	list-style-image: url('data:image/svg+xml;base256,<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="20px" height="1em" viewBox="0 0 20px 1em"><circle cx="17px" cy="0.675em" r="2px" fill="white"/></svg>'); 
+}
+#night:checked + .main pre {
+	color: #cccccc;
+	background: #000000;
+	border: 1px solid #3E4757;
+}
+#night:checked + .main #doc code {
+	background-color: #000;
+	border-color: #5b7c9f;
+	color: white;
+}</style>
+<style type="text/css" id="print_css">@media print {
+	.main { background-color: transparent }
+	.display-controls { display: none; }
+	.page { width: 100%; box-shadow: none; }
+	#doc header::before,
+	#doc section.open header::before	{
+		content: "~";
+	}
+	#doc { display: inherit }
+	#doc section:not(.open) > article,
+	#doc[ready] section:not(.open) > article {
+		display: inherit;
+	}
+}</style>
+<noscript><style>#doc header::before {
+	content: "~";
+}
+#doc header:hover {
+	border-left-color: #f3f3f3;
+	background: inherit;
+}
+#doc { display: inherit }
+#doc section:not(.open) > article {
+	display: inherit;
+}</style></noscript>
+</head><body>
+<input type="checkbox" id="night" checked/>
+<div class="main boxtt">
+<script type="text/javascript">(function() {
+	var night = document.getElementById("night");
+	var path = "docmd night mode";
+	var ls = window.localStorage;
+	if (ls) {
+		night.checked = ls.getItem(path) == "true";
+		night.onchange = function(_) {
+			ls.setItem(path, "" + night.checked);
+		};
+	}
+})();</script>
+<main class="page">
+<section class="intro">This is a "cheat sheet" for GMLive.gml extension by YellowAfterlife.  <br/>
+The extension can be acquired from
+<a href="https://marketplace.yoyogames.com/assets/5992/_">GM:Marketplace</a>
+or <a href="https://yellowafterlife.itch.io/gamemaker-live">itch.io</a>.  <br/>
+For questions/support, use <a href="https://yellowafterlife.itch.io/gamemaker-live/community">forums</a>,
+or <a href="mailto://yellowafterlife@hotmail.com">send me an email</a>.  <br/>
+An up-to-date version of this document can always be found <a href="https://yal.cc/r/17/gmlive">online</a>.</section><section class="display-controls">
+Click on sections to expand/collapse them.<br>Quick display controls:
+<a href="javascript:void(0)" onclick="opt_none(); return false">Categories</a>
+&middot; <a href="javascript:void(0)" onclick="opt_list(); return false">Sections</a>
+&middot; <a href="javascript:void(0)" onclick="opt_all(); return false">Everything</a>
+&middot; <a href="javascript:void(0)"><label for="night">Toggle night mode</label></a><br/>
+</section><section id="doc">
+<!--<doc--><p><section><header id="use1"><a href="#use1" title="(permalink)">Using GMLive.gml in GMS1</a></header><article><section><header id="gms1-setup"><a href="#gms1-setup" title="(permalink)">Initial setup</a></header><article><p>
+		Setting up is as following: </p><ul>
+			<li>	Make sure that you are running an up-to-date version of GameMaker: Studio.<br/>
+				You can find links to all versions at <a href="https://www.yoyogames.com/downloads/gm-studio/release-notes-studio.html">official website</a>.
+			</li><li>	Import the GMLive extension to the project.<br/>
+				With GMEZ file, either right-click on "Extensions" category in project tree and pick "import extension", or just drag-and-drop the file onto IDE from Explorer.
+			</li><li>	Import the assets (included files and <code>obj_gmlive</code>) from the package.<br/>
+				To do so, right-click on the extension, pick "Properties", and use the "Import" tab.<br/>
+				Depending on factors, it can take GMS1 a bit of time to show the dialog.<br/>
+				If it's stuck for good, use 7-zip (or equivalent) to unpack the GMEZ file, and import the assets
+				(contents of "datafiles" directory and <code>obj_gmlive.object.gmx</code>) via dragging and dropping them onto IDE.
+			</li><li>	Place <code>obj_gmlive</code> in the first room of the project.
+			</li><li>	Open menu "Resources - Define Macros" (Ctrl+Shift+N) and add a macro called <code>live_enabled</code> with value <code>1</code>.
+		</li></ul><p>
+		Now, as you might know, GMS1 does not let you save project while the game is running on most targets. This can be solved in multiple ways:
+		</p><p>
+		<b>A.</b> Use <b>netlog</b> and <b>GMLiveHelper</b> extensions (when on Windows): </p><ul>
+			<li>	Right-click on <b>netlog.gmez</b> in Included Files and pick "Open in Explorer".
+			</li><li>	Import <b>netlog.gmez</b> and <b>GMLiveHelper.gmez</b> to the project (much like above).
+			</li><li>	When starting up <b>gmlive-server</b>, also run <b>netlog.exe</b> in Included Files.
+			</li><li>	Use <code>netlog</code> script for debug logging instead of <code>show_debug_message</code>.<br/>
+				(which will display text in netlog's window when connected or IDE when not)
+		</li></ul><p>
+		<b>B.</b> Compile and run the game instead of running it from IDE directly.
+		</p><p>
+		<b>C.</b> Use an external editor for changing the "live" files mid-game: </p><ul>
+			<li>	There's a <a href="https://yellowafterlife.itch.io/gmedit">free and open-source GM code editor I made</a>
+				that works well for this (among other things).<br/>
+				There's also a decent number of plugins for GML support
+				in existing editors (Notepad++, Sublime Text, Visual Studio Code, etc.).
+			</li><li>	This can be faster than other options because an external editor
+				will only re-save the file in question while saving the project in GMS1
+				always also re-saves the .project.gmx
+				(and makes a backup if you didn't disable "backup on save" in File - Preferences).
+			</li><li>	The file(s) in question should not be open in GM:S while you are editing them externally,
+				or GMS1 might overwrite them with additional version next time you save the project.
+				If accidents happen, copy the updated code from external editor back to GM:S.
+				Enabling built-in version control for the project reduces the chances of this happening.
+		</li></ul><p>
+		Once you are done setting things up, you can remove <b>netlog.gmez</b> and <b>GMLiveHelper.gmez</b> from Included Files.
+		</p><p>
+		If you have <a href="http://nekovm.org/download">Neko VM</a> installed, you can also remove all DLL and NDLL files.
+		</p><p>
+		If you are not using option A, you can also remove <b>netlog.exe</b> and remove the <code>live_restart_if_necessary</code> line from <code>obj_gmlive</code>'s Create event.
+		</p><p>
+		(you can always re-import the included files later on)
+	</p></article></section><section><header id="gms1-start"><a href="#gms1-start" title="(permalink)">Starting up</a></header><article><ul>
+			<li>	Double-click <code>gmlive-server.exe</code> in Included Files to run it.<br/>
+				You can leave it running when recompiling the game -
+				it will re-scan the project directory whenever a new game instance connects to it.
+			</li><li>	If you've installed GMLiveHelper, also double-click <code>netlog.exe</code>.<br/>
+				Similarly, can be left running between game sessions.
+			</li><li>	Add <a href="#api-live">live function calls</a> to scripts and events of interest.<br/>
+				Note that for events the live-call must be in the first block of the event
+				(since GMS simply combines them during compilation),
+				and there may not be non-"Execute code" DnD blocks in the event.
+			</li><li>	Run the game.
+			</li><li>	Change the "live" scripts/events as you see fit and see the changes in-game
+				(if everything was done correctly). gmlive-server's window will report status updates.
+		</li></ul></article></section><section><header id="gms1-export"><a href="#gms1-export" title="(permalink)">Exporting</a></header><article><p>
+		
+		
+		Usually you do not want non-development builds
+		of the game to periodically ping a local or non-local address
+		- while not exactly resource-intensive,
+		this may raise warnings on some firewalls and anti-virus software.
+		</p><p>
+		For that reason it is suggested that you disable GMLive prior to exporting.
+		</p><p>
+		To do so, open menu "Resources - Define Macros" (Ctrl+Shift+N), and change the value of previously defined <code>live_enabled</code> macro to <code>0</code>.
+		</p><p>
+		This will disable the logic inside all of GMLive's scripts
+		and return default values, having it that nothing will happen
+		when calling them, and that they will not influence compile times/output size much as such.
+		</p><p>
+		After exporting you can set <code>live_enabled</code> back to <code>1</code>.
+	</p></article></section></article></section><section><header id="use2"><a href="#use2" title="(permalink)">Using GMLive.gml in GMS2/2022+</a></header><article><section><header id="gms2-setup"><a href="#gms2-setup" title="(permalink)">Initial setup</a></header><article><ul>
+		<li><p>	Import the GMLive asset the project: </p><ul>
+			<li>	If you bought the asset on GM Marketplace, you can import it using menu:Marketplace➜My Library.
+			</li><li>	If you bought the asset on itch.io, you can import it using menu:Tools➜Import Local Asset Package,
+				or by dragging and dropping the <code>.yymps</code> file onto the workspace area (where the resource editor windows show up) of the GameMaker window.<br/>
+				<b>Note:</b> <code>.yymp</code> is for GMS2.2.5, <code>.yymps</code> is for the current versions.
+			</li></ul></li><li>	Import the assets (extension, object, and included files) from the package.<br/>
+			<b>Note:</b> On Mac/Linux, omit importing Windows-specific <code>exe</code> and <code>ndll</code> files.
+		</li><li>	On Mac/Linux, install <a href="https://nekovm.org/download/">Neko VM</a> if you haven't already.<br/>
+			Neko VM is a tiny (1.5 .. 3.2MB) runtime for cross-platform applications that I use
+			for GMLive's server application.
+		</li><li>	Place <code>obj_gmlive</code> in the first room of the project.
+		</li></ul></article></section><section><header id="gms2-start"><a href="#gms2-start" title="(permalink)">Starting up (Windows)</a></header><article><ul>
+			<li>	Open your project directory using menu:Help ➜ Open project in Explorer<br/>
+				(or navigate to it manually)
+			</li><li>	Navigate to <code>datafiles</code> ➜ <code>GMLive</code>
+			</li><li>	Open <code>gmlive-server.exe</code><br/>
+				(you may also run it from Command Prompt/PowerShell/etc. if you prefer)
+			</li><li>	Once the server window says "Project load took Xms", the server is ready to go.<br/>
+			You can leave it running when recompiling the game -
+			it will re-scan the project directory whenever a new game instance connects to it.
+		</li><li>	Add <a href="#api-live">live function calls</a> to scripts and events of interest.<br/>
+			Note that the event must be GML-type (not a DND space with a GML block)
+		</li><li>	Run the game.
+		</li><li>	Change the "live" scripts/events as you see fit, save the file/project
+			(<b>this is important</b>) and see the changes in-game
+			(if everything was done correctly).  <br/>
+			gmlive-server's window will report status updates.
+		</li></ul></article></section><section><header id="gms2-start-mac"><a href="#gms2-start-mac" title="(permalink)">Starting up (Mac/Linux)</a></header><article><ul>
+			<li>	Open your project directory using menu:Help ➜ Show Project In Finder/File Manager<br/>
+				(or navigate to it manually)
+			</li><li>	Navigate to <code>datafiles</code> ➜ <code>GMLive</code>
+			</li><li>	Open a Terminal window in the folder.<br/>
+				On Mac, this is done using menu:Finder ➜ Services ➜ New Terminal at Folder.<br/>
+				On Linux, this depends on your file manager and/or desktop environment.<br/>
+				I trust you to know how to open Terminal if you have chosen Linux as your OS.
+			</li><li>	Type <code>neko gmlive-server.n</code> and press Enter.<br/>
+				If all is well, you'll see "Starting up... (protocol version: ...".<br/>
+			</li><li>	Once the server window says "Project load took Xms", the server is ready to go.<br/>
+			You can leave it running when recompiling the game -
+			it will re-scan the project directory whenever a new game instance connects to it.
+		</li><li>	Add <a href="#api-live">live function calls</a> to scripts and events of interest.<br/>
+			Note that the event must be GML-type (not a DND space with a GML block)
+		</li><li>	Run the game.
+		</li><li>	Change the "live" scripts/events as you see fit, save the file/project
+			(<b>this is important</b>) and see the changes in-game
+			(if everything was done correctly).  <br/>
+			gmlive-server's window will report status updates.
+		</li></ul></article></section><section><header id="gms2-export"><a href="#gms2-export" title="(permalink)">Exporting</a></header><article><p>
+		Usually you do not want non-development builds
+		of the game to periodically ping a local or non-local address
+		- while not exactly resource-intensive,
+		this may raise warnings on some firewalls and anti-virus software.
+		</p><p>
+		For that reason it is suggested that you disable GMLive prior to exporting.
+		</p><p>
+		To do so, change the value of <code>live_enabled</code> macro in <code>obj_gmlive</code>'s Create event to <code>0</code>.
+		</p><p>
+		This will disable the logic inside all of GMLive's scripts
+		and return default values, having it that nothing will happen
+		when calling them, and that they will not influence compile times/output size much as such.
+		</p><p>
+		After exporting you can set <code>live_enabled</code> back to <code>1</code>.
+	</p></article></section></article></section><section><header>General functions</header><article><section><header id="live_init"><a href="#live_init" title="(permalink)">live_init(update_rate, url, password)</a></header><article><p>
+		<code>update_rate</code> is how often files should be checked for updates, in seconds.
+		<code>1</code> is a common value. Lower values can load changed files faster,
+		but will also cause file system to be polled more frequently.
+		</p><p>
+		<code>url</code> is the URL that gmlive-server is running on.
+		Most often you would have this as <code>"http://127.0.0.1:5100"</code> to connect to the server on the same machine.
+		</p><p>
+		<code>password</code> is the password set via gmlive-server's <code>--password</code> option, as a basic form of security if running the server in an unprotected network. If you did not specify one, this should be left as a blank string.
+	</p></article></section><section><header id="live_log_script"><a href="#live_log_script" title="(permalink)">live_log_script:script(debug_text, log_level)</a></header><article><p>
+		Can be assigned to a script that GMLive will call to display debug information (such as notifications about scripts being reloaded), e.g.
+		</p><pre class="gmlmd">
+<a class="sv" href="#live_log_script">live_log_script</a> <span class="op">=</span> <span class="uf">scr_my_log</span><span class="op">;</span>
+</pre><p>
+		If not assigned, plain <code>show_debug_message</code> calls are used.
+		</p><p>
+		<code>log_level</code> can be 0 (info), 1 (warning), or 2 (error).
+		</p><p>
+		For example,
+		</p><pre class="gmlmd">
+<a class="sv" href="#live_log_script">live_log_script</a> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="lv">text</span><span class="op">,</span> <span class="lv">level</span><span class="op">)</span> <span class="cb">{</span>
+    <span class="sf">show_debug_message</span><span class="op">(</span><span class="lv">text</span><span class="op">)</span><span class="op">;</span>
+    <span class="kw">if</span> <span class="op">(</span><span class="lv">level</span> <span class="op">==</span> <span class="nu">2</span><span class="op">)</span> <span class="cb">{</span>
+        <span class="co">// make a beep</span>
+    <span class="cb">}</span>
+<span class="cb">}</span>
+</pre></article></section><section><header id="live_execute_string"><a href="#live_execute_string" title="(permalink)">live_execute_string(gml_code, ...arguments)&#8203;<span class="ret-arrow">&#10140;</span>ok?</a></header><article><p>
+		Attempts to compile and run a snippet of GML code.
+		</p><p>
+		Returns whether execution succeeded. If it did, <code>live_result</code> contains the returned value (if any). If it didn't, <code>live_result</code> contains the error text.
+		</p><pre class="gmlmd">
+<span class="kw">if</span> <span class="op">(</span><a class="sf" href="#live_execute_string">live_execute_string</a><span class="op">(</span><span class="st">@'show_message("Hello!"); return 1'</span><span class="op">)</span><span class="op">)</span> <span class="cb">{</span>
+    <span class="sf">show_debug_message</span><span class="op">(</span><span class="st">"Result: "</span> <span class="op">+</span> <span class="sf">string</span><span class="op">(</span><a class="sv" href="#live_result">live_result</a><span class="op">)</span><span class="op">)</span><span class="op">;</span>
+<span class="cb">}</span> <span class="kw">else</span> <span class="sf">show_debug_message</span><span class="op">(</span><span class="st">"Error: "</span> <span class="op">+</span> <span class="sf">string</span><span class="op">(</span><a class="sv" href="#live_result">live_result</a><span class="op">)</span><span class="op">)</span><span class="op">;</span>
+</pre><p>
+		Please keep in mind that much like the similarly-named GM&lt;=8.1 function, this compiles code on every call, thus is not fast and should only be used for debugging (e.g. if you want to be able to type snippets of GML in-game for quick tests)
+		- use <a href="#live_snippet_create">live_snippet_create</a> if you need to repeatedly execute dynamic code.
+	</p></article></section><hr/><section><header id="live_snippet_create"><a href="#live_snippet_create" title="(permalink)">live_snippet_create(gml_code, name = "snippet")&#8203;<span class="ret-arrow">&#10140;</span>snippet</a></header><article><p>
+		Creates a new "snippet" from a string of code.
+		</p><p>
+		Since this pre-compiles code, doing so is faster than live_execute_string for cases where you would want to repeatedly execute the same dynamic code snippet (in parallel with <code>object_event_add</code> in legacy GameMaker).
+		</p><p>
+		If there is a compilation error, the function returns <code>undefined</code> and stores the error text in <code>live_result</code>.
+		</p><pre class="gmlmd">
+<span class="kw">var</span> <span class="lv">snip</span> <span class="op">=</span> <a class="sf" href="#live_snippet_create">live_snippet_create</a><span class="op">(</span><span class="st">@'show_debug_message(argument0 * 2);'</span><span class="op">)</span><span class="op">;</span>
+<span class="kw">if</span> <span class="op">(</span><span class="lv">snip</span> <span class="op">!=</span> <span class="sv">undefined</span><span class="op">)</span> <span class="cb">{</span>
+    <a class="sf" href="#live_snippet_call">live_snippet_call</a><span class="op">(</span><span class="lv">snip</span><span class="op">,</span> <span class="nu">3</span><span class="op">)</span><span class="op">;</span> <span class="co">// -&gt; 6</span>
+    <a class="sf" href="#live_snippet_call">live_snippet_call</a><span class="op">(</span><span class="lv">snip</span><span class="op">,</span> <span class="nu">5</span><span class="op">)</span><span class="op">;</span> <span class="co">// -&gt; 10</span>
+    <a class="sf" href="#live_snippet_destroy">live_snippet_destroy</a><span class="op">(</span><span class="lv">snip</span><span class="op">)</span><span class="op">;</span>
+<span class="cb">}</span> <span class="kw">else</span> <span class="sf">show_debug_message</span><span class="op">(</span><span class="st">"Error: "</span> <span class="op">+</span> <span class="sf">string</span><span class="op">(</span><a class="sv" href="#live_result">live_result</a><span class="op">)</span><span class="op">)</span><span class="op">;</span>
+</pre><p>
+		Don't forget to <a href="#live_snippet_destroy">destroy</a> your snippets to free up memory when you're done using them!
+	</p></article></section><section><header id="live_snippet_call"><a href="#live_snippet_call" title="(permalink)">live_snippet_call(snippet, ...arguments)&#8203;<span class="ret-arrow">&#10140;</span>ok</a></header><article><p>
+		Executes a previously compiled snippet, returns whether successful.
+		</p><pre class="gmlmd">
+<span class="co">// ...</span>
+<span class="kw">if</span> <span class="op">(</span><a class="sf" href="#live_snippet_call">live_snippet_call</a><span class="op">(</span><span class="uv">snip</span><span class="op">,</span> <span class="nu">1</span><span class="op">)</span><span class="op">)</span> <span class="cb">{</span>
+    <span class="sf">show_debug_message</span><span class="op">(</span><span class="st">"Result: "</span> <span class="op">+</span> <span class="sf">string</span><span class="op">(</span><a class="sv" href="#live_result">live_result</a><span class="op">)</span><span class="op">)</span><span class="op">;</span>
+<span class="cb">}</span> <span class="kw">else</span> <span class="sf">show_debug_message</span><span class="op">(</span><span class="st">"Error: "</span> <span class="op">+</span> <span class="sf">string</span><span class="op">(</span><a class="sv" href="#live_result">live_result</a><span class="op">)</span><span class="op">)</span><span class="op">;</span>
+</pre></article></section><section><header id="live_snippet_destroy"><a href="#live_snippet_destroy" title="(permalink)">live_snippet_destroy(snippet)</a></header><article><p>
+		Destroys a previously created snippet.
+		</p><p>
+		Using a snippet after it had been destroyed will generally error.
+	</p></article></section></article></section><section><header id="api-live"><a href="#api-live" title="(permalink)">Live functions</a></header><article><section><header id="live_call"><a href="#live_call" title="(permalink)">live_call(...arguments)</a></header><article><p>
+		Calls the "live" version of the current script/event with specified arguments (if any).
+		</p><p>
+		Returns whether the "live" version is already loaded and was called.
+		</p><p>
+		If execution succeeds, <a href="#live_result">live_result</a> contains the returned value.
+		</p><p>
+		If execution fails, <a href="#live_result">live_result</a> contains <code>0</code> (also see <a href="#live_defcall">live_defcall</a>).
+		</p><p>
+		For example, if your script takes no arguments, you could do:
+		</p><pre class="gmlmd">
+<span class="co">/// scr_test</span>
+<span class="kw">if</span> <span class="op">(</span><a class="sf" href="#live_call">live_call</a><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="kw">return</span> <a class="sv" href="#live_result">live_result</a><span class="op">;</span>
+<span class="kw">return</span> <span class="st">"Hello!"</span><span class="op">;</span>
+</pre><p>
+		If your script takes two arguments, you could do:
+		</p><pre class="gmlmd">
+<span class="co">/// scr_add(a, b)</span>
+<span class="kw">if</span> <span class="op">(</span><a class="sf" href="#live_call">live_call</a><span class="op">(</span><span class="sv">argument0</span><span class="op">,</span> <span class="sv">argument1</span><span class="op">)</span><span class="op">)</span> <span class="kw">return</span> <a class="sv" href="#live_result">live_result</a><span class="op">;</span>
+<span class="kw">return</span> <span class="sv">argument0</span> <span class="op">+</span> <span class="sv">argument1</span><span class="op">;</span>
+</pre><p>
+		If your script takes a varying number of arguments, see <a href="#live_call_ext">live_call_ext</a>.
+	</p></article></section><section><header id="live_call_ext"><a href="#live_call_ext" title="(permalink)">live_call_ext(argument_array)</a></header><article><p>
+		Same as <a href="#live_call">live_call</a>, but takes arguments in an array instead of a list. You would usually use it like the following:
+		</p><pre class="gmlmd">
+<span class="kw">var</span> <span class="lv">argument_arr</span> <span class="op">=</span> <span class="sf">array_create</span><span class="op">(</span><span class="sv">argument_count</span><span class="op">)</span><span class="op">;</span>
+<span class="kw">for</span> <span class="op">(</span><span class="kw">var</span> <span class="lv">i</span> <span class="op">=</span> <span class="nu">0</span><span class="op">;</span> <span class="lv">i</span> <span class="op">&lt;</span> <span class="sv">argument_count</span><span class="op">;</span> <span class="lv">i</span><span class="op">++</span><span class="op">)</span> <span class="cb">{</span>
+    <span class="lv">argument_arr</span><span class="op">[</span><span class="lv">i</span><span class="op">]</span> <span class="op">=</span> <span class="sv">argument</span><span class="op">[</span><span class="lv">i</span><span class="op">]</span><span class="op">;</span>
+<span class="cb">}</span>
+<span class="kw">if</span> <span class="op">(</span><a class="sf" href="#live_call_ext">live_call_ext</a><span class="op">(</span><span class="lv">argument_arr</span><span class="op">)</span><span class="op">)</span> <span class="kw">return</span> <a class="sv" href="#live_result">live_result</a><span class="op">;</span>
+</pre><p>
+		(unfortunately, GM macros do not currently allow to use <code>argument[]</code> / <code>argument_count</code> inside of them, but you can add the code as a "snippet" in GM)
+	</p></article></section><section><header id="live_auto_call"><a href="#live_auto_call" title="(permalink)">live_auto_call</a></header><article><p>
+		In 2.3 version of GMLive, this macro is equivalent to packing up arguments
+		and calling <a href="#live_call_ext">live_call_ext</a> (as shown above).
+		So, instead of one or other <code>if (live_call...</code> snippet, you can just do
+		</p><pre class="gmlmd">
+<a class="sv" href="#live_auto_call">live_auto_call</a><span class="op">;</span>
+</pre><p>
+		and that's it.
+	</p></article></section><section><header id="live_defcall"><a href="#live_defcall" title="(permalink)">live_defcall(...arguments, default_value)</a></header><article><p>
+		Same as <a href="#live_call">live_call</a> but returns <code>default_value</code> instead of <code>0</code> if execution fails.
+		</p><p>
+		This is handy if livecoding a script that may only return values of specific type (thus specifying a default value would allow to avoid errors outside of "live" code).
+		</p><p>
+		For example,
+		</p><pre class="gmlmd">
+<span class="co">/// scr_transform_string(string)</span>
+<span class="kw">if</span> <span class="op">(</span><a class="sf" href="#live_defcall">live_defcall</a><span class="op">(</span><span class="sv">argument0</span><span class="op">,</span> <span class="st">""</span><span class="op">)</span><span class="op">)</span> <span class="kw">return</span> <a class="sv" href="#live_result">live_result</a><span class="op">;</span>
+<span class="co">// (some risky manipulations with string)</span>
+</pre><p>
+		would return <code>""</code> if execution of the "live" code fails.
+	</p></article></section><section><header id="live_defcall_ext"><a href="#live_defcall_ext" title="(permalink)">live_defcall_ext(argument_array, default_value)</a></header><article><p>
+		A mix of <a href="#live_call_ext">live_call_ext</a> and <a href="#live_defcall">live_defcall</a> - you can both pass arguments as an array and a default return value.
+	</p></article></section><section><header id="live_result"><a href="#live_result" title="(permalink)">live_result</a></header><article><p>
+		Stores the returned value from the last <a href="#live_call">live_call</a> (or other "live" group functions) if execution succeeded. If the code did not return anything, holds <code>0</code> (GM default for <code>exit</code>).
+	</p></article></section><section><header id="live_name"><a href="#live_name" title="(permalink)">live_name</a></header><article><p>
+		In GMS2.3+, it can be hard for GMLive to tell apart inline functions due to their
+		automatic naming. To mitigate this, a <code>live_name</code> variable is available and can be set
+		to any unique string prior to <code>live_call</code> for GMLive to know what function it is.
+		</p><p>
+		For example,
+		</p><pre class="gmlmd">
+<span class="uv">Greety</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="lv">_name</span><span class="op">)</span> <span class="kw">constructor</span> <span class="cb">{</span>
+    <span class="uv">name</span> <span class="op">=</span> <span class="lv">_name</span><span class="op">;</span>
+    <span class="kw">static</span> <span class="lv">greet</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="cb">{</span>
+        <a class="sv" href="#live_name">live_name</a> <span class="op">=</span> <span class="st">"Greety:greet"</span><span class="op">;</span>
+        <span class="kw">if</span> <span class="op">(</span><a class="sf" href="#live_call">live_call</a><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="kw">return</span> <a class="sv" href="#live_result">live_result</a><span class="op">;</span>
+        <span class="uf">trace</span><span class="op">(</span><span class="st">"A greet from"</span><span class="op">,</span> <span class="uv">name</span><span class="op">)</span>
+    <span class="cb">}</span>
+<span class="cb">}</span>
+</pre></article></section></article></section><section><header id="sprite"><a href="#sprite" title="(permalink)">Resource functions</a></header><article><p>
+	Apart of the primary feature of live-reloading code, GMLive can also live-reload other resource types.
+	</p><p>
+	As an opening note, <code>set_live</code> functions from this category can be called whenever
+	and have no overhead for repeated calls,
+	so you can set up the callbacks and make yourself a debug console/menu for picking resources
+	to live-reload, or even just add-remove a line of code in a "live" script/event.
+	</p><section><header id="sprite_set_live"><a href="#sprite_set_live" title="(permalink)">sprite_set_live(sprite, enable)</a></header><article><p>
+		Enables/disables live reloading for a specific sprite.
+		</p><p>
+		Does not work for Spine/SWF sprites (as they cannot be reloaded at runtime).
+		</p><p>
+		For example,
+		</p><pre class="gmlmd">
+<a class="sf" href="#sprite_set_live">sprite_set_live</a><span class="op">(</span><span class="ri">spr_test</span><span class="op">,</span> <span class="sv">true</span><span class="op">)</span><span class="op">;</span>
+</pre><p>
+		While it might be tempting to call this for <i>all the sprites</i>, usually you should not,
+		as the server has to watch "live" sprites and their subimage files for changes,
+		and this can add up in disk access time on larger projects.
+	</p></article></section><section><header id="path_set_live"><a href="#path_set_live" title="(permalink)">path_set_live(path_ind, enable)</a></header><article><p>
+		Enables/disables live reloading for a specific path (the resource type).
+		</p><p>
+		For example,
+		
+		</p><pre class="gmlmd">
+<a class="sf" href="#path_set_live">path_set_live</a><span class="op">(</span><span class="ri">pt_test</span><span class="op">,</span> <span class="sv">true</span><span class="op">)</span><span class="op">;</span>
+</pre><p>
+		Note that GameMaker stores path positions as a number in 0..1 range so making a path
+		shorter/longer will cause instances following it to jump around as they readjust.
+	</p></article></section><section><header id="file_set_live"><a href="#file_set_live" title="(permalink)">file_set_live(path, ?callback, ?kind)</a></header><article><p>
+		Enables/disables live reloading for a specific included file.
+		</p><p>
+		This can be used for live-updating game data, localization, or anything else.
+		</p><p>
+		<code>path</code> is a <i>relative</i> path to the file (e.g. <code>some.txt</code>, or <code>GMLive/gmlive.html</code>).
+		</p><p>
+		<code>callback</code> is a function/script that will be called whenever the file changes.<br/>
+		The function's first argument will be the new contents (more on this later)
+		and the second argument will be the relative path (as provided here).<br/>
+		Omit this argument or set it to <code>undefined</code> to disable live reloading.
+		</p><p>
+		<code>kind</code> is a string determining how to load the file. It can be one of the following: </p><ul>
+		<li>	<code>"text"</code>: provides file contents as a string.
+		</li><li>	<code>"buffer"</code>: provides file contents as a buffer.<br/>
+			Note that the buffer will be automatically deleted later so you should copy the data
+			from it somewhere as necessary.
+		</li><li>	<code>"csv"</code>: provides file contents as a CSV grid (using <code>load_csv</code>).<br/>
+			Similarly, the grid will be automatically deleted afterwards.
+		</li><li>	<code>"json"</code>: provides file contents as a JSON value, provided that it's valid JSON.
+		</li><li>	<code>"base64"</code>: provides file contents as a base64 string.<br/>
+			This is the format data is originally received in and is convenient if you intend
+			to decode it yourself as you please.
+		</li></ul><p>
+		If <code>kind</code> is not specified or is set to <code>"auto"</code>, it will be auto-detected based on file extension: </p><ul>
+		<li>	<code>.txt</code> ➜ <code>"text"</code>
+		</li><li>	<code>.json</code> ➜ <code>"json"</code>
+		</li><li>	<code>.bin</code> ➜ <code>"buffer"</code>
+		</li><li>	<code>.csv</code> ➜ <code>"csv"</code>
+		</li><li>	<code>.b64</code>, <code>.base64</code> ➜ <code>"base64"</code>
+		</li></ul><p>
+		If the file extension is not recognized, an error is thrown.
+		</p><p>
+		Example (assuming that you have a <code>test.txt</code> in your Included Files):
+		</p><pre class="gmlmd">
+<a class="sf" href="#file_set_live">file_set_live</a><span class="op">(</span><span class="st">"test.txt"</span><span class="op">,</span> <span class="kw">function</span><span class="op">(</span><span class="lv">_text</span><span class="op">,</span> <span class="lv">_path</span><span class="op">)</span> <span class="cb">{</span>
+    <span class="sf">show_debug_message</span><span class="op">(</span><span class="lv">_path</span> <span class="op">+</span> <span class="st">" has been updated: "</span> <span class="op">+</span> <span class="lv">_text</span><span class="op">)</span><span class="op">;</span>
+<span class="cb">}</span><span class="op">)</span><span class="op">;</span>
+</pre><p>
+		With a file type override:
+		</p><pre class="gmlmd">
+<a class="sf" href="#file_set_live">file_set_live</a><span class="op">(</span><span class="st">"test.txt"</span><span class="op">,</span> <span class="kw">function</span><span class="op">(</span><span class="lv">_buf</span><span class="op">,</span> <span class="lv">_path</span><span class="op">)</span> <span class="cb">{</span>
+    <span class="sf">show_debug_message</span><span class="op">(</span><span class="lv">_path</span> <span class="op">+</span> <span class="st">" is now "</span> <span class="op">+</span> <span class="sf">buffer_get_size</span><span class="op">(</span><span class="lv">_buf</span><span class="op">)</span> <span class="op">+</span> <span class="st">" bytes long"</span><span class="op">)</span><span class="op">;</span>
+<span class="cb">}</span><span class="op">,</span> <span class="st">"buffer"</span><span class="op">)</span><span class="op">;</span>
+</pre><p>
+		Disabling live-reloading:
+		</p><pre class="gmlmd">
+<a class="sf" href="#file_set_live">file_set_live</a><span class="op">(</span><span class="st">"test.txt"</span><span class="op">,</span> <span class="sv">undefined</span><span class="op">)</span><span class="op">;</span>
+</pre></article></section><section><header id="room"><a href="#room" title="(permalink)">Room functions</a></header><article><section><header id="room-setup"><a href="#room-setup" title="(permalink)">Setting up</a></header><article><ul>
+			<li>	Create an empty object and name it, for example, <code>obj_blank</code>;
+			</li><li><p>	Create an empty room and name it, for example, <code>rm_blank</code>;
+				If using GMS2, remove the default instance and background layers;
+				Add the following to its Room Creation Code:
+				</p><pre class="gmlmd">
+<span class="sf">live_room_start</span><span class="op">(</span><span class="op">)</span><span class="op">;</span>
+</pre></li><li><p>	Assign the two to <code>live_blank_object</code> and <code>live_blank_room</code> in <code>obj_gmlive</code>'s Create event:
+				</p><pre class="gmlmd">
+<span class="sv">live_blank_object</span> <span class="op">=</span> <span class="ri">obj_blank</span><span class="op">;</span>
+<span class="sv">live_blank_room</span> <span class="op">=</span> <span class="ri">rm_blank</span><span class="op">;</span>
+</pre></li></ul></article></section><section><header id="room_set_live"><a href="#room_set_live" title="(permalink)">room_set_live(room, enable)</a></header><article><p>
+			Enables/disables live reload for a specific room. Don't forget to <a href="#room-setup">setup helper resources</a> first.
+			</p><p>
+			For example,
+			
+			</p><pre class="gmlmd">
+<a class="sf" href="#room_set_live">room_set_live</a><span class="op">(</span><span class="ri">rm_test</span><span class="op">,</span> <span class="sv">true</span><span class="op">)</span><span class="op">;</span>
+</pre><p>
+			Can be called at runtime, including from "live" code.
+		</p></article></section><section><header id="room_goto_live"><a href="#room_goto_live" title="(permalink)">room_goto_live(room)</a></header><article><p>
+			Transits to the specified room much like regular <code>room_goto</code>.
+			</p><p>
+			If a "live" version of the room is loaded, transits to <code>live_blank_room</code>
+			instead and loads the new version of the room there.
+		</p></article></section><section><header id="live_room_updated"><a href="#live_room_updated" title="(permalink)">live_room_updated</a></header><article><p>
+			If set, this script will be called whenever a new version of a room is received.
+			</p><p>
+			By default this does an equivalent of
+			</p><pre class="gmlmd">
+<a class="sv" href="#live_room_updated">live_room_updated</a> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="lv">_rm</span><span class="op">)</span> <span class="cb">{</span>
+    <a class="sf" href="#room_goto_live">room_goto_live</a><span class="op">(</span><span class="lv">_rm</span><span class="op">)</span><span class="op">;</span>
+<span class="cb">}</span><span class="op">;</span>
+</pre><p>
+			but you can also add your own logic this way.
+		</p></article></section><section><header id="room-lims"><a href="#room-lims" title="(permalink)">Limitations</a></header><article><section><header id="room-lims-by-name"><a href="#room-lims-by-name" title="(permalink)">Referencing "live" instances by name from non-"live" code</a></header><article><p>
+				Since instance names are transformed into hardcoded instance IDs during compilation, this will not work.<br/>
+				Consider assigning instances of interest into global variables in room creation code
+				if you need to - that way you'll assign IDs that were given out to "live" versions as
+				the "live" code would know the "new" ones.
+			</p></article></section><section><header id="room-lims-_"><a href="#room-lims-_" title="(permalink)">(anything else?)</a></header><article><p>
+				This feature is relatively new and the topic of room loading is relatively complex so
+				it is possible that you'll encounter some issues that I've not even thought of testing for.
+				Make sure to report things that break!
+			</p></article></section></article></section></article></section><section><header id="shader"><a href="#shader" title="(permalink)">Shader functions</a></header><article><p>
+		These are currently experimental.
+		</p><section><header id="shader-setup"><a href="#shader-setup" title="(permalink)">Setting up</a></header><article><p>
+			First, you will need an extension to perform shader replacement.
+			</p><p>
+			There are a few options, </p><ul>
+			<li><a href="https://yellowafterlife.itch.io/gamemaker-shader-replace-simple">shader_replace_simple</a><br/>
+				A minimalistic extension by me.<br/>
+				Admittedly barebones (single function, some limitations) but works in GMS1+GMS2.<br/>
+				If imported, GMLive will auto-assign <a href="#live_shader_updated">live_shader_updated</a> so that you don't have to.
+			</li><li><a href="https://forum.yoyogames.com/index.php?threads/live-shader-editor-coming-soon.70962/">Live Shader Editor</a><br/>
+				A little more feature-rich, GMS2 only (?).<br/>
+				Not out yet as of me writing this on Jan 28, 2020.<br/>
+				2021 edit: it would appear like development of the extension has been abandoned.
+			</li></ul><p>
+			As of writing this, there is not a Mac OS compatible extension,
+			and it is as of yet unclear whether it is possible to implement one.
+		</p></article></section><section><header id="live_shader_updated"><a href="#live_shader_updated" title="(permalink)">live_shader_updated:script(shader, hlsl_vertex_code, hlsl_pixel_code)</a></header><article><p>
+			A script should be assigned to this variable and will be executed whenever a shader should be reloaded.
+			</p><p>
+			
+			For example,
+			</p><pre class="gmlmd">
+<a class="sv" href="#live_shader_updated">live_shader_updated</a> <span class="op">=</span> <span class="uf">scr_shader_reloaded</span><span class="op">;</span>
+</pre><p>
+			and then in <code>scr_shader_reloaded</code>:
+			</p><pre class="gmlmd">
+<span class="co">/// scr_shader_reloaded(shader, hlsl_vertex_code, hlsl_pixel_code)</span>
+<span class="co">// ... call your respective function to replace the shader</span>
+</pre><p>
+			or, for 2.3,
+			</p><pre class="gmlmd">
+<a class="sv" href="#live_shader_updated">live_shader_updated</a> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="lv">shader</span><span class="op">,</span> <span class="lv">hlsl_vertex_code</span><span class="op">,</span> <span class="lv">hlsl_pixel_code</span><span class="op">)</span> <span class="cb">{</span>
+    <span class="co">// ... call your respective function to replace the shader</span>
+<span class="cb">}</span>
+</pre><p>
+			GMLive will automatically assign <code>shader_replace_simple</code>'s function if available.
+		</p></article></section><section><header id="shader_set_live"><a href="#shader_set_live" title="(permalink)">shader_set_live(shader, enable)</a></header><article><p>
+			Enables/disables live reloading for a specific shader.
+			</p><p>
+			For example,
+			</p><pre class="gmlmd">
+<a class="sf" href="#shader_set_live">shader_set_live</a><span class="op">(</span><span class="uv">sh_test</span><span class="op">,</span> <span class="sv">true</span><span class="op">)</span><span class="op">;</span>
+</pre><p>
+			Can be called at runtime, including from "live" code.
+		</p></article></section></article></section></article></section><section><header id="api"><a href="#api" title="(permalink)">API functions</a></header><article><p>
+	The following functions are designed to add/override how GMLive will compile code
+	and are designed for rare cases where something doesn't work right
+	or to get around limitations with calling extension functions.
+	</p><p>
+	Note that changing the API only affects newly compiled live code / snippets
+	- you should perform such operations on game start.
+	</p><section><header id="live_function_add"><a href="#live_function_add" title="(permalink)">live_function_add(signature, impl)</a></header><article><p>
+		Registers a function for use in GMLive code / snippets.
+		</p><p>
+		<code>signature</code> is function signature, including the name, such as: </p><ul>
+		<li>	<code>clamp(a, b, c)</code> (normal),
+		</li><li>	<code>instance_destroy(?id, ?execEvent)</code> (prepend optional arguments with <code>?</code>)
+		</li><li>	<code>max(...values)</code> (include <code>...</code> for trailing arguments).
+		</li></ul><p>
+		<code>impl</code> (a script in 2.2, a function in 2.3)
+		will then be called with provided arguments as normal.
+		</p><p>
+		For example,
+		</p><pre class="gmlmd">
+<a class="sf" href="#live_function_add">live_function_add</a><span class="op">(</span><span class="st">"video_open(path)"</span><span class="op">,</span> <span class="uf">scr_video_open</span><span class="op">)</span><span class="op">;</span>
+</pre><p>
+		and then in <code>scr_video_open</code>
+		</p><pre class="gmlmd">
+<span class="uf">video_open</span><span class="op">(</span><span class="sv">argument0</span><span class="op">)</span><span class="op">;</span>
+</pre><p>
+		in 2.3, this can be written as
+		</p><pre class="gmlmd">
+<a class="sf" href="#live_function_add">live_function_add</a><span class="op">(</span><span class="st">"video_open(path)"</span><span class="op">,</span> <span class="kw">function</span><span class="op">(</span><span class="lv">path</span><span class="op">)</span> <span class="cb">{</span>
+    <span class="uf">video_open</span><span class="op">(</span><span class="lv">path</span><span class="op">)</span><span class="op">;</span>
+<span class="cb">}</span><span class="op">)</span><span class="op">;</span>
+</pre><p>
+		You may call <a href="#live_throw_error">live_throw_error</a> to hand an error back to the executing "live" code
+		(such as noting that arguments are mis-typed if this would result in a catastrophic error otherwise).
+	</p></article></section><section><header id="live_variable_add"><a href="#live_variable_add" title="(permalink)">live_variable_add(signature, impl)</a></header><article><p>
+		Registers a global built-in variable for use in GMLive.
+		</p><p>
+		<code>signature</code> is the variable signature in <code>fnames</code> format: </p><ul>
+		<li>	<code>room_speed</code> (a read/write variable)
+		</li><li>	<code>fps*</code> (a read-only variable)
+		</li><li>	<code>view_xport[]</code> (an array)
+		</li></ul><p>
+		<code>impl</code> (a script in 2.2, a function in 2.3)
+		will be called with the following arguments: </p><ul>
+		<li>	<code>argument0</code>: whether writing (true) or reading (false) the variable.
+		</li><li>	<code>argument1</code>: if writing the variable, this contains the new value.
+		</li><li>	<code>argument2</code>: if the variable is an array, this contains the index.<br/>
+			Please note that, honoring how GameMaker (still!) works,
+			<code>a = view_xport;</code> is equivalent to <code>a = view_xport[0];</code>.
+		</li></ul><p>
+		You may call <a href="#live_throw_error">live_throw_error</a> to hand an error back to the executing "live" code
+		(such as preventing out-of-bounds array access for fixed-size arrays
+		or performing value validation on write).
+		</p><p>
+		For example,
+		</p><pre class="gmlmd">
+<a class="sf" href="#live_variable_add">live_variable_add</a><span class="op">(</span><span class="st">"my_room_speed"</span><span class="op">,</span> <span class="uf">scr_my_room_speed</span><span class="op">)</span><span class="op">;</span>
+<span class="co">// and then in scr_my_room_speed</span>
+<span class="kw">if</span> <span class="op">(</span><span class="sv">argument0</span><span class="op">)</span> <span class="cb">{</span>
+    <span class="sv">room_speed</span> <span class="op">=</span> <span class="sv">argument1</span><span class="op">;</span>
+<span class="cb">}</span> <span class="kw">else</span> <span class="kw">return</span> <span class="sv">room_speed</span><span class="op">;</span>
+</pre><p>
+		or, in 2.3,
+		</p><pre class="gmlmd">
+<a class="sf" href="#live_variable_add">live_variable_add</a><span class="op">(</span><span class="st">"my_room_speed"</span><span class="op">,</span> <span class="kw">function</span><span class="op">(</span><span class="lv">set</span><span class="op">,</span> <span class="lv">val</span><span class="op">)</span> <span class="cb">{</span>
+    <span class="kw">if</span> <span class="op">(</span><span class="lv">set</span><span class="op">)</span> <span class="cb">{</span>
+        <span class="sv">room_speed</span> <span class="op">=</span> <span class="lv">val</span><span class="op">;</span>
+    <span class="cb">}</span> <span class="kw">else</span> <span class="kw">return</span> <span class="sv">room_speed</span><span class="op">;</span>
+<span class="cb">}</span><span class="op">)</span><span class="op">;</span>
+</pre></article></section><section><header id="live_constant_add"><a href="#live_constant_add" title="(permalink)">live_constant_add(name, value)</a></header><article><p>
+		Registers a constant for use in GMLive.
+		</p><p>
+		There isn't much to this one - name and value.
+		</p><pre class="gmlmd">
+<a class="sf" href="#live_constant_add">live_constant_add</a><span class="op">(</span><span class="st">"MATCHMAKING_SESSION"</span><span class="op">,</span> <span class="uv">MATCHMAKING_SESSION</span><span class="op">)</span><span class="op">;</span>
+</pre></article></section><section><header id="live_throw_error"><a href="#live_throw_error" title="(permalink)">live_throw_error(text)</a></header><article><p>
+		When ran from a function that is being ran by live code / snippet,
+		this passes an error message to GMLive, which will abort code execution.
+		</p><p>
+		In GMS2.3 you may instead use <code>show_error</code> or <code>throw</code>.
+	</p></article></section><p>
+	I cannot think of why you would want to unregister API entries, but, just in case:
+	</p><section><header>live_function_remove(name)</header><article><p>
+		Removes a previously registered function.
+	</p></article></section><section><header>live_variable_remove(name)</header><article><p>
+		Removes a previously registered global built-in variable.
+	</p></article></section><section><header>live_constant_remove(name)</header><article><p>
+		Removes a previously registered constant.
+	</p></article></section></article></section><section><header id="misc"><a href="#misc" title="(permalink)">GMS2.3+ functions</a></header><article><section><header id="live_method"><a href="#live_method" title="(permalink)">live_method(self, func)&#8203;<span class="ret-arrow">&#10140;</span>method</a></header><article><p>
+		Like the built-in <code>method</code> function,
+		but supports re-binding functions produced by GMLive code.
+	</p></article></section><section><header id="live_method_get_self"><a href="#live_method_get_self" title="(permalink)">live_method_get_self(func)&#8203;<span class="ret-arrow">&#10140;</span></a></header><article><p>
+		Like the built-in <code>method_get_self</code> function,
+		but returns correct values for functions produced by GMLive code.
+	</p></article></section></article></section><section><header id="tech"><a href="#tech" title="(permalink)">Technical topics</a></header><article><section><header id="gmlive-server"><a href="#gmlive-server" title="(permalink)">gmlive-server</a></header><article><p>
+		Is a helper application for GMLive.gml. It does a few things: </p><ul>
+			<li>	Fetches resources from the project.
+			</li><li>	Watches "live" files for changes.
+			</li><li>	Sends updated files to the game.
+		</li></ul><p>
+		Starting up without arguments (such as by double-clicking the executable) has it automatically
+		look for a GMS1/GMS2 project in the parent directory.
+		</p><p>
+		Passing an argument (such as by dragging a file/directory onto the executable) has it load up the specified project.
+		</p><p>
+		Starting up from command-line/PowerShell/terminal allows to specify additional arguments: </p><ul>
+			<li>	<code>--port &lt;port number&gt;</code>: Sets a custom port to run the server on.
+				You shouldn't need to touch this unless the default port (5100) is being used by some other application or you desire to run multiple gmlive-server instances on multiple project directories at once.
+			</li><li>	<code>--password &lt;string&gt;</code>: Sets a custom password (to be passed in <a href="#live_init">live_init</a>).
+			</li><li>	<code>--timeout &lt;seconds&gt;</code>: Adjusts connection timeout for clients.
+				In other words, how long it is without a response before a connection is dropped and related data structures are cleaned up. Default is 60 seconds and you wouldn't usually need to touch this unless you have issues with the game disconnecting during a step-by-step debug session.
+			</li><li>	<code>--runtimePath &lt;path&gt;</code>: If your GMS2 runtimes somehow don't reside in the usual location and gmlive-server fails to detect them as result, you can use this to force a path (which would end on <code>\runtime-a.b.c.d</code>)
+		</li></ul><p>
+		On the technical side, gmlive-server is a <a href="http://nekovm.org/">Neko VM</a> application. For Windows, the few DLLs it uses and an executable version are packaged together with it. On Mac, you'll need to install Neko VM binaries (~1.5MB) to be able to run it from terminal via
+		</p><pre>
+neko gmlive-server.n
+</pre></article></section><section><header id="tech-errors"><a href="#tech-errors" title="(permalink)">Error handling</a></header><article><p>
+		Things that GMLive takes care of: </p><ul>
+			<li>	Syntax errors in "live" code<br/>
+				(code will not be updated if the new version doesn't compile)
+			</li><li>	Value errors (e.g. trying to add a string to a number, dividing by 0)
+			</li><li>	Missing variables/instances
+			</li><li>	Wrong argument types passed to common built-in functions
+		</li></ul><p>
+		When a "runtime" error occurs, it is logged and the "live" script/event halts execution.
+		This does not prevent subsequent attempts to execute the code.
+		</p><p>
+		Things that GMLive cannot take care of: </p><ul>
+			<li>	Runtime errors in non-"live" scripts
+			</li><li>	Fatal errors thrown by built-in functions (e.g. memory allocation errors)
+		</li></ul><p>
+		If you are using GMS1 or older versions of GMS2 (2.2.5 or earlier),
+		you can also use <a href="https://yellowafterlife.itch.io/gamemaker-catch-error">catch_error</a>
+		and a "GMLiveForGMSX_and_catch_error" version of the extension to prevent a number of crashes.
+	</p></article></section><section><header id="multi-os"><a href="#multi-os" title="(permalink)">Using GMLive on Windows and Mac/Linux at once</a></header><article><p>
+		If you have the same project directory shared between a Windows and non-Windows machine
+		(via cloud sync, network folder, SyncThing, version control, etc.)
+		and want to be able to use GMLive without adding/removing files,
+		you can do any of the following: </p><ul>
+		<li>	Make a copy of GMLive folder so that you have one for Windows (with EXE and NDLLs)
+			and one for Mac/Linux (without NDLLs).
+		</li><li>	If using Git, delete the NDLL files, commit the deletion,
+			add them back on Windows machine, and also
+			add them to <code>.gitignore</code> so that they do not make it to Mac/Linux machines.
+		</li><li>	Install Neko VM on Windows so that you don't need the NDLLs nor the EXE
+			(and subsequently run <code>neko gmlive-server.n</code> from Command Prompt/PowerShell)
+		</li><li>	Copy the GMLive folder elsewhere and run it from Command Prompt/PowerShell/terminal
+			with a path to your YYP (see <a href="#gmlive-server">above</a>).
+		</li></ul></article></section></article></section><section><header id="Limitations"><a href="#Limitations" title="(permalink)">Limitations</a></header><article><section><header id="lim-performance"><a href="#lim-performance" title="(permalink)">Performance</a></header><article><p>
+		On average, any time you add another layer on interpreted code, performance degrades 5x..10x
+		- YYC code is on average 5 times slower than equivalent handwritten C++ code,
+		non-YYC GML is about 3..5 times slower than that, and GMLive,
+		<abbr title="to be able to access various structures that are not exposed to native extensions">having runtime compiled to GML</abbr>,
+		has roughly GM8.1 level of performance on non-YYC and roughly regular GMS level of performance on YYC.
+		</p><p>
+		This has a few implications: </p><ul>
+		<li>	Enabling livecoding for too many performance-critical scripts at once isn't a good idea.<br/>
+			GMLive versions from 1.0.48 onward will not compile-interpret code until a script/event
+			is changed after game start, but still there is minor overhead in checking whether the
+			script/event has a "live" version loaded or not.
+		</li><li>	Using GMLive for ad-hoc modding support isn't a super good idea
+			</li><li> both for performance reasons and because the interpreted scripts would have
+			complete access to GameMaker API and game's resources.<br/>
+			You can look into <a href="https://github.com/YAL-GameMaker/tiny-expression-runtime">tiny expression runtime</a>
+		</li></ul><p>
+		That said, both GMLive and GameMaker are being worked on, thus things will likely improve as time goes on.
+	</p></article></section><section><header id="lim-modding"><a href="#lim-modding" title="(permalink)">Use of GMLive for modding</a></header><article><p>
+		Although it may be tempting to use GMLive's
+		<code>live_execute_string</code> and <a href="#live_snippet_create">Snippet API</a>
+		for ad-hoc modding support,
+		the consequences of that aren't unlike use of <code>execute_string</code> -
+		you would be executing code without any security measures in place,
+		meaning that scripts could crash the game, corrupt save data or unrelated variables, and so on.
+		</p><p>
+		Better options would be: </p><ul>
+		<li>	<a href="https://github.com/YAL-GameMaker/tiny-expression-runtime">tiny expression runtime</a><br/>
+			An open-source example project and accompanying tutorial on writing purpose-specific
+			scripting languages. Can be highly customized in terms of access and sandboxing.
+		</li><li>	<a href="https://yellowafterlife.itch.io/gamemaker-lua">Apollo</a><br/>
+			A native wrapper for industry-standard Lua.<br/>
+			Similarly has sandboxing and full control over what executed code can access.
+		</li><li>	For projects with higher requirements,
+			I may be available for contract work and had built
+			<a href="https://yal.cc/works-ext/#Compiler">all kinds of compilers and interpreters</a>
+			for clients over years.
+		</li></ul></article></section><section><header id="lim-native-ext"><a href="#lim-native-ext" title="(permalink)">Calling functions in native extensions</a></header><article><p>
+		GMLive by default has entirety of standard GameMaker API and all game-specific resources
+		exposed to it, but native extension's functions currently cannot be dynamically referenced,
+		therefore you would not be able to call them from "live" code by default.
+		</p><p>
+		As a workaround, you can make a script that calls the function, and then call that script
+		(this is also what GMLive does for built-in GM functions).
+	</p></article></section><section><header id="lim-array-copy"><a href="#lim-array-copy" title="(permalink)">Copy-on-write behaviour in arrays</a></header><article><p>
+		<b>NOTE:</b> As of GM2022, copy-on-write has been deprecated and is turned off by default
+		in new projects.
+		</p><p>
+		GML itself has a <a href="http://docs2.yoyogames.com/source/_build/3_scripting/3_gml_overview/10_arrays.html">particular feature</a>
+		(see "Advanced Array Functionality") that has it so that passing an array as an argument
+		to a script, and then changing it via <code>arr[index] = value</code>
+		(rather than <code>arr[@index] = value</code>) would duplicate the array prior.
+		</p><p>
+		The internal data for this is not exposed, however,
+		so GMLive is unable to do it in the same way,
+		and only does "create-on-write" (replacing a value with a new array if it isn't yet).
+		</p><p>
+		If this doesn't make immediate sense, it is unlikely that you rely on this feature anywhere.
+	</p></article></section><section><header id="lim-api"><a href="#lim-api" title="(permalink)">API compatibility</a></header><article><p>
+		Since GMLive reasonably needs to reference every function and constant
+		yet there is no way to go over constants nor get information about function arguments
+		at runtime, so the extension has this massive script with function definitions and
+		series of <a href="#live_function_add">live_function_add</a>/<a href="#live_variable_add">live_variable_add</a>/<a href="#live_constant_add">live_constant_add</a> calls.
+		</p><p>
+		Here are the specific cases and instructions for getting around them:
+		</p><section><header>Function signature changes</header><article><p>
+			As of GMS2022, GMLive will gracefully new functions appearing (albeit with no argument count checks)
+			or functions going missing, but it cannot handle argument changes for existing functions -
+			like the infamous reduction of <code>buffer_set_surface</code> from 5 to 3 arguments,
+			or introduction of an optional argument to <code>instance_create_depth</code>.
+			</p><p>
+			When this happens, GMLive will refuse to compile code with seemingly-incorrect argument counts,
+			but you can fix this yourself:
+			
+			</p><pre class="gmlmd">
+<a class="sf" href="#live_function_add">live_function_add</a><span class="op">(</span><span class="st">"instance_create_depth(x, y, depth, object, ?vars)"</span><span class="op">,</span> <span class="sv">instance_create_depth</span><span class="op">)</span><span class="op">;</span>
+</pre></article></section><section><header>Constants</header><article><p>
+			If a GameMaker update adds new constants, "live" code will not be able to reference them
+			until a GMLive update releases, but you can also handle this yourself, like so:
+			</p><pre class="gmlmd">
+<a class="sf" href="#live_constant_add">live_constant_add</a><span class="op">(</span><span class="st">"some_constant"</span><span class="op">,</span> <span class="uv">some_constant</span><span class="op">)</span><span class="op">;</span>
+</pre><p>
+			But if a constant is <i>removed</i>, you'll get a startup error in <code>GMLiveAPI</code>.<br/>
+			You can comment out the offending lines in the script, but it can be easier to add
+			an empty macro for each such constant, like so:
+			</p><pre class="gmlmd">
+<span class="md">#macro</span> <span class="uf">some_constant</span> <span class="sv">undefined</span>
+</pre></article></section><section><header>Variables</header><article><p>
+			On occasion, a GameMaker update might introduce a new global variable that
+			"live" code wouldn't be aware of. You can fix this like so:
+			</p><pre class="gmlmd">
+<a class="sf" href="#live_variable_add">live_variable_add</a><span class="op">(</span><span class="st">"some_variable"</span><span class="op">,</span> <span class="kw">function</span><span class="op">(</span><span class="lv">set</span><span class="op">,</span> <span class="lv">val</span><span class="op">)</span> <span class="cb">{</span>
+    <span class="kw">if</span> <span class="op">(</span><span class="lv">set</span><span class="op">)</span> <span class="cb">{</span>
+        <span class="uv">some_variable</span> <span class="op">=</span> <span class="lv">val</span><span class="op">;</span>
+    <span class="cb">}</span> <span class="kw">else</span> <span class="kw">return</span> <span class="uv">some_variable</span><span class="op">;</span>
+<span class="cb">}</span><span class="op">)</span><span class="op">;</span>
+</pre></article></section></article></section></article></section><section><header id="troubleshooting"><a href="#troubleshooting" title="(permalink)">Troubleshooting</a></header><article><section><header id="no-updates"><a href="#no-updates" title="(permalink)">Code does not update</a></header><article><ul>
+		<li>	Make sure that you are saving the file (Ctrl+S).
+		</li><li>	Make sure that gmlive-server is running.
+		</li><li>	Check the output log for any compile/runtime errors with new code.
+		</li><li>	Check gmlive-server window for any project load errors.
+		</li><li>	Check if the time next to the client in gmlive-server window is ticking.<br/>
+			If it's not ticking, you likely accidentally deactivated/destroyed <code>obj_gmlive</code>.
+		</li></ul></article></section><section><header id="error-arg-index"><a href="#error-arg-index" title="(permalink)">"Argument index is out of range"</a></header><article><p>
+		This usually happens for one of two reasons: </p><ul>
+		<li>	You are calling the script with fewer arguments than you have the code expect<br/>
+			(in which case GM would throw you an error as well).
+		</li><li>	You forgot to add script arguments to <a href="#live_call">live_call</a>/<a href="#live_call_ext">live_call_ext</a>.
+		</li></ul></article></section><section><header id="error-inst-call"><a href="#error-inst-call" title="(permalink)">"Can't call instance-specific function - instance does not exist."</a></header><article><p>
+		You can occasionally get this error in output log when calling scripts for instances
+		after deactivating/destroying them - currently the only way <code>self</code>/<code>other</code>
+		instances can be set up for a call is via <code>with</code> blocks,
+		and these do not work with deactivated/destroyed instance IDs.
+		</p><p>
+		GMLive uses a few workarounds to get around this in common situations
+		(applying to original <code>self</code>/<code>other</code> instances of the event), but if you have something like
+		</p><pre class="gmlmd">
+<span class="kw">with</span> <span class="op">(</span><span class="uv">some_instance_id</span><span class="op">)</span> <span class="cb">{</span>
+    <span class="sf">instance_destroy</span><span class="op">(</span><span class="op">)</span><span class="op">;</span>
+    <span class="uf">scr_some_instance_script</span><span class="op">(</span><span class="op">)</span><span class="op">;</span>
+<span class="cb">}</span>
+</pre><p>
+		that may show that error.
+		</p><p>
+		As a workaround, you can either change your code not to attempt to call scripts on freshly
+		deactivated/destroyed instances, or move the D/D+call branch into a separate script.
+	</p></article></section><section><header id="error-tilemaps"><a href="#error-tilemaps" title="(permalink)">Problems with tilemaps in "live" rooms</a></header><article><p>
+		If you are using <code>layer_tilemap_get_id</code>, you should be aware (as per manual) that it does not work
+		with "dynamically" created tilemaps, including those made by GMLive.
+		</p><p>
+		The workaround is to make a little function, which would look as following in GMS2.3:
+		</p><pre class="gmlmd">
+<span class="kw">function</span> <span class="uf">layer_tilemap_get_id_fixed</span><span class="op">(</span><span class="lv">_layer</span><span class="op">)</span> <span class="cb">{</span>
+    <span class="kw">var</span> <span class="lv">els</span> <span class="op">=</span> <span class="uf">layer_get_all_elements</span><span class="op">(</span><span class="lv">_layer</span><span class="op">)</span><span class="op">;</span>
+    <span class="kw">var</span> <span class="lv">n</span> <span class="op">=</span> <span class="sf">array_length_1d</span><span class="op">(</span><span class="lv">els</span><span class="op">)</span><span class="op">;</span>
+    <span class="kw">for</span> <span class="op">(</span><span class="kw">var</span> <span class="lv">i</span> <span class="op">=</span> <span class="nu">0</span><span class="op">;</span> <span class="lv">i</span> <span class="op">&lt;</span> <span class="lv">n</span><span class="op">;</span> <span class="lv">i</span><span class="op">++</span><span class="op">)</span> <span class="cb">{</span>
+        <span class="kw">var</span> <span class="lv">el</span> <span class="op">=</span> <span class="lv">els</span><span class="op">[</span><span class="lv">i</span><span class="op">]</span><span class="op">;</span>
+        <span class="kw">if</span> <span class="op">(</span><span class="uf">layer_get_element_type</span><span class="op">(</span><span class="lv">el</span><span class="op">)</span> <span class="op">==</span> <span class="uv">layerelementtype_tilemap</span><span class="op">)</span> <span class="cb">{</span>
+            <span class="kw">return</span> <span class="lv">el</span><span class="op">;</span>
+        <span class="cb">}</span>
+    <span class="cb">}</span>
+    <span class="kw">return</span> <span class="op">-</span><span class="nu">1</span><span class="op">;</span>
+<span class="cb">}</span>
+</pre><p>
+		and as so in GMS2.2.5 and older versions:
+		</p><pre class="gmlmd">
+<span class="kw">var</span> <span class="lv">els</span> <span class="op">=</span> <span class="uf">layer_get_all_elements</span><span class="op">(</span><span class="uv">_layer</span><span class="op">)</span><span class="op">;</span>
+<span class="kw">var</span> <span class="lv">n</span> <span class="op">=</span> <span class="sf">array_length_1d</span><span class="op">(</span><span class="lv">els</span><span class="op">)</span><span class="op">;</span>
+<span class="kw">for</span> <span class="op">(</span><span class="kw">var</span> <span class="lv">i</span> <span class="op">=</span> <span class="nu">0</span><span class="op">;</span> <span class="lv">i</span> <span class="op">&lt;</span> <span class="lv">n</span><span class="op">;</span> <span class="lv">i</span><span class="op">++</span><span class="op">)</span> <span class="cb">{</span>
+    <span class="kw">var</span> <span class="lv">el</span> <span class="op">=</span> <span class="lv">els</span><span class="op">[</span><span class="lv">i</span><span class="op">]</span><span class="op">;</span>
+    <span class="kw">if</span> <span class="op">(</span><span class="uf">layer_get_element_type</span><span class="op">(</span><span class="lv">el</span><span class="op">)</span> <span class="op">==</span> <span class="uv">layerelementtype_tilemap</span><span class="op">)</span> <span class="cb">{</span>
+        <span class="kw">return</span> <span class="lv">el</span><span class="op">;</span>
+    <span class="cb">}</span>
+<span class="cb">}</span>
+<span class="kw">return</span> <span class="op">-</span><span class="nu">1</span><span class="op">;</span>
+</pre></article></section><section><header id="error-gmlive-copy"><a href="#error-gmlive-copy" title="(permalink)">What is "GMLive - copy.gml"?</a></header><article><p>
+		Occasionally I make a copy of one or other GMLive script to run a diff on them
+		before publishing an update and forget to remove them later. Such files are safe to remove.
+	</p></article></section><section><header id="error-mac-lib-load"><a href="#error-mac-lib-load" title="(permalink)">"Failed to load library : no suitable image found. "</a></header><article><p>
+		You can get this on Mac if you did not remove the original <code>ndll</code> files
+		- NDLLs that Windows uses are different from those for OSX.
+	</p></article></section><section><header id="error-debug-create"><a href="#error-debug-create" title="(permalink)">Running game in debug mode skips over create events</a></header><article><p>
+		GameMaker versions prior to 2.3 have a curious bug that has it that
+		if your game has "enough" code in it and your computer matches the unknown requirements,
+		the debugger may choke for a bit, causing the game to skip events for the first few frames.
+		</p><p>
+		Since GMLive adds about 900KB worth of GML code to your game, it tends to tip off the issue for affected users.
+		</p><p>
+		The solution is to add a blank room in front of the rest, and add a blank object to it which has a step event with something like the following:
+		</p><pre class="gmlmd">
+<span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="sv">debug_mode</span> <span class="op">||</span> <span class="op">++</span><span class="sv">x</span> <span class="op">&gt;</span> <span class="sv">xstart</span> <span class="op">+</span> <span class="nu">3</span><span class="op">)</span> <span class="cb">{</span>
+    <span class="sf">instance_destroy</span><span class="op">(</span><span class="op">)</span><span class="op">;</span>
+    <span class="sf">room_goto_next</span><span class="op">(</span><span class="op">)</span><span class="op">;</span> <span class="co">// or room_goto(real_init_room)</span>
+<span class="cb">}</span>
+</pre><p>
+		In worse cases, <code>3</code> may be increased until the issue is no longer present.
+		</p><p>
+		The issue appears to occur to fewer users in GMS2.3+
+	</p></article></section></article></section></p><!--doc>-->
+</section></main></div>
+<script type="text/javascript">(function() {
+	var doc, headers;
+	//
+	var path = "GMLive.gml cheat sheet";
+	var state = null;
+	if (window.localStorage && JSON.parse) {
+		state = window.localStorage.getItem(path);
+		state = state ? JSON.parse(state) : { };
+		if (state == null) state = { };
+	}
+	var isLocal = (location.host.indexOf("localhost") == 0);
+	//
+	function h3bind(h3) {
+		var node = h3.parentNode;
+		var snip = node.children[1];
+		var id = h3.id || h3.textContent;
+		h3.snip = snip;
+		h3.doc_set = function(z) {
+			if (z) node.classList.add("open"); else node.classList.remove("open");
+			if (state) {
+				state[id] = z;
+				window.localStorage.setItem(path, JSON.stringify(state));
+			}
+		}
+		h3.doc_hide = function() {
+			this.doc_set(false);
+		}
+		h3.doc_show = function() {
+			this.doc_set(true);
+		}
+		h3.onclick = function(_) {
+			var seen = !node.classList.contains("open");
+			h3.doc_set(seen);
+			return false;
+		};
+	}
+	function getHashFunc(id) {
+		var node = document.getElementById(id);
+		if (node == null) return null;
+		return function(e) {
+			while (node && node != doc) {
+				if (node.classList.contains("item")) {
+					node.classList.add("open");
+				}
+				node = node.parentElement;
+			}
+		};
+	}
+	// Display helpers:
+	window.opt_none = function() {
+		for (var li = 0; li < headers.length; li++) headers[li].doc_hide();
+	};
+	window.opt_list = function() {
+		for (var li = 0; li < headers.length; li++) {
+			var h3 = headers[li];
+			if (h3.parentNode.parentNode != doc) {
+				h3.doc_hide();
+			} else h3.doc_show();
+		}
+	};
+	window.opt_all = function() {
+		for (var li = 0; li < headers.length; li++) headers[li].doc_show();
+	};
+	window.live_post = function() {
+		doc = document.getElementById("doc");
+		headers = doc.getElementsByTagName("header");
+		//
+		for (var i = 0; i < headers.length; i++) h3bind(headers[i]);
+		// Clicks in document expand the related section:
+		var anchors = doc.getElementsByTagName("a");
+		for (var i = 0; i < anchors.length; i++) {
+			var anchor = anchors[i];
+			if (anchor.classList.contains("header")) continue;
+			var href = anchor.getAttribute("href");
+			if (href[0] == "#") {
+				var fn = getHashFunc(href.substr(1));
+				if (!fn) {
+					anchor.classList.add("broken");
+					anchor.title = "(section missing)";
+				} else anchor.addEventListener("click", fn);
+			}
+		}
+		//
+		for (var li = 0; li < headers.length; li++) {
+			var h3 = headers[li];
+			var val = state ? state[h3.id || h3.textContent] : null;
+			if (val == null) val = isLocal || h3.parentNode.parentNode == doc;
+			if (val) h3.doc_show(); else h3.doc_hide();
+		}
+	};
+	window.live_post();
+	//
+	(function() {
+		var hash = document.location.hash;
+		if (hash) {
+			var _hash = hash.substr(1);
+			getHashFunc(_hash)();
+			setTimeout(function() {
+				document.location.hash = hash + " ";
+				setTimeout(function() {
+					document.location.hash = hash;
+				}, 100);
+			}, 100);
+		}
+	})();
+	//
+	doc.setAttribute("ready", "");
+	})();</script>
+</body></html>

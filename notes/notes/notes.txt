@@ -8,3 +8,6 @@ Go to script Player/Characters/[char]/player_[char]_armor
 Where to add new weapons?
 Go to script Player/Weapons/player_weapon_settings
 Add weapon script Player/Characters/[char]/Weapons/player_[char]_[weapon]
+
+Live code editing check:
+if (live_call()) return live_result;

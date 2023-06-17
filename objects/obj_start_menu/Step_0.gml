@@ -582,10 +582,47 @@ switch (state) {
 				case 0:
 					menu_set_state(menu_states.voice_language);
 					break;
-				// Back
+				// Volume Settings
 				case 1:
+					menu_set_state(menu_states.volume);
+					break;
+				// Back
+				case 2:
 					menu_set_state(menu_states.option);
 					break;
+			}
+		}
+		break;
+	#endregion
+	#region Volume Settings
+	case menu_states.volume:
+		menu_update_item_v();
+		menu_update_item_click();
+		if (enter) {
+			switch (selected_item) {
+				// Back
+				case 2:
+					menu_set_state(menu_states.audio_settings);
+					break;
+			}
+		}
+		if (key_right || key_left) {
+			switch (selected_item) {
+				// SFX
+				case 0:
+				global.sfx_volume = clamp(global.sfx_volume+hinput*0.01,0,1);
+                audio_group_set_gain(audiogroup_default,global.sfx_volume,0);
+				if (global.sfx_volume <= 0.9){
+				audio_play(snd_item_changed);
+	            sound = false;
+				}
+				break;
+				
+				// BGM   global.music_playing_index
+				case 1:
+				global.bgm_volume = clamp(global.bgm_volume+hinput*0.01,0,1);
+                audio_sound_gain(global.music_playing_index,global.bgm_volume,0);
+				break;
 			}
 		}
 		break;
