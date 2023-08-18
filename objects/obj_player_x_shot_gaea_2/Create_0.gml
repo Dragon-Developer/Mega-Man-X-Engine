@@ -1,5 +1,5 @@
 event_inherited();
-collision_script = noone;
+on_collision = function() {};
 auto_destroy = true;
 auto_destroy_limit = 25;
 destroy_reset_speed = true;

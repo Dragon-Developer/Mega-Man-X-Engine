@@ -21,7 +21,7 @@ function scr_weapon_collision() {
 	// If this weapon isn't being destroyed
 	if (!destroy) {
 		// For each parent
-		for (var k = 0; k < array_length_1d(parents); k++) {
+		for (var k = 0; k < array_length(parents); k++) {
 			// List of enemies/blocks in contact with this weapon
 			var enemies_list = ds_list_create();
 			var parent = parents[k];
@@ -105,7 +105,7 @@ function scr_weapon_collision() {
 				if (weapon_type == weapon_types.saber && (enemy_block || owner.saber_slash))
 					scr_saber_create_hitspark(enemy, enemy_block);
 				// Run custom collision script (Ex: plasma ball, ...)
-				script_try(collision_script, enemy);
+				on_collision(enemy);
 			}
 			ds_list_destroy(enemies_list);
 		}

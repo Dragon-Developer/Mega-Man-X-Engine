@@ -54,7 +54,12 @@ function player_special_weapons_variables() {
 	// Dive Kick
 	dive_kick_hspeed = 4;
 	dive_kick_vspeed = 4;
-	dive_kick_jump_speed = 4;
+	dive_kick_jump_speed = 3;
+	dive_kick_end_hspeed = 2;
+	dive_kick_object = obj_player_x_shot_dive_kick;
+	dive_kick_jump = false;
+	dive_kick_limit = 1;
+	dive_kick_count = 0;
 	
 	// All
 	using_special_weapon = false;

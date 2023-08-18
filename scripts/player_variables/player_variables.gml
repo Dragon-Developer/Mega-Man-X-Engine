@@ -65,6 +65,7 @@ function player_variables() {
 	// Fall
 	fall = false; // Is the player falling?
 	vspeed_max = 5.75; // Maximum Vertical Speed
+	fall_reset_vspeed = true;
 	ceil_reset_vspeed = true;
 
 	// Land

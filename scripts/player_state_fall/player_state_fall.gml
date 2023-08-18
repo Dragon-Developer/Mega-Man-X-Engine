@@ -1,6 +1,5 @@
 function player_state_fall() {
 	var t = state_timer++;
-	
 	if (t < 4 || animation != "fall")
 		animation_play("fall", t);
 
@@ -11,6 +10,7 @@ function player_state_fall() {
 		player_state_set(states.land, 1);
 		animation_play("land");
 		v_speed = 0;
+		h_speed = 0;
 		move_down();
 		player_counters_reset();
 		walk_speed = walk_speed_default;
@@ -28,6 +28,4 @@ function player_state_fall() {
 	player_check_hover();
 	player_check_fly();
 	player_check_glide();
-
-
 }

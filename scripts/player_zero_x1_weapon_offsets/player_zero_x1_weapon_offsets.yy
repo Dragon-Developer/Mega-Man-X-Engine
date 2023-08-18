@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Weapons",
-    "path": "folders/Scripts/Player/Characters/Zero/Weapons.yy",
+    "name": "Offsets",
+    "path": "folders/Scripts/Player/Characters/Zero/Weapons/Offsets.yy",
   },
 }

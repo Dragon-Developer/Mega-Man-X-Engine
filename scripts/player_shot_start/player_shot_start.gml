@@ -78,7 +78,7 @@ function player_shot_start() {
 	hit_if_shot_level_is_equal = false;
 	element = 0; // It can be used to indicate element specific effects
 	through_walls = 1; // Does our shot go through walls?
-	collision_script = noone;
+	on_collision = function() {};
 
 	enum weapon_types {
 		none,
