@@ -1,12 +1,11 @@
 {
-  "isDnD": false,
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "mobile_start",
   "isCompatibility": false,
+  "isDnD": false,
   "parent": {
     "name": "Mobile",
     "path": "folders/Scripts/Mobile.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "mobile_start",
-  "tags": [],
-  "resourceType": "GMScript",
 }

@@ -1,25 +1,9 @@
 {
-  "spriteId": {
-    "name": "spr_tiles_test",
-    "path": "sprites/spr_tiles_test/spr_tiles_test.yy",
-  },
-  "tileWidth": 16,
-  "tileHeight": 16,
-  "tilexoff": 0,
-  "tileyoff": 0,
-  "tilehsep": 0,
-  "tilevsep": 0,
-  "spriteNoExport": false,
-  "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
-  },
-  "out_tilehborder": 2,
-  "out_tilevborder": 2,
-  "out_columns": 7,
-  "tile_count": 56,
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "ts_test_stage",
   "autoTileSets": [
-    {"tiles":[
+    {"resourceType":"GMAutoTileSet","resourceVersion":"1.0","name":"autotile_2","closed_edge":false,"tiles":[
         9,
         21,
         20,
@@ -67,8 +51,8 @@
         19,
         6,
         14,
-      ],"closed_edge":false,"resourceVersion":"1.0","name":"autotile_2","tags":[],"resourceType":"GMAutoTileSet",},
-    {"tiles":[
+      ],},
+    {"resourceType":"GMAutoTileSet","resourceVersion":"1.0","name":"autotile_3","closed_edge":false,"tiles":[
         9,
         21,
         20,
@@ -85,10 +69,30 @@
         16,
         18,
         55,
-      ],"closed_edge":false,"resourceVersion":"1.0","name":"autotile_3","tags":[],"resourceType":"GMAutoTileSet",},
+      ],},
   ],
-  "tileAnimationFrames": [],
-  "tileAnimationSpeed": 15.0,
+  "macroPageTiles": {
+    "SerialiseHeight": 0,
+    "SerialiseWidth": 0,
+    "TileSerialiseData": [],
+  },
+  "out_columns": 7,
+  "out_tilehborder": 2,
+  "out_tilevborder": 2,
+  "parent": {
+    "name": "Test Stage",
+    "path": "folders/Tile Sets/Test Stage.yy",
+  },
+  "spriteId": {
+    "name": "spr_tiles_test",
+    "path": "sprites/spr_tiles_test/spr_tiles_test.yy",
+  },
+  "spriteNoExport": false,
+  "textureGroupId": {
+    "name": "Default",
+    "path": "texturegroups/Default",
+  },
+  "tile_count": 56,
   "tileAnimation": {
     "FrameData": [
       0,
@@ -150,17 +154,12 @@
     ],
     "SerialiseFrameCount": 1,
   },
-  "macroPageTiles": {
-    "SerialiseWidth": 0,
-    "SerialiseHeight": 0,
-    "TileSerialiseData": [],
-  },
-  "parent": {
-    "name": "Test Stage",
-    "path": "folders/Tile Sets/Test Stage.yy",
-  },
-  "resourceVersion": "1.0",
-  "name": "ts_test_stage",
-  "tags": [],
-  "resourceType": "GMTileSet",
+  "tileAnimationFrames": [],
+  "tileAnimationSpeed": 15.0,
+  "tileHeight": 16,
+  "tilehsep": 0,
+  "tilevsep": 0,
+  "tileWidth": 16,
+  "tilexoff": 0,
+  "tileyoff": 0,
 }

@@ -38,6 +38,7 @@ function player_states() {
 		giga_falcon,
 		messenko,
 		speed_gear,
+		dive_kick,
 		// Weapons
 		db_buster,
 		x3_saber,
@@ -106,6 +107,7 @@ function player_states() {
 	state_array[states.tatsumaki]    = player_state_tatsumaki;
 	state_array[states.giga_falcon]  = player_state_giga_falcon;
 	state_array[states.messenko]     = player_state_messenko;
+	state_array[states.dive_kick]    = player_state_dive_kick;
 
 	// Weapons
 	state_array[states.db_buster]		= player_state_db_buster;

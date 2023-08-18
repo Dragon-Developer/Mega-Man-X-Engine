@@ -51,6 +51,11 @@ function player_special_weapons_variables() {
 	power_gear = false;
 	power_gear_sprite = spr_power_gear_effect;
 	
+	// Dive Kick
+	dive_kick_hspeed = 4;
+	dive_kick_vspeed = 4;
+	dive_kick_jump_speed = 4;
+	
 	// All
 	using_special_weapon = false;
 	special_inst = noone;

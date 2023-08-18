@@ -1,12 +1,11 @@
 {
-  "isDnD": false,
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "palette_shader",
   "isCompatibility": false,
+  "isDnD": false,
   "parent": {
     "name": "Palette",
     "path": "folders/Scripts/Utils/Palette.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "palette_shader",
-  "tags": [],
-  "resourceType": "GMScript",
 }

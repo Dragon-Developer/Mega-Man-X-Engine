@@ -35,6 +35,7 @@ function player_zero_armors() {
 		player_weapon_set(1, weapons.homing_torpedo);
 		player_weapon_set(2, weapons.storm_tornado);
 		player_weapon_select(weapons.z_buster);
+		player_special_weapons_add(states.dive_kick);
 		#region Animations
 		/*
 		animation_add("dash",

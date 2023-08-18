@@ -325,4 +325,7 @@ function player_animations() {
 		8, 6
 	], 8);
 	animation_add("ride_armor");
+	
+	animation_add("dive_kick", keyframes_generate(4, 1/2));
+	animation_add_loop("dive_kick");
 }
