@@ -57,7 +57,7 @@
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"3cd25c37-dbc1-42d9-861e-5c724f8ebc5d","path":"sprites/spr_light_capsule_lightning/spr_light_capsule_lightning.yy",},},},"Disabled":false,"id":"4c885267-4308-4c95-8a5c-c997bc574b77","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
-    "visibleRange": {"x":0.0,"y":0.0,},
+    "visibleRange": null,
     "volume": 1.0,
     "xorigin": 12,
     "yorigin": 72,

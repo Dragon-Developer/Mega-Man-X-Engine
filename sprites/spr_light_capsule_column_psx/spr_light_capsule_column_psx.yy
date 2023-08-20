@@ -65,7 +65,7 @@
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a84df760-7c47-4a24-b3de-2f9cbfdbc594","path":"sprites/spr_light_capsule_column_psx/spr_light_capsule_column_psx.yy",},},},"Disabled":false,"id":"c66404ca-b591-4152-bb79-d7054678f974","IsCreationKey":false,"Key":4.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
-    "visibleRange": {"x":0.0,"y":0.0,},
+    "visibleRange": null,
     "volume": 1.0,
     "xorigin": 18,
     "yorigin": 44,

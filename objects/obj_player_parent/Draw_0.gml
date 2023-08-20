@@ -1,5 +1,3 @@
-if (live_call()) return live_result;
-
 if (ignore_draw) exit;
 
 player_draw_event();

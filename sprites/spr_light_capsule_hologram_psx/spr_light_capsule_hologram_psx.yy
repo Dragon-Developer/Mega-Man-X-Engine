@@ -72,7 +72,7 @@
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e02976d6-734f-4616-a8ed-3112b00871de","path":"sprites/spr_light_capsule_hologram_psx/spr_light_capsule_hologram_psx.yy",},},},"Disabled":false,"id":"fad21c4a-87bd-48a8-9cf4-538fc78259cc","IsCreationKey":false,"Key":7.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
-    "visibleRange": {"x":0.0,"y":0.0,},
+    "visibleRange": null,
     "volume": 1.0,
     "xorigin": 14,
     "yorigin": 39,

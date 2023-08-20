@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_light_capusle_psx",
-    "path": "sprites/spr_light_capusle_psx/spr_light_capusle_psx.yy",
+    "name": "spr_light_capsule_psx",
+    "path": "sprites/spr_light_capsule_psx/spr_light_capsule_psx.yy",
   },
   "spriteMaskId": null,
   "visible": true,

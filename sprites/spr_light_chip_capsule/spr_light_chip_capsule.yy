@@ -63,7 +63,7 @@
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4c842a77-f032-4ee1-9125-6a7cee9d97ac","path":"sprites/spr_light_chip_capsule/spr_light_chip_capsule.yy",},},},"Disabled":false,"id":"f7ceab5d-58e7-4d51-886c-52401ca9b274","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
-    "visibleRange": {"x":0.0,"y":0.0,},
+    "visibleRange": null,
     "volume": 1.0,
     "xorigin": 24,
     "yorigin": 75,

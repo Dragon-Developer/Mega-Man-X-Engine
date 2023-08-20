@@ -57,7 +57,7 @@
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"1be9a58d-23af-4c6c-9fe6-8f3380889d8d","path":"sprites/spr_light_capsule_particle/spr_light_capsule_particle.yy",},},},"Disabled":false,"id":"6b0b97bd-3f8a-425b-af5a-308e754cf276","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
-    "visibleRange": {"x":0.0,"y":0.0,},
+    "visibleRange": null,
     "volume": 1.0,
     "xorigin": 2,
     "yorigin": 4,

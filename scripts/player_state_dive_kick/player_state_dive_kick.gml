@@ -9,7 +9,7 @@ function player_state_dive_kick() {
 		grav = 0;
 		h_speed = 0;
 		v_speed = 0;
-		move_x(dir * dive_kick_hspeed);
+		dive_kick_jump |= !move_x(dir * dive_kick_hspeed);
 		move_y(dive_kick_vspeed);
 		if (instance_exists(special_inst)){
 			special_inst.x = x;
@@ -23,7 +23,7 @@ function player_state_dive_kick() {
 		} else if (dive_kick_jump) {
 			v_speed = -jump_strength;
 			state_set(state, 0, [1]);
-			animation_play("jump");
+			animation_play("dive_kick_jump");
 		}
 	} else {
 		player_state_dive_kick_jump();	
