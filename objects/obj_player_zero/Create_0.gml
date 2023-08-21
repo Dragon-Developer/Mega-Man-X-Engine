@@ -4,6 +4,7 @@ event_inherited();
 variables_script = player_zero_variables;
 animation_script = player_zero_animations;
 armor_script = player_zero_armors;
+weapon_offsets_script = player_zero_weapon_offsets;
 
 // Palette
 palette_texture_set(plt_zero);

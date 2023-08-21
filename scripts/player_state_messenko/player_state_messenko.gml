@@ -29,5 +29,4 @@ function player_state_messenko() {
 	player_charge_reset();
 	player_saber_reset();
 
-
 }

@@ -368,5 +368,5 @@ function player_zero_animations() {
 		77, 18
 	]);
 
-
+	animation_add("buster", keyframes_generate(6, 1/3));
 }

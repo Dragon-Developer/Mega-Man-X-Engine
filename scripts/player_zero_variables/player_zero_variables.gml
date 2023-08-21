@@ -34,6 +34,7 @@ function player_zero_variables() {
 	saber_atk_unlocked[saber_atks.raikousen] = true;
 
 	player_special_weapons_add(states.messenko);
+	player_special_weapons_add(states.z_buster_x5);
 
 	weapon_allow_pallete = false;
 

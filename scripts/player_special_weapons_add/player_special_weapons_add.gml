@@ -57,6 +57,11 @@ function player_special_weapon_from_state(wp_state) {
 				check: player_check_dive_kick,
 				scr: player_state_dive_kick
 			};
+		case states.z_buster_x5:
+			return {
+				check: player_check_z_buster,
+				scr: player_state_z_buster_x5
+			};
 		default:
 			return {};
 	}
