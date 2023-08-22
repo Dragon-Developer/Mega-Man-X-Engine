@@ -19,7 +19,7 @@ else
 	if (t < start_frame) player_shot_pos_fix();
 	else {
 		if (t == start_frame) {
-			abs_hspeed = 2;
+			abs_hspeed = abs_hspeed_max;
 			animation_play("L");
 		}
 		abs_hspeed += 0.5;

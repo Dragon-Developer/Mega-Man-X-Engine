@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Shots",
-    "path": "folders/Objects/Players/Characters/Zero/Shots.yy",
+    "name": "X5",
+    "path": "folders/Objects/Players/Characters/Zero/Shots/X5.yy",
   },
   "parentObjectId": {
     "name": "obj_player_shot_parent",

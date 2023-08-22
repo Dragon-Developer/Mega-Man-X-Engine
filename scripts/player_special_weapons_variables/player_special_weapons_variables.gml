@@ -61,6 +61,10 @@ function player_special_weapons_variables() {
 	dive_kick_limit = 1;
 	dive_kick_count = 0;
 	
+	// Buster
+	z_buster_effect = player_effect_new(obj_player_zero_shot_x5_charge, 19, -6, layer_up);
+	z_buster_effect_inst = noone;
+	
 	// All
 	using_special_weapon = false;
 	special_inst = noone;

@@ -38,8 +38,8 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "Weapons",
-    "path": "folders/Sprites/Player/Characters/Zero/Weapons.yy",
+    "name": "X1",
+    "path": "folders/Sprites/Player/Characters/Zero/Weapons/X1.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
