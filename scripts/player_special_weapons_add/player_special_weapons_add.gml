@@ -42,6 +42,11 @@ function player_special_weapon_from_state(wp_state) {
 				check: player_check_messenko,
 				scr: player_state_messenko
 			};
+		case states.shin_messenko:
+			return {
+				check: player_check_shin_messenko,
+				scr: player_state_shin_messenko
+			};
 		case states.giga_crush:
 			return {
 				check: player_check_giga_crush,

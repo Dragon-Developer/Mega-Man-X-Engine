@@ -11,6 +11,9 @@ function player_zero_armors() {
 		}
 	}
 	if (FULL == "nightmare") {
+		ds_list_clear(special_weapons);
+		player_special_weapons_add(states.shin_messenko);
+		player_special_weapons_add(states.z_buster_x5);
 		plt_index_default = 2;
 		saber.plt_index = saber_color.black;
 		damage_reduction = 0.5;

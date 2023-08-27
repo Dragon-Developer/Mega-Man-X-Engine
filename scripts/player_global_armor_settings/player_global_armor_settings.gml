@@ -120,7 +120,6 @@ function player_global_armor_settings() {
 	for (var i = 0; i < zero_armor.length; i++) {
 		global.character_armor_unlocked[pl_char.zero][i] = [false, false, false, false, false, true];
 	}
-	global.character_armor_unlocked[pl_char.zero][zero_armor.nightmare] = [false, false, false, false, false, false];
 	// Axl
 	for (var i = 0; i < axl_armor.length; i++) {
 		global.character_armor_unlocked[pl_char.axl][i] = [false, false, false, false, false, true];

@@ -36,6 +36,7 @@ function player_states() {
 		tatsumaki,
 		nova_strike,
 		giga_falcon,
+		shin_messenko,
 		messenko,
 		speed_gear,
 		dive_kick,
@@ -102,14 +103,15 @@ function player_states() {
 	state_array[states.dodge_roll]   = player_state_dodge_roll;
 
 	// Special Attack States
-	state_array[states.nova_strike]  = player_state_nova_strike;
-	state_array[states.hadouken]     = player_state_hadouken;
-	state_array[states.shoryuken]    = player_state_shoryuken;
-	state_array[states.tatsumaki]    = player_state_tatsumaki;
-	state_array[states.giga_falcon]  = player_state_giga_falcon;
-	state_array[states.messenko]     = player_state_messenko;
-	state_array[states.dive_kick]    = player_state_dive_kick;
-	state_array[states.z_buster_x5]    = player_state_z_buster_x5;
+	state_array[states.nova_strike]		= player_state_nova_strike;
+	state_array[states.hadouken]		= player_state_hadouken;
+	state_array[states.shoryuken]		= player_state_shoryuken;
+	state_array[states.tatsumaki]		= player_state_tatsumaki;
+	state_array[states.giga_falcon]		= player_state_giga_falcon;
+	state_array[states.messenko]		= player_state_messenko;
+	state_array[states.shin_messenko]	= player_state_shin_messenko;
+	state_array[states.dive_kick]		= player_state_dive_kick;
+	state_array[states.z_buster_x5]		= player_state_z_buster_x5;
 
 	// Weapons
 	state_array[states.db_buster]		= player_state_db_buster;

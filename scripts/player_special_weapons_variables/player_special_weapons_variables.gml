@@ -51,6 +51,12 @@ function player_special_weapons_variables() {
 	power_gear = false;
 	power_gear_sprite = spr_power_gear_effect;
 	
+	// Shin Messenko
+	shin_messenko_interval = 8;
+	shin_messenko_distance = 48;
+	shin_messenko_limit = 5;
+	shin_messenko_y_offset = 20;
+	
 	// Dive Kick
 	dive_kick_hspeed = 4;
 	dive_kick_vspeed = 4;
