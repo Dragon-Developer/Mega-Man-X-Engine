@@ -18,7 +18,7 @@ if (state == door_states.open && !moving_target) {
 	with (target) {
 		player_disable_speed_gear();
 		player_dolor_reset();
-		player_saber_reset();
+		player_saber_reset(false);
 		player_effects_reset();
 		immunity = false;
 		shoot_enabled = true;

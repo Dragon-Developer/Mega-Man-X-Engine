@@ -21,3 +21,7 @@ else
 	x = owner.x;
 	y = owner.y;
 }
+if (global.pause_type == pause_types.door) {
+	var k;
+	k = 1;
+}
