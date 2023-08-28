@@ -5,8 +5,6 @@ can_hit = false;
 shot_counted = false;
 destroy_reset_speed = false;
 
-animation_init();
-animations_init();
 animation_add("S", [
 	0, 0,
 	3, 1,

@@ -7,7 +7,7 @@ function player_state_z_buster_x5() {
 	}
 	if (t == 20) {
 		z_buster_effect_inst = player_effect_destroy(z_buster_effect_inst);
-		var inst = player_shoot_projectile(obj_player_zero_shot_x5);
+		var inst = player_shoot_projectile(z_buster_object);
 	}
 	if (animation_end) {
 		player_check_idle();

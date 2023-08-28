@@ -4,8 +4,6 @@ atk = 5;
 shot_level = 1;
 hit_if_shot_level_is_equal = true;
 
-animations_init();
-
 animation_add("S",
 [
 	0, 0,

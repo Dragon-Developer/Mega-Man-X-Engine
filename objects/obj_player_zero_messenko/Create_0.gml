@@ -8,8 +8,6 @@ shot_counted = false;
 abs_speed = 6.5;
 destroy_reset_speed = false;
 
-animation_init();
-animations_init();
 animation_add("L", keyframes_generate(sprite_get_number(sprite_index), 1 / 3));
 animation_play("L");
 execute_step_in_first_frame = true;

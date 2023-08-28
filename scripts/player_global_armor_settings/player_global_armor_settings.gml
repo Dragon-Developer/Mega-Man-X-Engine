@@ -13,7 +13,7 @@ function player_global_armor_settings() {
 		length
 	}
 	enum zero_armor {
-		none, black, x1, nightmare,
+		none, black, x1, nightmare, nightmare_2, nightmare_3, nightmare_4,
 		length
 	}
 	enum axl_armor {
@@ -71,8 +71,24 @@ function player_global_armor_settings() {
 	]);
 	
 	// Zero Armors
-	global.character_armor[pl_char.zero] = ["", "black", "x1", "nightmare"];
-	global.character_armor_name[pl_char.zero] = ["default", "black", "x1", "nightmare"];
+	global.character_armor[pl_char.zero] = [
+		"", 
+		"black", 
+		"x1", 
+		"nightmare",
+		"nightmare_2",
+		"nightmare_3",
+		"nightmare_4"
+	];
+	global.character_armor_name[pl_char.zero] = [
+		"default", 
+		"black", 
+		"x1", 
+		"nightmare",
+		"nightmare 2",
+		"nightmare 3",
+		"nightmare 4"
+	];
 	player_global_armor_set_mixable(pl_char.zero, zero_armor.length);
 	
 	// Axl Armors

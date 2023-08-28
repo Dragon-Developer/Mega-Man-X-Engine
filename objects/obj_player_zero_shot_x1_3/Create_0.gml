@@ -5,7 +5,6 @@ boss_damage[? noone] = 3;
 hit_if_shot_level_is_equal = true;
 sound = snd_player_x_shot_x2_3;
 
-animations_init();
 animation_add("S", [
 	0, 0,
 	1, 1,

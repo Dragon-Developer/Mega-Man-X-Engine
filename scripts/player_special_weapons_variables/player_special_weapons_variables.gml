@@ -70,6 +70,7 @@ function player_special_weapons_variables() {
 	// Buster
 	z_buster_effect = player_effect_new(obj_player_zero_shot_x5_charge, 19, -6, layer_up);
 	z_buster_effect_inst = noone;
+	z_buster_object = obj_player_zero_shot_x5;
 	
 	// All
 	using_special_weapon = false;

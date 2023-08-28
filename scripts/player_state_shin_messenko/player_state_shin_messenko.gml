@@ -5,7 +5,7 @@ function player_state_shin_messenko() {
 		shin_messenko_count = 0;
 	}
 	if (t < 26) {
-		animation_play("messenko", t);	
+		animation_play("shin_messenko", t);	
 	}
 	else {
 		if (t == 26)  {

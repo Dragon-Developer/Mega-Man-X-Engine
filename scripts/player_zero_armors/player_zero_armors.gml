@@ -10,16 +10,12 @@ function player_zero_armors() {
 			saber_damage[i] *= 1.25;
 		}
 	}
-	if (FULL == "nightmare") {
-		ds_list_clear(special_weapons);
-		player_special_weapons_add(states.shin_messenko);
-		player_special_weapons_add(states.z_buster_x5);
-		plt_index_default = 2;
-		saber.plt_index = saber_color.black;
-		damage_reduction = 0.5;
-		for (var i = 0, len = array_length(saber_damage); i < len; i++) {
-			saber_damage[i] *= 1.25;
-		}
+	if (string_starts_with(FULL, "nightmare")) {
+		player_zero_armor_nightmare();
+		if (FULL == "nightmare") plt_index_default = 2;
+		else if (FULL == "nightmare_2") plt_index_default = 3;
+		else if (FULL == "nightmare_3") plt_index_default = 4;
+		else if (FULL == "nightmare_4") plt_index_default = 5;
 	}
 	if (FULL == "x1") {
 		mobile_buttons_set_sprite(spr_zero_x1_mobile_buttons);
@@ -55,5 +51,17 @@ function player_zero_armors() {
 		#endregion
 	}
 
-
+}
+function player_zero_armor_nightmare() {
+	ds_list_clear(special_weapons);
+	player_special_weapons_add(states.shin_messenko);
+	player_special_weapons_add(states.z_buster_x5);
+	plt_index_default = 2;
+	saber.plt_index = saber_color.black;
+	damage_reduction = 0.5;
+	z_buster_object = obj_player_zero_shot_nightmare;
+	z_buster_effect.object = obj_player_zero_shot_nightmare_charge;
+	for (var i = 0, len = array_length(saber_damage); i < len; i++) {
+		saber_damage[i] *= 1.25;
+	}	
 }

@@ -367,6 +367,8 @@ function player_zero_animations() {
 		75, 18,
 		77, 18
 	]);
+	
+	animation_add("shin_messenko", animations_frames[? "messenko"]);
 
 	animation_add("buster", [
 		0, 0,
