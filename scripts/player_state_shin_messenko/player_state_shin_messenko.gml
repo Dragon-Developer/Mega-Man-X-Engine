@@ -1,5 +1,6 @@
 function player_state_shin_messenko() {
 	var t = state_timer++;
+	
 	if (t == 0) {
 		player_activate_immunity(immunity_types.normal);
 		shin_messenko_count = 0;
@@ -18,6 +19,7 @@ function player_state_shin_messenko() {
 					inst.x += d * (0.5 + shin_messenko_count) * shin_messenko_distance;
 					inst.y += shin_messenko_y_offset;
 					inst.shake = (shin_messenko_count == 0 && d == -1);
+					shots_count--;
 				}
 				shin_messenko_count += 1;
 				shoot_update_position = false;
@@ -30,6 +32,7 @@ function player_state_shin_messenko() {
 		player_check_fall();
 		using_special_weapon = false;
 		player_weapon_select(weapon_previous);
+		current_weapon = noone;
 	}
 
 	player_charge_reset();

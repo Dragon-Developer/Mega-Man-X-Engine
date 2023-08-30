@@ -15,6 +15,7 @@ function player_state_messenko() {
 			inst.image_angle = angle;
 			inst.x += lengthdir_x(16, angle);
 			inst.y += lengthdir_y(16, angle) + 16;
+			shots_count--;
 		}
 		shoot_update_position = false;
 	}

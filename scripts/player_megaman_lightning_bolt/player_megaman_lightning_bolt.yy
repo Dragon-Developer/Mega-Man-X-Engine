@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "X1",
-    "path": "folders/Scripts/Player/Characters/X/Weapons/Shots/X1.yy",
+    "name": "Weapons",
+    "path": "folders/Scripts/Player/Characters/MegaMan/Weapons.yy",
   },
 }

@@ -65,7 +65,7 @@ function player_special_weapon_from_state(wp_state) {
 		case states.z_buster_x5:
 			return {
 				check: player_check_z_buster,
-				scr: player_state_z_buster_x5
+				scr: player_state_z_buster_nightmare
 			};
 		default:
 			return {};

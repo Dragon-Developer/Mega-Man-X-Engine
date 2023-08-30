@@ -4,12 +4,12 @@ atk = 2;
 boss_damage[? noone] = 3;
 anti_destroy = true;
 anti_destroy_limit = 1;
-shot_counted = false;
 abs_hspeed = 0;
 abs_hspeed_max = 6;
+abs_vspeed_max = 1.5;
 destroy_reset_speed = false;
 sound = snd_player_x_shot_x2_3;
-
+v_speed_dir = 0;
 animation_add("L", [
 	0, 0,
 	2, 1,

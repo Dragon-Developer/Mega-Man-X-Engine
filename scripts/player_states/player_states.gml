@@ -41,6 +41,7 @@ function player_states() {
 		speed_gear,
 		dive_kick,
 		z_buster_x5,
+		z_buster_nightmare,
 		// Weapons
 		db_buster,
 		x3_saber,
@@ -112,6 +113,7 @@ function player_states() {
 	state_array[states.shin_messenko]	= player_state_shin_messenko;
 	state_array[states.dive_kick]		= player_state_dive_kick;
 	state_array[states.z_buster_x5]		= player_state_z_buster_x5;
+	state_array[states.z_buster_nightmare]	= player_state_z_buster_nightmare;
 
 	// Weapons
 	state_array[states.db_buster]		= player_state_db_buster;

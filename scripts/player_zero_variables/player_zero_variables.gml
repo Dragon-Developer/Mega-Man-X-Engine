@@ -3,7 +3,12 @@ function player_zero_variables() {
 	state_hitbox[states.dash] = spr_zero_crouch_mask;
 	state_hitbox[states.crouch] = spr_zero_crouch_mask;
 	// Shoot
-	shoot_unlocked = false;
+	shoot_unlocked = true;
+	charge_unlocked = false;
+	charge_palette_enabled = false;
+	weapon[0] = noone;
+	weapon[1] = noone;
+	weapon[2] = weapons.z_buster_x5;
 
 	// Complete Effect
 	complete_effect_limit = 17;
@@ -34,7 +39,6 @@ function player_zero_variables() {
 	saber_atk_unlocked[saber_atks.raikousen] = true;
 
 	player_special_weapons_add(states.messenko);
-	player_special_weapons_add(states.z_buster_x5);
 
 	weapon_allow_pallete = false;
 

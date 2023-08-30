@@ -5,6 +5,7 @@ var t = timer++;
 
 if (t == 8) {
 	abs_hspeed = 3;	
+	v_speed = abs_vspeed_max * v_speed_dir;
 }
 else if (t > 8) {
 	abs_hspeed += 0.5;

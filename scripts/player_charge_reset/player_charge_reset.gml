@@ -11,6 +11,7 @@ function player_charge_reset() {
 	charge_level = -1;
 	shot_id = 0;
 	audio_stop(charge_sound);
+	current_weapon = noone;
 
 
 }

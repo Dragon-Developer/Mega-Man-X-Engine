@@ -15,13 +15,14 @@ if (t == 0 && pickup_type == pickup_types.wp) {
 	// Find weapon to fill
 	with (target) {
 		// If this weapon is full, find other weapon to fill
-		if (weapon_energy[weapon[0]] >= weapon_energy_max[weapon[0]] || weapon_damage_refill[weapon[0]] != 0) {
+		if (weapon[0] == noone || weapon_energy[weapon[0]] >= weapon_energy_max[weapon[0]] || weapon_damage_refill[weapon[0]] != 0) {
 			for (var i = 0; i < array_length(weapon_list); i++) {
 				var wp = weapon_list[i];
-				if (wp >= 0 && weapon_energy[wp] < weapon_energy_max[wp] && weapon_damage_refill[wp] == 0) 
+				if (wp >= 0 && weapon_energy[wp] < weapon_energy_max[wp] && weapon_damage_refill[wp] == 0) {
 					other.weapon_id = weapon_list[i];
 					other.weapon_fill_other = true;
 					other.instant_fill = true;
+				}
 			}
 		} else {
 			other.weapon_id = weapon[0];

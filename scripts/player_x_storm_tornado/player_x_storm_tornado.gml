@@ -1,7 +1,5 @@
 function player_x_storm_tornado(lvl = -1, t = 0) {
 	charge_level = -1;
-	//if (shots_count >= 1) exit;
-
 	shoot_type = shoot_types.normal;
 	shoot_limit = 16;
 	shoot_animation = "";

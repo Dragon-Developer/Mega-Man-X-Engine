@@ -16,6 +16,7 @@ function player_weapon_settings() {
 		nova_strike,
 		// Zero
 		messenko,
+		z_buster_x5,
 		// Axl
 		a_ray_gun,
 		// Mega Man
@@ -97,6 +98,7 @@ function player_weapon_settings() {
 	// Cost
 	weapon_costs[weapons.x_buster] = [0];
 	weapon_costs[weapons.z_buster] = [0];
+	weapon_costs[weapons.z_buster_x5] = [0];
 	weapon_costs[weapons.a_pistol] = [0];
 	weapon_costs[weapons.a_ray_gun] = [0];
 	weapon_costs[weapons.mega_buster] = [0];
@@ -147,4 +149,5 @@ function player_weapon_settings() {
 	weapons_script[weapons.copy_vision] = player_megaman_copy_vision;
 	weapons_script[weapons.dive_missile] = player_megaman_dive_missile;
 	weapons_script[weapons.lightning_bolt] = player_megaman_lightning_bolt;
+	weapons_script[weapons.z_buster_x5] = player_zero_buster_x5;
 }

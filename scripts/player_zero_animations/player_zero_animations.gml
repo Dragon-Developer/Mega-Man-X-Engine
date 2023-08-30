@@ -379,4 +379,17 @@ function player_zero_animations() {
 		40, 5,
 		44, 5
 	]);
+	
+	animation_add("buster_charge|buster", [
+		0, 0
+	], 0, 0);
+	
+	animation_add("buster", [
+		0, 1,
+		5, 2,
+		10, 3,
+		15, 4,
+		20, 5,
+		24, 5
+	]);
 }

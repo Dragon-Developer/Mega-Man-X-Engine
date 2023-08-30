@@ -189,6 +189,7 @@ function player_start() {
 	shot_offset_y = 0;
 	
 	// Charge
+	current_weapon = noone;
 	charge = false; // Is the player charging a shot?
 	charge_t = 0; // Timer
 	charge_speed = 1; // Speed
@@ -213,6 +214,7 @@ function player_start() {
 	charge_blink_t = 0; // Timer
 	charge_sound = snd_player_charge; // Charge Sound
 	charge_enabled = false; // Is the Charge enabled?
+	charge_palette_enabled = true;
 	charge_unlocked = false;
 	charged_shots_limit = 1;
 	charged_shots_count = 0;
@@ -233,7 +235,8 @@ function player_start() {
 	for (var i = 80; i >= 0; i--) weapon_list[i] = noone;
 	weapon[0] = weapons.x_buster; // Primary weapon
 	weapon[1] = noone; // Secondary weapon (Disabled in Snes Style)
-
+	weapon[2] = noone;
+	
 	weapon_name = "";
 	weapon_id = 0;
 	weapon_hold_mode = false;

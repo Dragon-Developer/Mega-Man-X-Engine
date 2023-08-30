@@ -2,8 +2,6 @@ function player_shoot_check() {
 	var _state = state;
 	if (shoot_unlocked) {
 
-		current_weapon = weapon[0];
-
 		var condition = true;
 
 		if (!charge_enabled || saber_state != noone) {
@@ -12,19 +10,37 @@ function player_shoot_check() {
 			audio_stop_sound(charge_sound);
 		}
 		if ((state == states.dash && substates[1] == 1) // Dolor or Dash Up
-		|| !shoot_enabled || shoot_wait || using_special_weapon || saber_state != noone || locked)
+		|| !shoot_enabled || shoot_wait || using_special_weapon || saber_state != noone || locked 
+		|| state == states.z_buster_nightmare
+		|| state == states.z_buster_x5
+		)
 			condition = false;
 
 		var change_state = -1, change_state_type = shoot_types.normal;
 
-		var key_p = key_p_shoot;
-		var key_h = key_shoot;
+		var key_p = false;
+		var key_h = false;
+		
+		if (condition) {
+			if (key_shoot && weapon[0] != noone && (current_weapon == noone || current_weapon == weapon[0])) {
+				key_p = key_p_shoot;
+				key_h = key_shoot;
+				current_weapon = weapon[0];
+			}
 
-		if (key_shoot2 && weapon[1] != noone) {
-			key_p = key_p_shoot2;
-			key_h = key_shoot2;
-			current_weapon = weapon[1];
+			if (key_shoot2 && weapon[1] != noone && (current_weapon == noone || current_weapon == weapon[1])) {
+				key_p = key_p_shoot2;
+				key_h = key_shoot2;
+				current_weapon = weapon[1];
+			}
+		
+			if (key_special && weapon[2] != noone && (current_weapon == noone || current_weapon == weapon[2])) {
+				key_p = key_p_special;
+				key_h = key_special;
+				current_weapon = weapon[2];
+			}
 		}
+		
 		if (shots_count < 0)
 			shots_count = 0;
 

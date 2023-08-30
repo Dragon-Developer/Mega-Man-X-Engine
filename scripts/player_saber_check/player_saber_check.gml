@@ -46,6 +46,7 @@ function player_saber_check() {
 	}
 	if (changed_atk) {
 		if (saber_atk != noone) {
+			shoot_wait = false;
 			saber_atk_animation = saber_atk_animations[saber_atk];
 			saber_atk_sound = saber_atk_sounds[saber_atk];
 			saber_atk_next = false;

@@ -138,6 +138,7 @@ function player_step() {
 			if (!array_contains([states.dolor, states.ready, states.intro, states.complete, states.outro, states.grabbed], state)) {
 				script_try(spi.check);
 				if (using_special_weapon) {
+					shoot_wait = false;
 					dash_tap_timers = [0, 0, 0, 0];
 					audio_stop(hover_sound);
 				}
