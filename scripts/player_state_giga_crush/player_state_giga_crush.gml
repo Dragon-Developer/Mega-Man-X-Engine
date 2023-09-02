@@ -7,7 +7,7 @@ function player_state_giga_crush() {
 	h_speed = 0;
 	using_special_weapon = true;
 	shoot_wait = true;
-	charge_enabled = false;
+	player_charge_reset();
 	player_activate_immunity(immunity_types.normal);
 	player_effects_reset();
 

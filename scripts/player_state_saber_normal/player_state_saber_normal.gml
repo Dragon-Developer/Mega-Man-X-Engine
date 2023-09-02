@@ -20,7 +20,11 @@ function player_state_saber_normal() {
 		// Do next attack after the animation is done
 		if (t > 3 && saber_key_p)
 			saber_atk_next = true;
-
+		
+		if (t == saber_projectile_frame && saber_projectile != noone) {
+			player_shoot_projectile(saber_projectile);	
+		}
+		
 		var do_next_combo = false;
 
 		if (saber_atk_next && t >= 8 &&
@@ -69,8 +73,10 @@ function player_state_saber_normal() {
 	player_check_fall();
 	if (saber_atk != noone)
 		saber.shot_level = saber_atk;
-	if (state != st)
+	if (state != st) {
 		saber_state = noone;
+		shoot_wait = false;
+	}
 
 
 

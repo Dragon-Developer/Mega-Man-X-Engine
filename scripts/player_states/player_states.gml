@@ -61,6 +61,8 @@ function player_states() {
 		saber_down,
 		saber_dash,
 		saber_raikousen,
+		saber_charged,
+		saber_genmu,
 		length_all
 	}
 

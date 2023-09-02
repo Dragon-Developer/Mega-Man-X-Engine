@@ -5,8 +5,8 @@ function player_state_screen_cleaner() {
 	grav = 0;
 	v_speed = 0;
 	using_special_weapon = true;
-	shoot_wait = true;
-	charge_enabled = false;
+
+	player_charge_reset();
 	player_effects_reset();
 
 	// [Animations]
@@ -22,7 +22,6 @@ function player_state_screen_cleaner() {
 		player_check_fall();
 		using_special_weapon = false;
 		shoot = false;
-		shoot_wait = false;
 		charge_enabled = true;
 		immunity = false;
 	}

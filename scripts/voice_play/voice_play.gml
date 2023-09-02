@@ -2,13 +2,13 @@ function voice_play() {
 	// Don't play if it's not enabled
 	if (!G.voice_enabled) exit;
 	// Get correct voice name
-	var voice;
+	var voice = "";
 	if (argument_count == 0) {
 		voice = G.state_voice_name[state];
 	} else {
 		if (is_string(argument[0])) {
 			voice = argument[0];	
-		} else {
+		} else if (argument[0] < states.length_all) {
 			voice = G.state_voice_name[argument[0]];
 		}
 	}

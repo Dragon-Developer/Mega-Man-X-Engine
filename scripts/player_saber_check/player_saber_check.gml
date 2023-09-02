@@ -46,15 +46,7 @@ function player_saber_check() {
 	}
 	if (changed_atk) {
 		if (saber_atk != noone) {
-			shoot_wait = false;
-			saber_atk_animation = saber_atk_animations[saber_atk];
-			saber_atk_sound = saber_atk_sounds[saber_atk];
-			saber_atk_next = false;
-			saber_state = saber_states[saber_atk];
-			ceil_reset_vspeed = true;
-			//saber.melee_activated = false;
-			//saber.destroy = true;
-			state_set(saber_state, 0, [0, 0, 0, 0, 0]);
+			player_saber_use(saber_atk);
 		}
 	}
 	if (saber_atk != noone) {
@@ -63,4 +55,20 @@ function player_saber_check() {
 	}
 
 
+}
+
+function player_saber_use(_saber_atk, _saber_projectile = noone) {
+	saber_atk = _saber_atk;
+	saber.shot_level = saber_atk;
+	saber.boss_damage = saber_skill_boss_damage[saber_atk_skill[saber_atk]];
+	saber_projectile = _saber_projectile;
+	shoot_wait = false;
+	saber_projectile_frame = saber_projectile_frames[saber_atk];
+	player_charge_reset();
+	saber_atk_animation = saber_atk_animations[saber_atk];
+	saber_atk_sound = saber_atk_sounds[saber_atk];
+	saber_atk_next = false;
+	saber_state = saber_states[saber_atk];
+	ceil_reset_vspeed = true;
+	state_set(saber_state, 0, [0, 0, 0, 0, 0]);	
 }

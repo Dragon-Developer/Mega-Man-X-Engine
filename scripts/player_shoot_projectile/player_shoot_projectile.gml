@@ -1,5 +1,5 @@
-function player_shoot_projectile() {
-	var inst = instance_create_depth(x, y, depth - 10, argument[0]);
+function player_shoot_projectile(_object, _affect_direction = false) {
+	var inst = instance_create_depth(x, y, depth - 10, _object);
 	inst.image_xscale = dir;
 	inst.h_speed = inst.abs_hspeed * dir;
 	inst.dir = dir;
@@ -11,7 +11,7 @@ function player_shoot_projectile() {
 	inst.is_main = true;
 	shoot_update_position = true;
 
-	if (argument_count > 1 && argument[1]) {
+	if (_affect_direction) {
 		inst.shot_direction_index = shoot_direction_index;
 		switch(shoot_direction_index) {
 			case 0:

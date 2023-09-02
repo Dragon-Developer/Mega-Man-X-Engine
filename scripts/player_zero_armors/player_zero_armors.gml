@@ -53,6 +53,8 @@ function player_zero_armor_nightmare() {
 	charge_unlocked = true;
 	weapon_allow_pallete = false;
 	z_buster_effect.object = obj_player_zero_shot_nightmare_charge;
+	player_weapon_set(0, weapons.nightmare_saber);
+	player_weapon_select(weapons.nightmare_saber);
 	charge_limits[3] = charge_limits[2];
 	charge_level_max = 3;
 	for (var i = 0, len = array_length(saber_damage); i < len; i++) {

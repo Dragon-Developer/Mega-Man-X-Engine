@@ -6,7 +6,6 @@ function player_state_open_arms() {
 	v_speed = 0;
 	using_special_weapon = true;
 	shoot_wait = true;
-	charge_enabled = false;
 	player_effects_reset();
 
 	// [Animations]
@@ -22,6 +21,10 @@ function player_state_open_arms() {
 	// Create Projectiles
 	if (t == shoot_at_time) {
 		player_shoot_projectile(shoot_next_projectile);
+	}
+
+	if (charge_level == 0) {
+		player_charge_reset();	
 	}
 
 	if (t > shoot_limit) {

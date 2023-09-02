@@ -4,7 +4,6 @@ function player_state_x3_saber() {
 
 	player_effects_reset();
 	shoot_wait = true;
-	charge_enabled = false;
 	// Jump
 	var can_jump = player_can_jump();
 	if (key_p_jump && can_jump)
@@ -42,12 +41,14 @@ function player_state_x3_saber() {
 		}
 	}
 
-
+	if (charge_level == 0) {
+		player_charge_reset();	
+	}
+	
 	if (state != states.x3_saber)
 	{
 		shoot = false;
 		shoot_wait = false;
-		charge_enabled = true;
 	}
 
 	// Shoot

@@ -75,8 +75,10 @@ function player_state_saber_jump() {
 	if (!is_on_floor()) {
 		player_check_move();
 	}
-	if (state != st)
+	if (state != st) {
 		saber_state = noone;
+		shoot_wait = false;	
+	}
 
 
 }
