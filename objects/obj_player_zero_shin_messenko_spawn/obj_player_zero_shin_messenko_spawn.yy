@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_zero_shot_nightmare_wave",
-    "path": "sprites/spr_zero_shot_nightmare_wave/spr_zero_shot_nightmare_wave.yy",
+    "name": "spr_shin_messenko_spawn",
+    "path": "sprites/spr_shin_messenko_spawn/spr_shin_messenko_spawn.yy",
   },
   "spriteMaskId": null,
   "visible": true,

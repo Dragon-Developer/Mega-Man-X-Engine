@@ -36,10 +36,10 @@ function player_saber_skills_init() {
 	m[? obj_magma_dragoon] = 3;
 	// Charged
 	m = saber_skill_boss_damage[saber_skills.charged_saber];
-	m[? noone] = 3;
+	m[? noone] = 2;
 	// Genmu
 	m = saber_skill_boss_damage[saber_skills.genmu];
-	m[? noone] = 4;
+	m[? noone] = 2;
 
 
 }

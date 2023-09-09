@@ -1,10 +1,11 @@
 event_inherited();
-lv = saber_atks.charged_saber + 1;
+shot_level = saber_atks.charged_saber + 1;
 atk = 4;
-boss_damage[? noone] = 2;
+boss_damage[? noone] = 1;
 shot_counted = true;
 destroy_reset_speed = false;
 abs_speed = 5;
+weapon_death_type = weapon_death_types.saber;
 animation_add("L", [
 	0, 0,
 	1, 1,

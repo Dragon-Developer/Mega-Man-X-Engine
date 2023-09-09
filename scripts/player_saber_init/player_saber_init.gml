@@ -68,6 +68,7 @@ function player_saber_init() {
 	saber_atk_animations[saber_atks.dash]          = "atk_shippuuga";
 	saber_atk_animations[saber_atks.raikousen]     = "atk_raikousen";
 	saber_atk_animations[saber_atks.charged_saber] = "atk_3";
+	saber_atk_animations[saber_atks.genmu]		   = "atk_genmu";
 
 	// Sounds
 	saber_atk_sounds[saber_atks.atk1]           = snd_player_zero_saber_1;
@@ -81,7 +82,7 @@ function player_saber_init() {
 	saber_atk_sounds[saber_atks.dash]           = snd_player_zero_saber_1;
 	saber_atk_sounds[saber_atks.raikousen]      = noone;
 	saber_atk_sounds[saber_atks.charged_saber]  = snd_player_zero_saber_2;
-	saber_atk_sounds[saber_atks.genmu]          = snd_player_zero_saber_2;
+	saber_atk_sounds[saber_atks.genmu]          = noone;
 
 	// Mask
 	saber_mask[saber_atks.up]				   = spr_zero_saber_ryuenjin_mask;
@@ -102,6 +103,7 @@ function player_saber_init() {
 	// Projectile
 	saber_projectile_frames[saber_atks.atk3] = 4;
 	saber_projectile_frames[saber_atks.charged_saber] = 4;
+	saber_projectile_frames[saber_atks.genmu] = 19;
 
 	// Saber Hitstun Interval + Hit Times
 	saber_hitstun_interval[saber_atks.atk1]          = [0, 6, 1];

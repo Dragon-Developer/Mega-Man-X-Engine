@@ -19,6 +19,7 @@ function player_zero_nightmare_saber(lvl = -1, t = 0) {
 		// Super-Charged shot
 		case 2: 
 		case 3:
+			player_saber_use(saber_atks.genmu, obj_player_zero_nightmare_genmu);
 //			player_state_set(states.charged_saber_big);
 		break;
 	}

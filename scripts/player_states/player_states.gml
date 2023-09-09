@@ -136,5 +136,6 @@ function player_states() {
 	state_array[states.saber_down]            = player_state_saber_down;
 	state_array[states.saber_dash]            = player_state_saber_dash;
 	state_array[states.saber_raikousen]       = player_state_saber_raikousen;
+	state_array[states.saber_genmu]       = player_state_saber_genmu;
 
 }

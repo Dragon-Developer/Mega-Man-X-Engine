@@ -1,5 +1,5 @@
 event_inherited();
-lv = 4;
+shot_level = 4;
 atk = 2;
 boss_damage[? noone] = 3;
 anti_destroy = true;
