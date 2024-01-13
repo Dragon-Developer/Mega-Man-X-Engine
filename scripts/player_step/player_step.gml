@@ -123,9 +123,9 @@ function player_step() {
 	}
 	player_check_weapon_change();
 	if (state != states.ride) {
-		player_saber_check();
 		player_gravity();
 		script_try(state_array[state]);
+		player_saber_check();
 		player_immunity();
 		player_collision();
 		player_door_check();

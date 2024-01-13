@@ -19,6 +19,7 @@ switch(state) {
 			with (target) {
 				shots_count = 0;
 				charged_shots_count = 0;
+				visible = true;
 			}
 			
 			pause_set(true, pause_types.door);

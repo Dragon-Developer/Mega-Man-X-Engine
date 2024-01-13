@@ -7,6 +7,7 @@ function player_check_shin_messenko() {
 			instance_try_destroy(special_inst);
 			weapon_previous = weapon[0];
 			player_weapon_select(weapons.messenko);
+			shoot_enabled = false;
 		}
 	}
 

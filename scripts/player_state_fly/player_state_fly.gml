@@ -16,8 +16,6 @@ function player_state_fly() {
 	special_inst.x = x + h_speed;
 	special_inst.y = y + v_speed;
 
-	//player_activate_immunity(immunity_types.normal);
-
 	grav = 0;
 	v_speed = 0;
 	var y_result = key_down - key_up;

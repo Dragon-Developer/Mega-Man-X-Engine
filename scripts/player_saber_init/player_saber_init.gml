@@ -117,7 +117,7 @@ function player_saber_init() {
 	saber_hitstun_interval[saber_atks.dash]          = [2, 10, 6];
 	saber_hitstun_interval[saber_atks.raikousen]     = [12, 32, 6];
 	saber_hitstun_interval[saber_atks.charged_saber] = [0, 8, 6];
-	saber_hitstun_interval[saber_atks.genmu]		 = [0, 8, 6];
+	saber_hitstun_interval[saber_atks.genmu]		 = [2, 24, 10];
 
 	// Damage
 	saber_damage[saber_atks.atk1]          = 2;

@@ -6,7 +6,7 @@ function player_state_z_buster_x5() {
 		animation_play("buster_charge");	
 		z_buster_effect_inst = player_effect_create(z_buster_effect);
 	}
-	
+
 	if (t == z_buster_charge_interval) {
 		animation_play("buster");	
 		z_buster_effect_inst = player_effect_destroy(z_buster_effect_inst);

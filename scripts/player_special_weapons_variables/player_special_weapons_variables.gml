@@ -81,6 +81,12 @@ function player_special_weapons_variables() {
 		inst.v_speed_dir = dir_array[count mod array_length(dir_array)];
 	}
 	
+	// Teleport Dash
+	teleport_dash_duration = 45;
+	teleport_dash_speed = 5;
+	teleport_dash_start = 9;
+	teleport_dash_end = 9;
+	
 	// All
 	using_special_weapon = false;
 	special_inst = noone;

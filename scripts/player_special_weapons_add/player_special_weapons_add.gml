@@ -62,6 +62,11 @@ function player_special_weapon_from_state(wp_state) {
 				check: player_check_dive_kick,
 				scr: player_state_dive_kick
 			};
+		case states.teleport_dash:
+			return {
+				check: player_check_teleport_dash,
+				scr: player_state_teleport_dash
+			};
 		default:
 			return {};
 	}

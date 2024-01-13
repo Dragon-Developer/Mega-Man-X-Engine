@@ -426,4 +426,21 @@ function player_zero_animations() {
 		22, 24,
 		24, 24
 	]);
+	
+	animation_add("teleport", [
+		0, 0,
+		2, 1,
+		4, 2,
+		6, 3,
+		7, 4,
+		9, 4,
+	], 6, 9);
+	
+	animation_add("teleport_end|teleport", [
+		0, 3,
+		3, 2,
+		6, 1,
+		9, 0
+	], 9, 9);
+	
 }

@@ -10,7 +10,10 @@ if (instance_exists(owner)) {
 	}
 }
 with (obj_player_parent) {
-	if (!dead && state != states.grabbed) {
+	if (state == states.teleport_dash) {
+		other.player_stuck = false;
+	}
+	if (!dead && state != states.grabbed && state != states.teleport_dash) {
 		if (abs(x - mid_x) < other.player_speed * other.local_game_speed || other.player_stuck) {
 			x = mid_x;
 			other.player_stuck = true;

@@ -1,6 +1,6 @@
 PAUSE;
 with (obj_player_parent) {
-	if (!dead)
+	if (!dead && state != states.teleport_dash)
 		move_x(2 * other.dir * other.local_game_speed);	
 }
 if (instance_exists(owner)) {

@@ -32,7 +32,9 @@ function player_state_shin_messenko() {
 		player_check_fall();
 		using_special_weapon = false;
 		player_weapon_select(weapon_previous);
+		weapon[0] = weapon_previous;
 		current_weapon = noone;
+		shoot_enabled = true;
 	}
 
 	player_charge_reset();
